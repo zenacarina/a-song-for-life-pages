@@ -110,6 +110,7 @@ function lyricParts(lyrics) {
     if (lines[i].trim()) {
       preview.push(lines[i].trim());
     }
+
     i++;
   }
 
@@ -194,13 +195,6 @@ function renderPage(d, css) {
 
 <style>
 ${css}
-
-.hero-shade {
-  background: ${
-    d.heroShade ||
-    'linear-gradient(90deg,rgba(255,253,249,.92),rgba(255,253,249,0) 65%)'
-  };
-}
 </style>
 </head>
 
@@ -665,6 +659,7 @@ ${paragraphs}
     if (mobile) {
       qrPanel.classList.remove('open');
       qrPanel.setAttribute('aria-hidden', 'true');
+
       qrToggle.setAttribute(
         'aria-expanded',
         'false'
@@ -788,13 +783,16 @@ body{
   color:#fbf6ee;
   font-family:Georgia,serif
 }
+
 main{
   text-align:center;
   padding:2rem
 }
+
 .heart{
   color:#d5a04e
 }
+
 p{
   opacity:.82
 }
@@ -805,6 +803,7 @@ p{
 <main>
   <div class="heart">♥</div>
   <h1>A Song for Life</h1>
+
   <p>
     Private memorial pages are shared by direct link.
   </p>
