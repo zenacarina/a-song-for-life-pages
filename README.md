@@ -59,3 +59,4 @@ npm run build
 ```
 
 No packages need to be installed; the generator uses Node.js built-in modules only.
+Cloudflare automatic deployment enabled.
