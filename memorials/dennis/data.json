@@ -4,8 +4,11 @@
   "shortName": "Dennis",
   "possessiveName": "Dennis’s",
   "dates": "1951–2021",
-  "pronouns": { "subject": "he", "possessive": "his" },
-  "heroImage": "dennis-tropical-garden-hero.png",
+  "pronouns": {
+    "subject": "he",
+    "possessive": "his"
+  },
+  "heroImage": "dennis-tropical-garden-clean.png",
   "heroAlt": "Dennis seated in a tropical garden in warm golden evening light",
   "heroShade": "linear-gradient(90deg,rgba(255,253,249,.76) 0%,rgba(255,253,249,.46) 24%,rgba(255,253,249,.12) 42%,rgba(255,253,249,0) 62%),linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%)",
   "tributeHtml": "He gave us music, laughter<br>and a welcome that felt like home.",
