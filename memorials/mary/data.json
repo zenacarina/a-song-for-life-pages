@@ -1,0 +1,26 @@
+{
+  "slug": "mary",
+  "name": "Mary",
+  "shortName": "Mary",
+  "possessiveName": "Mary’s",
+  "dates": "1938–2020",
+  "pronouns": {
+    "subject": "she",
+    "possessive": "her"
+  },
+  "heroImage": "mary-coastal-hero.png",
+  "heroAlt": "Mary seated among coastal wildflowers overlooking the sea in warm golden evening light",
+  "tributeHtml": "Her hands brought comfort.<br>Her kindness lives on.",
+  "songTitle": "Mary’s Song",
+  "audioUrl": "https://audio.asongforlife.co.uk/examples/marys-song.mp3",
+  "shareImage": "mary-coastal-hero.png",
+  "shareDescription": "A personal memorial song celebrating Mary’s life of comfort, kindness and quiet strength.",
+  "lyrics": "Mary, child of Galway rain\nNurse’s hands that eased our pain\nBlue eyes bright as candle flame\nYou stood your ground, you lit the way\n\nYour open door was never closed\nFed half the street and still made more\nA laugh that travelled down the hall\nA quiet heart that held us all\n\nMary, your love still rises\nThrough the years, through joy and pain\nEvery life you valued dearly\nStill finds comfort in your name\n\nA quiet walk, a peaceful face\nA smile that softened every place\nA prayer kept quiet in your hand\nA kindness people understand\n\nYou passed by beds, you knew each name\nHeld tired hands through fear and pain\nYou smiled in that familiar way\nAnd made their darkness feel okay\n\nMary, your love still rises\nThrough the years, through joy and pain\nEvery life you valued dearly\nStill finds comfort in your name\n\nLove was never small in you\nIt came like sunlight breaking through\nA gentle bird, a lion’s breath\nHolding close what mattered best\n\nYou had a way of standing firm\nSoft in heart and quick to learn\nStubborn in the best of ways\nFull of stories, full of grace\n\nMary, your love still rises\nThrough the years, through joy and pain\nEvery life you valued dearly\nStill finds comfort in your name",
+  "rememberingTitle": "Remembering Mary",
+  "rememberingParagraphs": [
+    "Mary carried Galway in her spirit and a rare steadiness into every room. With a nurse’s hands and a peaceful presence, she knew how to ease fear, soften pain and make people feel seen.",
+    "Her door was open, food was shared freely and her laugh travelled through the house. She could be gentle and firm in equal measure — soft-hearted, strong-minded and stubborn in the best of ways.",
+    "She valued every life she touched. The comfort, courage and kindness she gave remain in the people who knew her and in the stories that still carry her name."
+  ],
+  "closingLine": "Loved always. Remembered in every life she touched."
+}
