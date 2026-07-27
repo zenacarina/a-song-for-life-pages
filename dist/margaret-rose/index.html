@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Margaret Rose — a personal memorial song and private keepsake page.">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta property="og:title" content="Remembering Margaret Rose">
+<meta property="og:description" content="A personal memorial song created from her story.">
+<meta property="og:image" content="https://remembering.asongforlife.co.uk/margaret-rose/margaret-rose-share-card-clean.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Remembering Margaret Rose — a personal memorial song by A Song for Life">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Remembering Margaret Rose">
+<meta name="twitter:description" content="A personal memorial song created from her story.">
+<meta name="twitter:image" content="https://remembering.asongforlife.co.uk/margaret-rose/margaret-rose-share-card-clean.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://remembering.asongforlife.co.uk/margaret-rose/">
+<title>Margaret Rose | A Song for Life</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#08243a">
+<style>
+:root{
+  --navy:#08243a;
+  --deep:#061b2c;
+  --cream:#fbf6ee;
+  --paper:#fffdfa;
+  --gold:#d5a04e;
+  --gold-dark:#b87824;
+  --ink:#16344c;
+  --body:#403b36;
+  --muted:#756d65;
+  --line:rgba(184,120,36,.24);
+  --soft-line:rgba(184,120,36,.14);
+  --shadow:0 28px 70px rgba(0,0,0,.22);
+  --card-shadow:0 14px 34px rgba(46,32,20,.09);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  color:var(--body);
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(30,74,104,.55),transparent 40%),
+    linear-gradient(180deg,var(--navy),var(--deep));
+}
+button,input{font:inherit}
+button:focus-visible,input:focus-visible,a:focus-visible{
+  outline:3px solid rgba(213,160,78,.72);
+  outline-offset:4px;
+}
+.shell{width:min(1160px,100%);margin:auto;padding:32px 18px 62px}
+.page{
+  overflow:hidden;
+  position:relative;
+  background:linear-gradient(180deg,#fffdf9,var(--cream));
+  border:1px solid rgba(213,160,78,.46);
+  border-radius:32px;
+  box-shadow:var(--shadow);
+}
+.hero{
+  position:relative;
+  min-height:600px;
+  overflow:hidden;
+  background:var(--cream);
+}
+.hero-image{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center center;
+  filter:saturate(1.04) contrast(1.02);
+}
+.hero-shade{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,rgba(255,253,249,.98) 0%,rgba(255,253,249,.90) 25%,rgba(255,253,249,.42) 43%,rgba(255,253,249,0) 66%),
+    linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%);
+}
+.hero-copy{
+  position:relative;
+  z-index:2;
+  width:min(47%,500px);
+  padding:82px 0 146px 62px;
+}
+.kicker{
+  margin:0 0 16px;
+  color:var(--gold-dark);
+  font:16px/1.2 Georgia,serif;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+.hero h1{
+  margin:0;
+  max-width:470px;
+  color:var(--navy);
+  font:400 clamp(58px,6.4vw,84px)/.96 Georgia,serif;
+  letter-spacing:-.042em;
+}
+.dates{
+  margin:20px 0 0;
+  color:var(--ink);
+  font:21px Georgia,serif;
+  letter-spacing:.11em;
+}
+.rule,.panel-rule{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--gold-dark);
+}
+.rule{margin:20px 0 16px}
+.rule::before,.rule::after,.panel-rule::before,.panel-rule::after{
+  content:"";
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gold));
+}
+.rule::before,.rule::after{width:72px}
+.rule::after,.panel-rule::after{background:linear-gradient(90deg,var(--gold),transparent)}
+.tribute{
+  max-width:405px;
+  margin:0;
+  color:#31516a;
+  font:italic clamp(21px,2.2vw,28px)/1.38 Georgia,serif;
+}
+.player-card{
+  position:relative;
+  z-index:5;
+  width:calc(100% - 104px);
+  margin:-104px auto 0;
+  padding:22px 24px;
+  display:grid;
+  grid-template-columns:70px minmax(0,1fr) auto;
+  gap:18px;
+  align-items:center;
+  background:rgba(255,253,249,.975);
+  border:1px solid rgba(184,120,36,.28);
+  border-radius:20px;
+  box-shadow:0 20px 45px rgba(46,32,20,.16);
+  backdrop-filter:blur(8px);
+}
+.play{
+  width:70px;height:70px;
+  display:flex;align-items:center;justify-content:center;
+  border:0;border-radius:50%;cursor:pointer;
+  background:var(--navy);
+  box-shadow:0 10px 25px rgba(8,36,58,.2);
+  transition:transform .18s ease,box-shadow .18s ease;
+}
+.play:hover{transform:translateY(-1px);box-shadow:0 13px 29px rgba(8,36,58,.25)}
+.triangle{width:0;height:0;margin-left:5px;border-top:13px solid transparent;border-bottom:13px solid transparent;border-left:21px solid var(--gold)}
+.pause{display:none;gap:7px}.pause span{width:6px;height:28px;background:var(--gold);border-radius:2px}
+.play.is-playing .triangle{display:none}.play.is-playing .pause{display:flex}
+.song-title{margin:0 0 3px;color:var(--navy);font:30px Georgia,serif}
+.song-sub{margin:0 0 12px;color:var(--gold-dark);font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+.seek{
+  width:100%;height:6px;appearance:none;border-radius:999px;cursor:pointer;
+  background:linear-gradient(90deg,var(--navy) 0,var(--navy) var(--p,0%),#c4ccd2 var(--p,0%),#c4ccd2 100%);
+}
+.seek::-webkit-slider-thumb{width:16px;height:16px;appearance:none;border:3px solid var(--cream);border-radius:50%;background:var(--navy);box-shadow:0 0 0 1px rgba(8,36,58,.18)}
+.seek::-moz-range-thumb{width:12px;height:12px;border:3px solid var(--cream);border-radius:50%;background:var(--navy)}
+.times{display:flex;justify-content:space-between;margin-top:7px;color:#61717c;font-size:12px}
+.player-actions{display:flex;gap:9px;align-items:center}
+.icon-btn{
+  min-width:104px;
+  padding:11px 13px;
+  border:1px solid rgba(184,120,36,.32);
+  border-radius:11px;
+  cursor:pointer;
+  color:var(--navy);
+  background:#fff;
+  font-size:13px;
+  transition:background .18s ease,border-color .18s ease,transform .18s ease;
+}
+.icon-btn:hover{background:#fffaf3;border-color:rgba(184,120,36,.52);transform:translateY(-1px)}
+.icon-btn.primary{color:#fff;background:var(--navy);border-color:var(--navy)}
+.icon-btn.primary:hover{background:#0d304a}
+.content{position:relative;z-index:2;padding:18px 50px 38px}
+.panel{
+  margin-top:14px;
+  padding:28px 30px;
+  background:rgba(255,255,255,.58);
+  border:1px solid var(--line);
+  border-radius:20px;
+  box-shadow:var(--card-shadow);
+}
+.panel-title{margin:0 0 12px;color:var(--navy);font:29px Georgia,serif;text-align:center}
+.panel-rule{justify-content:center;gap:10px;margin-bottom:18px}
+.panel-rule::before,.panel-rule::after{width:66px}
+.remembrance{
+  position:relative;
+  overflow:hidden;
+  min-height:0;
+  padding:30px 42px;
+  background:rgba(255,255,255,.62);
+}
+.remembrance-copy{max-width:760px;margin:0 auto}
+.remembrance p{margin:0 0 12px;line-height:1.68;text-align:left}
+.remembrance em{display:block;color:var(--gold-dark);font:italic 19px Georgia,serif}
+.lyrics-heading{
+  margin:0;
+  padding:18px 24px 2px;
+  color:var(--gold-dark);
+  font:600 12px/1.2 Arial,sans-serif;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  text-align:center;
+  opacity:.82;
+}
+.lyrics-preview{
+  margin-top:0;
+  padding:14px 28px 17px;
+  text-align:center;
+  color:var(--gold-dark);
+  font:italic 18px/1.6 Georgia,serif;
+  background:rgba(255,255,255,.22);
+  border-bottom:1px solid rgba(184,120,36,.22);
+}
+.lyrics-preview p{margin:0}
+.lyrics-panel{padding:0;overflow:hidden}
+.lyrics-toggle{
+  width:100%;
+  padding:20px 24px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  cursor:pointer;
+  border:0;
+  background:transparent;
+  color:var(--navy);
+}
+.lyrics-label{display:flex;align-items:center;font:20px Georgia,serif}
+.chev{width:13px;height:13px;border-right:2px solid var(--gold-dark);border-bottom:2px solid var(--gold-dark);transform:rotate(45deg);transition:transform .25s ease}
+.lyrics-toggle[aria-expanded="true"] .chev{transform:rotate(225deg)}
+.lyrics-content{display:grid;grid-template-rows:0fr;transition:grid-template-rows .36s ease}
+.lyrics-content.open{grid-template-rows:1fr}
+.lyrics-inner{overflow:hidden}
+.lyrics{
+  max-width:700px;
+  margin:0 auto;
+  padding:0 26px 30px;
+  color:var(--gold-dark);
+  font:italic 18px/1.68 Georgia,serif;
+  text-align:center;
+  white-space:pre-line;
+}
+.lyrics p{margin:0}
+.share-grid{display:grid;grid-template-columns:140px minmax(0,1.08fr) minmax(0,.92fr);gap:28px;align-items:center}
+#qr{width:max-content;padding:8px;background:#fff;border:1px solid rgba(184,120,36,.32);border-radius:12px}
+.share-copy h2,.privacy h2{margin:0 0 7px;color:var(--navy);font:23px Georgia,serif}
+.share-copy p,.privacy p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.55}
+.copy-link{
+  display:inline-flex;
+  margin-top:12px;
+  padding:9px 12px;
+  border:1px solid rgba(184,120,36,.3);
+  border-radius:10px;
+  background:#fff;
+  color:var(--navy);
+  cursor:pointer;
+  font-size:13px;
+}
+
+.qr-wrap{display:block}
+.qr-toggle{display:none;width:100%;margin-top:12px;padding:12px 14px;align-items:center;justify-content:space-between;border:1px solid rgba(184,120,36,.3);border-radius:11px;background:#fff;color:var(--navy);cursor:pointer;font:18px Georgia,serif}
+.qr-toggle .chev{width:11px;height:11px}
+.qr-toggle[aria-expanded="true"] .chev{transform:rotate(225deg)}
+.qr-panel{display:block}
+.qr-panel-inner{display:block}
+.qr-help{display:none}
+.status{min-height:18px;margin:10px 0 0;color:var(--gold-dark);text-align:center;font-size:13px}.status:empty{display:none}
+.footer{position:relative;z-index:2;padding:18px 22px 20px;text-align:center;border-top:1px solid var(--line)}
+.brand{color:var(--navy);font:15px Georgia,serif;letter-spacing:.27em;text-transform:uppercase}
+.footer-note{margin:6px 0 0;color:var(--muted);font:italic 13px Georgia,serif}
+.footer-credit{margin:12px 0 0;color:rgba(107,100,91,.78);font-size:11px;line-height:1.45;letter-spacing:.01em}
+.footer-credit a{color:var(--navy);text-decoration:none;border-bottom:1px solid rgba(8,45,70,.22)}
+.footer-credit a:hover,.footer-credit a:focus-visible{color:var(--gold-dark);border-bottom-color:currentColor}
+@media(max-width:900px){
+  .shell{padding:16px 12px 40px}
+  .page{border-radius:24px}
+  .hero{min-height:auto;padding-top:68.75%}
+  .hero-image{height:auto;aspect-ratio:16/11;object-position:72% 34%}
+  .hero-shade{height:auto;aspect-ratio:16/11;background:linear-gradient(180deg,rgba(255,253,249,0) 68%,rgba(255,253,249,.98) 100%)}
+  .hero-copy{width:100%;padding:26px 24px 28px;text-align:center;background:linear-gradient(180deg,#fffdf9,var(--cream))}
+  .kicker{margin-bottom:11px;font-size:13px}
+  .hero h1{max-width:none;font-size:clamp(43px,9vw,62px);line-height:1;letter-spacing:-.035em}
+  .dates{margin-top:13px;font-size:18px}
+  .rule{justify-content:center;margin:15px 0 12px}
+  .tribute{max-width:520px;margin:auto;font-size:clamp(20px,4vw,26px)}
+  .player-card{width:calc(100% - 28px);margin:12px auto 0;padding:17px;grid-template-columns:60px 1fr;gap:13px;border-radius:18px}
+  .play{width:60px;height:60px}
+  .song-title{font-size:24px}
+  .song-sub{font-size:10px;margin-bottom:9px}
+  .player-actions{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;width:100%;gap:9px}
+  .icon-btn{width:100%;min-width:0}
+  .content{padding:14px 14px 28px}
+  .panel{padding:22px 20px;border-radius:18px}
+  .remembrance{min-height:0;padding:24px 28px}
+  .share-grid{grid-template-columns:125px 1.08fr .92fr;gap:20px}
+}
+@media(max-width:620px){
+  .shell{padding:8px 6px 22px}
+  .page{border-radius:18px}
+  .hero{padding-top:68.75%}
+  .hero-image{object-position:75% 34%}
+  .hero-copy{padding:17px 14px 19px}
+  .kicker{margin-bottom:8px;font-size:11px;letter-spacing:.13em}
+  .hero h1{font-size:clamp(36px,10.5vw,46px)}
+  .dates{margin-top:9px;font-size:15px;letter-spacing:.09em}
+  .rule{margin:11px 0 9px}.rule::before,.rule::after{width:52px}
+  .tribute{font-size:18px;line-height:1.34}
+  .player-card{width:calc(100% - 14px);margin:8px auto 0;padding:13px 12px;grid-template-columns:46px 1fr;gap:10px;border-radius:15px}
+  .play{width:46px;height:46px}
+  .triangle{border-top-width:10px;border-bottom-width:10px;border-left-width:16px}
+  .song-title{font-size:19px}.song-sub{font-size:9px;letter-spacing:.06em;margin-bottom:7px}
+  .times{font-size:11px;margin-top:5px}
+  .player-actions{gap:7px}.icon-btn{padding:10px 11px;font-size:13px;border-radius:9px}
+  .content{padding:10px 9px 20px}
+  .panel{margin-top:10px;padding:17px 14px;border-radius:15px}
+  .panel-title{font-size:24px;margin-bottom:9px}
+  .panel-rule{margin-bottom:13px}.panel-rule::before,.panel-rule::after{width:48px}
+  .remembrance{padding:17px 16px;background:rgba(255,255,255,.62)}
+  .remembrance-copy{max-width:none}
+  .remembrance p{font-size:15.5px;line-height:1.5;margin-bottom:9px}
+  .remembrance em{font-size:17px}
+  .lyrics-heading{padding:14px 16px 2px;font-size:11px;letter-spacing:.17em}
+  .lyrics-preview{padding:10px 16px 14px;font-size:16px;line-height:1.52}
+  .lyrics-toggle{padding:12px 16px}
+  .lyrics-label{font-size:18px}
+  .lyrics{padding:0 15px 24px;font-size:16px;line-height:1.58;font-style:italic}
+  .share-grid{display:flex;flex-direction:column;gap:0;padding:15px 14px;text-align:center}
+  .share-copy{order:1}
+  .qr-wrap{order:2;width:100%}
+  .privacy{order:3;width:100%}
+  .share-copy h2,.privacy h2{font-size:21px}
+  .share-copy p,.privacy p{font-size:14.5px;line-height:1.48}
+  .copy-link{margin-top:8px}
+  .qr-wrap{margin-top:9px}
+  .qr-toggle{display:flex}
+  .qr-panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .28s ease}
+  .qr-panel.open{grid-template-rows:1fr}
+  .qr-panel-inner{overflow:hidden}
+  #qr{margin:14px auto 8px;padding:7px}
+  #qr img,#qr canvas{width:132px!important;height:132px!important}
+  .qr-help{margin:0 auto 4px;max-width:310px;font-size:13.5px;line-height:1.45;color:var(--muted)}
+  .privacy{margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}
+  .footer{padding:15px 12px 17px}
+  .brand{font-size:12px;letter-spacing:.22em}
+  .footer-note{font-size:13px}
+  .footer-credit{font-size:10.5px;line-height:1.45}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.hero-shade{background:linear-gradient(90deg,rgba(255,253,249,.98) 0%,rgba(255,253,249,.90) 25%,rgba(255,253,249,.42) 43%,rgba(255,253,249,0) 66%),linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%);}
+</style>
+</head>
+<body>
+<main class="shell"><article class="page">
+<section class="hero" aria-labelledby="memorial-name">
+  <img class="hero-image" src="margaret-rose-rose-garden-hero.png" alt="Margaret Rose standing in a rose garden in warm evening light">
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="hero-copy"><p class="kicker">In loving memory of</p><h1 id="memorial-name">Margaret Rose</h1><p class="dates">1946–2023</p><div class="rule" aria-hidden="true">♥</div><p class="tribute">Her kindness was her legacy.<br>Her love lives on.</p></div>
+</section>
+<section class="player-card" aria-label="Margaret’s memorial song player">
+  <audio id="audio" preload="metadata" src="https://audio.asongforlife.co.uk/examples/margarets-song.mp3"></audio>
+  <button id="play" class="play" type="button" aria-label="Play Margaret’s Song"><span class="triangle" aria-hidden="true"></span><span class="pause" aria-hidden="true"><span></span><span></span></span></button>
+  <div><p id="playerTitle" class="song-title">Margaret’s Song</p><p class="song-sub">A personal song created in her honour</p><input id="seek" class="seek" type="range" min="0" max="100" value="0" step=".1" aria-label="Song progress"><div class="times"><span id="current">0:00</span><span id="duration">0:00</span></div></div>
+  <div class="player-actions"><button id="share" class="icon-btn primary" type="button">Share</button><button id="download" class="icon-btn" type="button">Download song</button></div>
+</section>
+<div class="content">
+<section class="panel lyrics-panel">
+  <h2 class="lyrics-heading">Lyrics</h2>
+  <div class="lyrics-preview" aria-label="Lyrics preview"><p>She loved the soil upon her hands<br>And sunlight in her hair<br>She grew roses in her garden<br>And left her kindness there</p></div>
+  <button id="lyricsToggle" class="lyrics-toggle" type="button" aria-expanded="false" aria-controls="lyricsContent"><span class="lyrics-label"><span id="lyricsLabel">View remaining lyrics</span></span><span class="chev" aria-hidden="true"></span></button>
+  <div id="lyricsContent" class="lyrics-content" aria-hidden="true"><div class="lyrics-inner"><div class="lyrics">She knew the names of every child
+Who passed her classroom door
+And somehow made the quiet ones
+Believe a little more
+
+She kept a tin of buttons
+And letters tied with string
+Birthday cards from years gone by
+And every precious thing
+
+Margaret Rose, we’re missing you
+And all the love you gave
+In gardens full of morning sun
+In every heart you shaped
+You gave us words, you gave us grace
+You taught us how to care
+And when the roses bloom again
+We’ll feel you standing there
+
+She made a home where tea was poured
+And cake was always near
+Where every guest was welcomed in
+With “come on in, my dear”
+She loved the spring and Sunday roast
+The books beside her bed
+The stories read to bright young eyes
+The little prayers she said
+
+And though we wish for one more cup
+One more “come in, my dear”
+The love she gave so freely
+Is still living with us here
+
+Margaret Rose, we’re missing you
+And all the love you gave
+In gardens full of morning sun
+In every heart you shaped
+You gave us words, you gave us grace
+You taught us how to care
+And when the roses bloom again
+We’ll feel you standing there
+
+So rest now, gentle Margaret
+Your work on earth is done
+The seeds you planted long ago
+Are reaching for the sun</div></div></div>
+</section>
+<section class="panel remembrance" aria-labelledby="story-title"><div class="remembrance-copy"><h2 id="story-title" class="panel-title">Remembering Margaret</h2><div class="panel-rule" aria-hidden="true">♥</div>
+        <p>Margaret was a beloved teacher, gardener and friend whose kindness touched everyone she met.</p>
+        <p>She found joy in simple things — roses opening in the morning, a good book beside her bed, and time spent with the people she loved.</p>
+        <p><em>Forever loved. Never forgotten.</em></p></div></section>
+<section class="panel share-grid" aria-label="Share Margaret’s memorial">
+  <div class="qr-wrap"><button id="qrToggle" class="qr-toggle" type="button" aria-expanded="false" aria-controls="qrPanel"><span>Show QR code</span><span class="chev" aria-hidden="true"></span></button><div id="qrPanel" class="qr-panel" aria-hidden="true"><div class="qr-panel-inner"><div id="qr"></div><p class="qr-help">Let someone nearby scan this code to open the memorial.</p></div></div></div>
+  <div class="share-copy"><h2>Share this memorial</h2><p>Share the page directly, copy its link, or show the QR code to someone nearby.</p><button id="copyLink" class="copy-link" type="button">Copy page link</button></div>
+  <div class="privacy"><h2>Shared privately by link</h2><p>This page is not listed in internet search results, but is available to anyone who receives its direct link or QR code.</p></div>
+</section><p id="status" class="status" role="status" aria-live="polite"></p></div>
+<footer class="footer"><div class="brand">A Song for Life</div><p class="footer-note">A personal song created from a life remembered</p><p class="footer-credit">Created with care by Zena Carina <span aria-hidden="true">·</span> <a href="https://asongforlife.co.uk" target="_blank" rel="noopener">Visit A Song for Life</a></p></footer>
+</article></main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function(){
+const audio=document.getElementById('audio'),play=document.getElementById('play'),title=document.getElementById('playerTitle'),seek=document.getElementById('seek'),current=document.getElementById('current'),duration=document.getElementById('duration'),lyricsToggle=document.getElementById('lyricsToggle'),lyricsLabel=document.getElementById('lyricsLabel'),lyricsContent=document.getElementById('lyricsContent'),share=document.getElementById('share'),copyLink=document.getElementById('copyLink'),qrToggle=document.getElementById('qrToggle'),qrPanel=document.getElementById('qrPanel'),download=document.getElementById('download'),status=document.getElementById('status');
+const songTitle="Margaret’s Song",downloadUrl="https://a-song-for-life-downloads.zenacarinas.workers.dev/margaret-rose",shareTitle="Margaret Rose | A Song for Life",shareText="Listen to Margaret Rose’s personal memorial song.";
+const fmt=s=>!Number.isFinite(s)?'0:00':Math.floor(s/60)+':'+Math.floor(s%60).toString().padStart(2,'0');
+const setStatus=message=>{status.textContent=message;clearTimeout(setStatus.timer);setStatus.timer=setTimeout(()=>status.textContent='',3500)};
+function state(on){play.classList.toggle('is-playing',on);play.setAttribute('aria-label',(on?'Pause ':'Play ')+songTitle);title.textContent=on?songTitle+' — playing':songTitle}
+function progress(){const p=audio.duration?audio.currentTime/audio.duration*100:0;seek.value=p;seek.style.setProperty('--p',p+'%');current.textContent=fmt(audio.currentTime)}
+play.addEventListener('click',()=>audio.paused?audio.play():audio.pause());audio.addEventListener('play',()=>state(true));audio.addEventListener('pause',()=>state(false));audio.addEventListener('ended',()=>{audio.currentTime=0;state(false);progress()});audio.addEventListener('loadedmetadata',()=>{duration.textContent=fmt(audio.duration);progress()});audio.addEventListener('timeupdate',progress);seek.addEventListener('input',()=>{if(audio.duration)audio.currentTime=seek.value/100*audio.duration});
+lyricsToggle.addEventListener('click',()=>{const open=lyricsToggle.getAttribute('aria-expanded')==='true';lyricsToggle.setAttribute('aria-expanded',String(!open));lyricsContent.classList.toggle('open',!open);lyricsContent.setAttribute('aria-hidden',String(open));lyricsLabel.textContent=!open?'Hide remaining lyrics':'View remaining lyrics'});
+async function copyPageLink(){try{await navigator.clipboard.writeText(location.href);setStatus('Page link copied.')}catch{setStatus('Copy the page address from your browser.')}}copyLink.addEventListener('click',copyPageLink);
+qrToggle.addEventListener('click',()=>{const open=qrToggle.getAttribute('aria-expanded')==='true';qrToggle.setAttribute('aria-expanded',String(!open));qrPanel.classList.toggle('open',!open);qrPanel.setAttribute('aria-hidden',String(open));qrToggle.querySelector('span:first-child').textContent=!open?'Hide QR code':'Show QR code'});
+share.addEventListener('click',async()=>{try{navigator.share?await navigator.share({title:shareTitle,text:shareText,url:location.href}):await copyPageLink()}catch{}});download.addEventListener('click',()=>{location.href=downloadUrl});
+function syncQrLayout(){const mobile=matchMedia('(max-width:620px)').matches;if(mobile){qrPanel.classList.remove('open');qrPanel.setAttribute('aria-hidden','true');qrToggle.setAttribute('aria-expanded','false');qrToggle.querySelector('span:first-child').textContent='Show QR code'}else{qrPanel.classList.add('open');qrPanel.setAttribute('aria-hidden','false')}}syncQrLayout();addEventListener('resize',syncQrLayout);
+new QRCode(document.getElementById('qr'),{text:location.href,width:innerWidth<=620?132:142,height:innerWidth<=620?132:142,colorDark:'#08243A',colorLight:'#FFFFFF',correctLevel:QRCode.CorrectLevel.H});
+})();
+</script></body></html>

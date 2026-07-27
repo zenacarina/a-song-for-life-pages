@@ -1,0 +1,13 @@
+{
+  "name": "asongforlife-memorial-pages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Data-driven static memorial pages for A Song for Life",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
