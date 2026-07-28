@@ -5,24 +5,30 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="description" content="Margaret Rose — a personal memorial song and private keepsake page.">
 <meta name="robots" content="noindex,nofollow,noarchive">
+
 <meta property="og:title" content="Remembering Margaret Rose">
 <meta property="og:description" content="A personal memorial song created from her story.">
 <meta property="og:image" content="https://remembering.asongforlife.co.uk/margaret-rose/margaret-rose-share-card-clean.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Remembering Margaret Rose — a personal memorial song by A Song for Life">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://remembering.asongforlife.co.uk/margaret-rose/">
+
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Remembering Margaret Rose">
 <meta name="twitter:description" content="A personal memorial song created from her story.">
 <meta name="twitter:image" content="https://remembering.asongforlife.co.uk/margaret-rose/margaret-rose-share-card-clean.jpg">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://remembering.asongforlife.co.uk/margaret-rose/">
+
 <title>Margaret Rose | A Song for Life</title>
+
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
+
 <meta name="theme-color" content="#08243a">
+
 <style>
 :root{
   --navy:#08243a;
@@ -255,6 +261,27 @@ button:focus-visible,input:focus-visible,a:focus-visible{
   white-space:pre-line;
 }
 .lyrics p{margin:0}
+.story-panel{padding:0;overflow:hidden}
+.story-toggle{
+  width:100%;
+  padding:22px 26px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  cursor:pointer;
+  border:0;
+  background:transparent;
+  color:var(--navy);
+}
+.story-label{font:25px Georgia,serif}
+.story-toggle[aria-expanded="true"] .chev{transform:rotate(225deg)}
+.story-content{display:grid;grid-template-rows:0fr;transition:grid-template-rows .36s ease}
+.story-content.open{grid-template-rows:1fr}
+.story-inner{overflow:hidden}
+.story-copy{max-width:760px;margin:0 auto;padding:0 30px 30px}
+.story-copy p{margin:0 0 13px;line-height:1.68;text-align:left}
+.story-copy p:last-child{margin-bottom:0}
 .share-grid{display:grid;grid-template-columns:140px minmax(0,1.08fr) minmax(0,.92fr);gap:28px;align-items:center}
 #qr{width:max-content;padding:8px;background:#fff;border:1px solid rgba(184,120,36,.32);border-radius:12px}
 .share-copy h2,.privacy h2{margin:0 0 7px;color:var(--navy);font:23px Georgia,serif}
@@ -289,8 +316,17 @@ button:focus-visible,input:focus-visible,a:focus-visible{
   .shell{padding:16px 12px 40px}
   .page{border-radius:24px}
   .hero{min-height:auto;padding-top:68.75%}
-  .hero-image{height:auto;aspect-ratio:16/11;object-position:72% 34%}
-  .hero-shade{height:auto;aspect-ratio:16/11;background:linear-gradient(180deg,rgba(255,253,249,0) 68%,rgba(255,253,249,.98) 100%)}
+  .hero-image{height:auto;aspect-ratio:16/11;object-position:var(--hero-position-mobile,72% 34%)}
+  .hero-shade{
+    height:auto;
+    aspect-ratio:16/11;
+    background:linear-gradient(
+      180deg,
+      rgba(255,253,249,0) 88%,
+      rgba(255,253,249,.25) 94%,
+      rgba(255,253,249,.96) 100%
+    )
+  }
   .hero-copy{width:100%;padding:26px 24px 28px;text-align:center;background:linear-gradient(180deg,#fffdf9,var(--cream))}
   .kicker{margin-bottom:11px;font-size:13px}
   .hero h1{max-width:none;font-size:clamp(43px,9vw,62px);line-height:1;letter-spacing:-.035em}
@@ -312,7 +348,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{
   .shell{padding:8px 6px 22px}
   .page{border-radius:18px}
   .hero{padding-top:68.75%}
-  .hero-image{object-position:75% 34%}
+  .hero-image{object-position:var(--hero-position-mobile,75% 34%)}
   .hero-copy{padding:17px 14px 19px}
   .kicker{margin-bottom:8px;font-size:11px;letter-spacing:.13em}
   .hero h1{font-size:clamp(36px,10.5vw,46px)}
@@ -338,6 +374,10 @@ button:focus-visible,input:focus-visible,a:focus-visible{
   .lyrics-toggle{padding:12px 16px}
   .lyrics-label{font-size:18px}
   .lyrics{padding:0 15px 24px;font-size:16px;line-height:1.58;font-style:italic}
+  .story-toggle{padding:16px}
+  .story-label{font-size:21px}
+  .story-copy{padding:0 16px 22px}
+  .story-copy p{font-size:15.5px;line-height:1.5;margin-bottom:10px}
   .share-grid{display:flex;flex-direction:column;gap:0;padding:15px 14px;text-align:center}
   .share-copy{order:1}
   .qr-wrap{order:2;width:100%}
@@ -361,28 +401,149 @@ button:focus-visible,input:focus-visible,a:focus-visible{
 }
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
 
-.hero-shade{background:linear-gradient(90deg,rgba(255,253,249,.98) 0%,rgba(255,253,249,.90) 25%,rgba(255,253,249,.42) 43%,rgba(255,253,249,0) 66%),linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%);}
 </style>
 </head>
+
 <body>
-<main class="shell"><article class="page">
+<main class="shell">
+<article class="page">
+
 <section class="hero" aria-labelledby="memorial-name">
-  <img class="hero-image" src="margaret-rose-rose-garden-hero.png" alt="Margaret Rose standing in a rose garden in warm evening light">
+  <picture>
+    
+    <img
+      class="hero-image"
+      src="margaret-rose-rose-garden-hero.png"
+      alt="Margaret Rose standing in a rose garden in warm evening light"
+      style="--hero-position-mobile:75% 34%"
+    >
+  </picture>
+
   <div class="hero-shade" aria-hidden="true"></div>
-  <div class="hero-copy"><p class="kicker">In loving memory of</p><h1 id="memorial-name">Margaret Rose</h1><p class="dates">1946–2023</p><div class="rule" aria-hidden="true">♥</div><p class="tribute">Her kindness was her legacy.<br>Her love lives on.</p></div>
+
+  <div class="hero-copy">
+    <p class="kicker">In loving memory of</p>
+
+    <h1 id="memorial-name">
+      Margaret Rose
+    </h1>
+
+    <p class="dates">
+      1946–2023
+    </p>
+
+    <div class="rule" aria-hidden="true">♥</div>
+
+    <p class="tribute">
+      Her kindness was her legacy.<br>Her love lives on.
+    </p>
+  </div>
 </section>
-<section class="player-card" aria-label="Margaret’s memorial song player">
-  <audio id="audio" preload="metadata" src="https://audio.asongforlife.co.uk/examples/margarets-song.mp3"></audio>
-  <button id="play" class="play" type="button" aria-label="Play Margaret’s Song"><span class="triangle" aria-hidden="true"></span><span class="pause" aria-hidden="true"><span></span><span></span></span></button>
-  <div><p id="playerTitle" class="song-title">Margaret’s Song</p><p class="song-sub">A personal song created in her honour</p><input id="seek" class="seek" type="range" min="0" max="100" value="0" step=".1" aria-label="Song progress"><div class="times"><span id="current">0:00</span><span id="duration">0:00</span></div></div>
-  <div class="player-actions"><button id="share" class="icon-btn primary" type="button">Share</button><button id="download" class="icon-btn" type="button">Download song</button></div>
+
+<section
+  class="player-card"
+  aria-label="Margaret’s memorial song player"
+>
+  <audio
+    id="audio"
+    preload="metadata"
+    src="https://audio.asongforlife.co.uk/examples/margarets-song.mp3"
+  ></audio>
+
+  <button
+    id="play"
+    class="play"
+    type="button"
+    aria-label="Play Margaret’s Song"
+  >
+    <span class="triangle" aria-hidden="true"></span>
+
+    <span class="pause" aria-hidden="true">
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <div>
+    <p id="playerTitle" class="song-title">
+      Margaret’s Song
+    </p>
+
+    <p class="song-sub">
+      A personal song created in her honour
+    </p>
+
+    <input
+      id="seek"
+      class="seek"
+      type="range"
+      min="0"
+      max="100"
+      value="0"
+      step=".1"
+      aria-label="Song progress"
+    >
+
+    <div class="times">
+      <span id="current">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
+  <div class="player-actions">
+    <button
+      id="share"
+      class="icon-btn primary"
+      type="button"
+    >
+      Share
+    </button>
+
+    <button
+      id="download"
+      class="icon-btn"
+      type="button"
+    >
+      Download song
+    </button>
+  </div>
 </section>
+
 <div class="content">
+
 <section class="panel lyrics-panel">
   <h2 class="lyrics-heading">Lyrics</h2>
-  <div class="lyrics-preview" aria-label="Lyrics preview"><p>She loved the soil upon her hands<br>And sunlight in her hair<br>She grew roses in her garden<br>And left her kindness there</p></div>
-  <button id="lyricsToggle" class="lyrics-toggle" type="button" aria-expanded="false" aria-controls="lyricsContent"><span class="lyrics-label"><span id="lyricsLabel">View remaining lyrics</span></span><span class="chev" aria-hidden="true"></span></button>
-  <div id="lyricsContent" class="lyrics-content" aria-hidden="true"><div class="lyrics-inner"><div class="lyrics">She knew the names of every child
+
+  <div
+    class="lyrics-preview"
+    aria-label="Lyrics preview"
+  >
+    <p>She loved the soil upon her hands<br>And sunlight in her hair<br>She grew roses in her garden<br>And left her kindness there</p>
+  </div>
+
+  <button
+    id="lyricsToggle"
+    class="lyrics-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="lyricsContent"
+  >
+    <span class="lyrics-label">
+      <span id="lyricsLabel">
+        View remaining lyrics
+      </span>
+    </span>
+
+    <span class="chev" aria-hidden="true"></span>
+  </button>
+
+  <div
+    id="lyricsContent"
+    class="lyrics-content"
+    aria-hidden="true"
+  >
+    <div class="lyrics-inner">
+      <div class="lyrics">She knew the names of every child
 Who passed her classroom door
 And somehow made the quiet ones
 Believe a little more
@@ -427,34 +588,391 @@ We’ll feel you standing there
 So rest now, gentle Margaret
 Your work on earth is done
 The seeds you planted long ago
-Are reaching for the sun</div></div></div>
+Are reaching for the sun</div>
+    </div>
+  </div>
 </section>
-<section class="panel remembrance" aria-labelledby="story-title"><div class="remembrance-copy"><h2 id="story-title" class="panel-title">Remembering Margaret</h2><div class="panel-rule" aria-hidden="true">♥</div>
+
+<section
+  class="panel remembrance"
+  aria-labelledby="story-title"
+>
+  <div class="remembrance-copy">
+    <h2 id="story-title" class="panel-title">
+      Remembering Margaret
+    </h2>
+
+    <div class="panel-rule" aria-hidden="true">♥</div>
+
         <p>Margaret was a beloved teacher, gardener and friend whose kindness touched everyone she met.</p>
         <p>She found joy in simple things — roses opening in the morning, a good book beside her bed, and time spent with the people she loved.</p>
-        <p><em>Forever loved. Never forgotten.</em></p></div></section>
-<section class="panel share-grid" aria-label="Share Margaret’s memorial">
-  <div class="qr-wrap"><button id="qrToggle" class="qr-toggle" type="button" aria-expanded="false" aria-controls="qrPanel"><span>Show QR code</span><span class="chev" aria-hidden="true"></span></button><div id="qrPanel" class="qr-panel" aria-hidden="true"><div class="qr-panel-inner"><div id="qr"></div><p class="qr-help">Let someone nearby scan this code to open the memorial.</p></div></div></div>
-  <div class="share-copy"><h2>Share this memorial</h2><p>Share the page directly, copy its link, or show the QR code to someone nearby.</p><button id="copyLink" class="copy-link" type="button">Copy page link</button></div>
-  <div class="privacy"><h2>Shared privately by link</h2><p>This page is not listed in internet search results, but is available to anyone who receives its direct link or QR code.</p></div>
-</section><p id="status" class="status" role="status" aria-live="polite"></p></div>
-<footer class="footer"><div class="brand">A Song for Life</div><p class="footer-note">A personal song created from a life remembered</p><p class="footer-credit">Created with care by Zena Carina <span aria-hidden="true">·</span> <a href="https://asongforlife.co.uk" target="_blank" rel="noopener">Visit A Song for Life</a></p></footer>
-</article></main>
+
+    <p>
+      <em>Forever loved. Never forgotten.</em>
+    </p>
+  </div>
+</section>
+
+
+
+<section
+  class="panel share-grid"
+  aria-label="Share Margaret’s memorial"
+>
+  <div class="qr-wrap">
+    <button
+      id="qrToggle"
+      class="qr-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="qrPanel"
+    >
+      <span>Show QR code</span>
+      <span class="chev" aria-hidden="true"></span>
+    </button>
+
+    <div
+      id="qrPanel"
+      class="qr-panel"
+      aria-hidden="true"
+    >
+      <div class="qr-panel-inner">
+        <div id="qr"></div>
+
+        <p class="qr-help">
+          Let someone nearby scan this code to open the memorial.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="share-copy">
+    <h2>Share this memorial</h2>
+
+    <p>
+      Share the page directly, copy its link,
+      or show the QR code to someone nearby.
+    </p>
+
+    <button
+      id="copyLink"
+      class="copy-link"
+      type="button"
+    >
+      Copy page link
+    </button>
+  </div>
+
+  <div class="privacy">
+    <h2>Shared privately by link</h2>
+
+    <p>
+      This page is not listed in internet search results,
+      but is available to anyone who receives its direct
+      link or QR code.
+    </p>
+  </div>
+</section>
+
+<p
+  id="status"
+  class="status"
+  role="status"
+  aria-live="polite"
+></p>
+
+</div>
+
+<footer class="footer">
+  <div class="brand">A Song for Life</div>
+
+  <p class="footer-note">
+    A personal song created from a life remembered
+  </p>
+
+  <p class="footer-credit">
+    Created with care by Zena Carina
+    <span aria-hidden="true">·</span>
+
+    <a
+      href="https://asongforlife.co.uk"
+      target="_blank"
+      rel="noopener"
+    >
+      Visit A Song for Life
+    </a>
+  </p>
+</footer>
+
+</article>
+</main>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
 <script>
-(function(){
-const audio=document.getElementById('audio'),play=document.getElementById('play'),title=document.getElementById('playerTitle'),seek=document.getElementById('seek'),current=document.getElementById('current'),duration=document.getElementById('duration'),lyricsToggle=document.getElementById('lyricsToggle'),lyricsLabel=document.getElementById('lyricsLabel'),lyricsContent=document.getElementById('lyricsContent'),share=document.getElementById('share'),copyLink=document.getElementById('copyLink'),qrToggle=document.getElementById('qrToggle'),qrPanel=document.getElementById('qrPanel'),download=document.getElementById('download'),status=document.getElementById('status');
-const songTitle="Margaret’s Song",downloadUrl="https://a-song-for-life-downloads.zenacarinas.workers.dev/margaret-rose",shareTitle="Margaret Rose | A Song for Life",shareText="Listen to Margaret Rose’s personal memorial song.";
-const fmt=s=>!Number.isFinite(s)?'0:00':Math.floor(s/60)+':'+Math.floor(s%60).toString().padStart(2,'0');
-const setStatus=message=>{status.textContent=message;clearTimeout(setStatus.timer);setStatus.timer=setTimeout(()=>status.textContent='',3500)};
-function state(on){play.classList.toggle('is-playing',on);play.setAttribute('aria-label',(on?'Pause ':'Play ')+songTitle);title.textContent=on?songTitle+' — playing':songTitle}
-function progress(){const p=audio.duration?audio.currentTime/audio.duration*100:0;seek.value=p;seek.style.setProperty('--p',p+'%');current.textContent=fmt(audio.currentTime)}
-play.addEventListener('click',()=>audio.paused?audio.play():audio.pause());audio.addEventListener('play',()=>state(true));audio.addEventListener('pause',()=>state(false));audio.addEventListener('ended',()=>{audio.currentTime=0;state(false);progress()});audio.addEventListener('loadedmetadata',()=>{duration.textContent=fmt(audio.duration);progress()});audio.addEventListener('timeupdate',progress);seek.addEventListener('input',()=>{if(audio.duration)audio.currentTime=seek.value/100*audio.duration});
-lyricsToggle.addEventListener('click',()=>{const open=lyricsToggle.getAttribute('aria-expanded')==='true';lyricsToggle.setAttribute('aria-expanded',String(!open));lyricsContent.classList.toggle('open',!open);lyricsContent.setAttribute('aria-hidden',String(open));lyricsLabel.textContent=!open?'Hide remaining lyrics':'View remaining lyrics'});
-async function copyPageLink(){try{await navigator.clipboard.writeText(location.href);setStatus('Page link copied.')}catch{setStatus('Copy the page address from your browser.')}}copyLink.addEventListener('click',copyPageLink);
-qrToggle.addEventListener('click',()=>{const open=qrToggle.getAttribute('aria-expanded')==='true';qrToggle.setAttribute('aria-expanded',String(!open));qrPanel.classList.toggle('open',!open);qrPanel.setAttribute('aria-hidden',String(open));qrToggle.querySelector('span:first-child').textContent=!open?'Hide QR code':'Show QR code'});
-share.addEventListener('click',async()=>{try{navigator.share?await navigator.share({title:shareTitle,text:shareText,url:location.href}):await copyPageLink()}catch{}});download.addEventListener('click',()=>{location.href=downloadUrl});
-function syncQrLayout(){const mobile=matchMedia('(max-width:620px)').matches;if(mobile){qrPanel.classList.remove('open');qrPanel.setAttribute('aria-hidden','true');qrToggle.setAttribute('aria-expanded','false');qrToggle.querySelector('span:first-child').textContent='Show QR code'}else{qrPanel.classList.add('open');qrPanel.setAttribute('aria-hidden','false')}}syncQrLayout();addEventListener('resize',syncQrLayout);
-new QRCode(document.getElementById('qr'),{text:location.href,width:innerWidth<=620?132:142,height:innerWidth<=620?132:142,colorDark:'#08243A',colorLight:'#FFFFFF',correctLevel:QRCode.CorrectLevel.H});
+(function () {
+  const audio = document.getElementById('audio');
+  const play = document.getElementById('play');
+  const title = document.getElementById('playerTitle');
+  const seek = document.getElementById('seek');
+  const current = document.getElementById('current');
+  const duration = document.getElementById('duration');
+
+  const lyricsToggle =
+    document.getElementById('lyricsToggle');
+
+  const lyricsLabel =
+    document.getElementById('lyricsLabel');
+
+  const lyricsContent =
+    document.getElementById('lyricsContent');
+
+  const storyToggle =
+    document.getElementById('storyToggle');
+
+  const storyContent =
+    document.getElementById('storyContent');
+
+  const share = document.getElementById('share');
+
+  const copyLink =
+    document.getElementById('copyLink');
+
+  const qrToggle =
+    document.getElementById('qrToggle');
+
+  const qrPanel =
+    document.getElementById('qrPanel');
+
+  const download =
+    document.getElementById('download');
+
+  const status =
+    document.getElementById('status');
+
+  const songTitle = "Margaret’s Song";
+  const downloadUrl = "https://a-song-for-life-downloads.zenacarinas.workers.dev/margaret-rose";
+
+  const shareTitle = "Margaret Rose | A Song for Life";
+
+  const shareText = "Listen to Margaret Rose’s personal memorial song.";
+
+  const fmt = seconds =>
+    !Number.isFinite(seconds)
+      ? '0:00'
+      : Math.floor(seconds / 60) +
+        ':' +
+        Math.floor(seconds % 60)
+          .toString()
+          .padStart(2, '0');
+
+  const setStatus = message => {
+    status.textContent = message;
+
+    clearTimeout(setStatus.timer);
+
+    setStatus.timer = setTimeout(() => {
+      status.textContent = '';
+    }, 3500);
+  };
+
+  function state(on) {
+    play.classList.toggle('is-playing', on);
+
+    play.setAttribute(
+      'aria-label',
+      (on ? 'Pause ' : 'Play ') + songTitle
+    );
+
+    title.textContent =
+      on
+        ? songTitle + ' — playing'
+        : songTitle;
+  }
+
+  function progress() {
+    const percentage =
+      audio.duration
+        ? (audio.currentTime / audio.duration) * 100
+        : 0;
+
+    seek.value = percentage;
+    seek.style.setProperty('--p', percentage + '%');
+
+    current.textContent =
+      fmt(audio.currentTime);
+  }
+
+  play.addEventListener('click', () => {
+    audio.paused
+      ? audio.play()
+      : audio.pause();
+  });
+
+  audio.addEventListener('play', () => state(true));
+  audio.addEventListener('pause', () => state(false));
+
+  audio.addEventListener('ended', () => {
+    audio.currentTime = 0;
+    state(false);
+    progress();
+  });
+
+  audio.addEventListener('loadedmetadata', () => {
+    duration.textContent = fmt(audio.duration);
+    progress();
+  });
+
+  audio.addEventListener('timeupdate', progress);
+
+  seek.addEventListener('input', () => {
+    if (audio.duration) {
+      audio.currentTime =
+        (seek.value / 100) * audio.duration;
+    }
+  });
+
+  lyricsToggle.addEventListener('click', () => {
+    const open =
+      lyricsToggle.getAttribute('aria-expanded') === 'true';
+
+    lyricsToggle.setAttribute(
+      'aria-expanded',
+      String(!open)
+    );
+
+    lyricsContent.classList.toggle('open', !open);
+
+    lyricsContent.setAttribute(
+      'aria-hidden',
+      String(open)
+    );
+
+    lyricsLabel.textContent =
+      !open
+        ? 'Hide remaining lyrics'
+        : 'View remaining lyrics';
+  });
+
+  if (storyToggle && storyContent) {
+    storyToggle.addEventListener('click', () => {
+      const open =
+        storyToggle.getAttribute('aria-expanded') === 'true';
+
+      storyToggle.setAttribute(
+        'aria-expanded',
+        String(!open)
+      );
+
+      storyContent.classList.toggle('open', !open);
+
+      storyContent.setAttribute(
+        'aria-hidden',
+        String(open)
+      );
+    });
+  }
+
+  async function copyPageLink() {
+    try {
+      await navigator.clipboard.writeText(location.href);
+      setStatus('Page link copied.');
+    } catch {
+      setStatus(
+        'Copy the page address from your browser.'
+      );
+    }
+  }
+
+  copyLink.addEventListener(
+    'click',
+    copyPageLink
+  );
+
+  qrToggle.addEventListener('click', () => {
+    const open =
+      qrToggle.getAttribute('aria-expanded') === 'true';
+
+    qrToggle.setAttribute(
+      'aria-expanded',
+      String(!open)
+    );
+
+    qrPanel.classList.toggle('open', !open);
+
+    qrPanel.setAttribute(
+      'aria-hidden',
+      String(open)
+    );
+
+    qrToggle.querySelector(
+      'span:first-child'
+    ).textContent =
+      !open
+        ? 'Hide QR code'
+        : 'Show QR code';
+  });
+
+  share.addEventListener('click', async () => {
+    try {
+      if (navigator.share) {
+        await navigator.share({
+          title: shareTitle,
+          text: shareText,
+          url: location.href,
+        });
+      } else {
+        await copyPageLink();
+      }
+    } catch {}
+  });
+
+  download.addEventListener('click', () => {
+    location.href = downloadUrl;
+  });
+
+  function syncQrLayout() {
+    const mobile =
+      matchMedia('(max-width:620px)').matches;
+
+    if (mobile) {
+      qrPanel.classList.remove('open');
+      qrPanel.setAttribute('aria-hidden', 'true');
+
+      qrToggle.setAttribute(
+        'aria-expanded',
+        'false'
+      );
+
+      qrToggle.querySelector(
+        'span:first-child'
+      ).textContent = 'Show QR code';
+    } else {
+      qrPanel.classList.add('open');
+      qrPanel.setAttribute('aria-hidden', 'false');
+    }
+  }
+
+  syncQrLayout();
+
+  addEventListener(
+    'resize',
+    syncQrLayout
+  );
+
+  new QRCode(
+    document.getElementById('qr'),
+    {
+      text: location.href,
+      width: innerWidth <= 620 ? 132 : 142,
+      height: innerWidth <= 620 ? 132 : 142,
+      colorDark: '#08243A',
+      colorLight: '#FFFFFF',
+      correctLevel: QRCode.CorrectLevel.H,
+    }
+  );
 })();
-</script></body></html>
+</script>
+
+</body>
+</html>

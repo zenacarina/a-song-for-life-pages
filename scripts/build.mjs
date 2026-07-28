@@ -258,14 +258,17 @@ ${css}
 <article class="page">
 
 <section class="hero" aria-labelledby="memorial-name">
-  <img
-    class="hero-image"
-    src="${escapeHtml(d.heroImage)}"
-    alt="${escapeHtml(d.heroAlt)}"
-    style="--hero-position-mobile:${
-      escapeHtml(d.heroPositionMobile || '75% 34%')
-    }"
-  >
+  <picture>
+    ${d.heroImageMobile ? `<source media="(max-width:620px)" srcset="${escapeHtml(d.heroImageMobile)}">` : ''}
+    <img
+      class="hero-image"
+      src="${escapeHtml(d.heroImage)}"
+      alt="${escapeHtml(d.heroAlt)}"
+      style="--hero-position-mobile:${
+        escapeHtml(d.heroPositionMobile || '75% 34%')
+      }"
+    >
+  </picture>
 
   <div class="hero-shade" aria-hidden="true"></div>
 
@@ -814,8 +817,9 @@ for (const dir of dirs) {
 
   for (const asset of [
     data.heroImage,
+    data.heroImageMobile,
     data.shareImage,
-  ]) {
+  ].filter(Boolean)) {
     if (!(await exists(path.join(folder, asset)))) {
       throw new Error(
         `${dir}: missing asset ${asset}`
@@ -936,10 +940,20 @@ for (const { dir, data, folder } of pages) {
     path.join(out, data.heroImage)
   );
 
-  await fs.copyFile(
-    path.join(folder, data.shareImage),
-    path.join(out, data.shareImage)
-  );
+  if (data.heroImageMobile) {
+    await fs.copyFile(
+      path.join(folder, data.heroImageMobile),
+      path.join(out, data.heroImageMobile)
+    );
+  }
+
+  if (data.shareImage !== data.heroImage &&
+      data.shareImage !== data.heroImageMobile) {
+    await fs.copyFile(
+      path.join(folder, data.shareImage),
+      path.join(out, data.shareImage)
+    );
+  }
 }
 
 console.log(`Built site in ${DIST}`);
