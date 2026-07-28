@@ -259,7 +259,7 @@ ${css}
 
 <section class="hero" aria-labelledby="memorial-name">
   <picture>
-    ${d.heroImageMobile ? `<source media="(max-width:620px)" srcset="${escapeHtml(d.heroImageMobile)}">` : ''}
+    ${d.heroImageMobile ? `<source media="(max-width:620px) and (orientation:portrait)" srcset="${escapeHtml(d.heroImageMobile)}">` : ''}
     <img
       class="hero-image"
       src="${escapeHtml(d.heroImage)}"
