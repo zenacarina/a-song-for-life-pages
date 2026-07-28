@@ -284,7 +284,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{
   .shell{padding:16px 12px 40px}
   .page{border-radius:24px}
   .hero{min-height:auto;padding-top:68.75%}
-  .hero-image{height:auto;aspect-ratio:16/11;object-position:72% 34%}
+  .hero-image{height:auto;aspect-ratio:16/11;object-position:var(--hero-position-mobile,72% 34%)}
   .hero-shade{
     height:auto;
     aspect-ratio:16/11;
@@ -316,7 +316,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{
   .shell{padding:8px 6px 22px}
   .page{border-radius:18px}
   .hero{padding-top:68.75%}
-  .hero-image{object-position:75% 34%}
+  .hero-image{object-position:var(--hero-position-mobile,75% 34%)}
   .hero-copy{padding:17px 14px 19px}
   .kicker{margin-bottom:8px;font-size:11px;letter-spacing:.13em}
   .hero h1{font-size:clamp(36px,10.5vw,46px)}
