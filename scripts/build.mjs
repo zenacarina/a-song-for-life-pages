@@ -99,6 +99,24 @@ function validate(d, dir) {
   ) {
     throw new Error(`${dir}: lyrics are unexpectedly short`);
   }
+
+  if (d.storyParagraphs !== undefined) {
+    if (
+      !Array.isArray(d.storyParagraphs) ||
+      !d.storyParagraphs.length ||
+      d.storyParagraphs.some(p => !String(p).trim())
+    ) {
+      throw new Error(
+        `${dir}: storyParagraphs must be a non-empty array of paragraphs`
+      );
+    }
+
+    if (!d.storyTitle || !String(d.storyTitle).trim()) {
+      throw new Error(
+        `${dir}: storyTitle is required when storyParagraphs are supplied`
+      );
+    }
+  }
 }
 
 function lyricParts(lyrics) {
@@ -158,6 +176,43 @@ function renderPage(d, css) {
   const paragraphs = d.rememberingParagraphs
     .map(p => `        <p>${escapeHtml(p)}</p>`)
     .join('\n');
+
+  const storyParagraphs = Array.isArray(d.storyParagraphs)
+    ? d.storyParagraphs
+        .map(p => `        <p>${escapeHtml(p)}</p>`)
+        .join('\n')
+    : '';
+
+  const storySection = storyParagraphs
+    ? `
+<section class="panel story-panel">
+  <button
+    id="storyToggle"
+    class="story-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="storyContent"
+  >
+    <span id="storyLabel" class="story-label">
+      ${escapeHtml(d.storyTitle)}
+    </span>
+
+    <span class="chev" aria-hidden="true"></span>
+  </button>
+
+  <div
+    id="storyContent"
+    class="story-content"
+    aria-hidden="true"
+  >
+    <div class="story-inner">
+      <div class="story-copy">
+${storyParagraphs}
+      </div>
+    </div>
+  </div>
+</section>`
+    : '';
 
   const shareText =
     `Listen to ${d.name}’s personal memorial song.`;
@@ -340,6 +395,8 @@ ${css}
   </div>
 </section>
 
+${storySection}
+
 <section
   class="panel remembrance"
   aria-labelledby="story-title"
@@ -471,6 +528,12 @@ ${paragraphs}
   const lyricsContent =
     document.getElementById('lyricsContent');
 
+  const storyToggle =
+    document.getElementById('storyToggle');
+
+  const storyContent =
+    document.getElementById('storyContent');
+
   const share = document.getElementById('share');
 
   const copyLink =
@@ -593,6 +656,25 @@ ${paragraphs}
         ? 'Hide remaining lyrics'
         : 'View remaining lyrics';
   });
+
+  if (storyToggle && storyContent) {
+    storyToggle.addEventListener('click', () => {
+      const open =
+        storyToggle.getAttribute('aria-expanded') === 'true';
+
+      storyToggle.setAttribute(
+        'aria-expanded',
+        String(!open)
+      );
+
+      storyContent.classList.toggle('open', !open);
+
+      storyContent.setAttribute(
+        'aria-hidden',
+        String(open)
+      );
+    });
+  }
 
   async function copyPageLink() {
     try {
