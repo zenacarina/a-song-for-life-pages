@@ -10,6 +10,7 @@
   },
   "heroImage": "peter-burgoyne-hero.png",
   "heroAlt": "Peter Burgoyne standing beside the sea in warm evening light",
+  "heroPositionMobile": "68% 34%",
   "heroShade": "linear-gradient(90deg,rgba(255,253,249,.98) 0%,rgba(255,253,249,.90) 25%,rgba(255,253,249,.42) 43%,rgba(255,253,249,0) 66%),linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%)",
   "tributeHtml": "A life shaped by purpose, service and quiet determination.<br>Peter gave his time, skills and care generously.",
   "songTitle": "A Life of Purpose",
