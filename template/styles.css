@@ -312,6 +312,11 @@ button:focus-visible,input:focus-visible,a:focus-visible{
   .remembrance{min-height:0;padding:24px 28px}
   .share-grid{grid-template-columns:125px 1.08fr .92fr;gap:20px}
 }
+
+@media(max-width:900px) and (orientation:landscape){
+  .hero-image{object-position:100% 34%}
+}
+
 @media(max-width:620px){
   .shell{padding:8px 6px 22px}
   .page{border-radius:18px}
