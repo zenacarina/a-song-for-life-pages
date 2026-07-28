@@ -262,6 +262,9 @@ ${css}
     class="hero-image"
     src="${escapeHtml(d.heroImage)}"
     alt="${escapeHtml(d.heroAlt)}"
+    style="--hero-position-mobile:${
+      escapeHtml(d.heroPositionMobile || '75% 34%')
+    }"
   >
 
   <div class="hero-shade" aria-hidden="true"></div>
