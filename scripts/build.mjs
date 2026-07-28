@@ -395,8 +395,6 @@ ${css}
   </div>
 </section>
 
-${storySection}
-
 <section
   class="panel remembrance"
   aria-labelledby="story-title"
@@ -415,6 +413,8 @@ ${paragraphs}
     </p>
   </div>
 </section>
+
+${storySection}
 
 <section
   class="panel share-grid"
