@@ -5,9 +5,14 @@
   "description": "Data-driven static memorial pages for A Song for Life",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "check": "node scripts/build.mjs --check"
+    "check": "node scripts/build.mjs --check",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "engines": {
     "node": ">=18"
+  },
+  "devDependencies": {
+    "wrangler": "^4.114.0"
   }
 }
