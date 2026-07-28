@@ -1,45 +1,336 @@
+# A Song for Life — Build a New Memorial Page
+
+We are creating a new memorial page using the existing **A Song for Life memorial-page system** in the GitHub repository:
+
+```text
+zenacarina/a-song-for-life-pages
+```
+
+The existing working memorial pages, especially **Mary**, **Dennis**, **Margaret Rose** and **Peter Burgoyne**, are the model.
+
+Peter Burgoyne demonstrates the optional **Read [Name]’s Story** section.
+
+Do not redesign the page structure, shared template, styling, player, lyrics card, remembrance section, optional story section, QR code, footer or build system unless I specifically ask.
+
+## Your task
+
+Create a complete, ready-to-upload GitHub folder for the new memorial.
+
+The folder should normally contain only:
+
+```text
+person-slug/
+  data.json
+  person-slug-hero.png
+```
+
+The same clean landscape image may be used for both:
+
+```json
+"heroImage"
+```
+
+and:
+
+```json
+"shareImage"
+```
+
+Do not create a separate social-share graphic with wording baked into it unless I explicitly request one.
+
+## Important image rule
+
+Once I have supplied or approved the final clean landscape image:
+
+**Do not generate, redesign, edit or replace the image. Build the memorial page using it.**
+
+The image should remain:
+
+* text-free
+* logo-free
+* free from baked-in fades or cream panels
+* suitable for both the page hero and social sharing
+* landscape, with the person safely positioned away from the extreme edges
+
+## Information I will provide
+
+I will give you as much of the following as I have:
+
+```text
+Name:
+Dates:
+Final clean landscape image:
+Audio URL:
+Lyrics:
+Life story or personal details:
+Eulogy, questionnaire or longer notes:
+Include a fuller Read [Name]’s Story section? Yes / No / Decide for me
+Preferred short tribute line:
+Preferred closing line:
+```
+
+Use the supplied material as the factual basis for the page.
+
+Do not invent specific biographical details.
+
+When a short tribute line, remembrance text, fuller story or closing line is missing, write suitable wording based only on the information provided.
+
+## Writing requirements
+
+The page should feel personal, dignified, warm and natural.
+
+Avoid:
+
+* clichés
+* exaggerated spiritual claims
+* generic funeral language
+* wording such as “fly high”, “gained their wings” or “until we meet again”
+* repeating the same idea excessively
+* sounding like an advertisement
+* turning the person into a flawless or unrealistic character
+* inventing details that were not supplied
+* reproducing another person’s writing word for word without clear permission
+
+The short tribute line should normally be one or two concise sentences.
+
+The **Remembering [Name]** section should normally contain three short paragraphs:
+
+1. Their character, background or everyday presence
+2. Their relationships, qualities and memorable details
+3. How their influence, love or memory continues
+
+Finish with one brief italic-style closing line.
+
+## Optional fuller story section
+
+When the family supplies substantial life-story material, questionnaire answers, notes or a eulogy, consider creating an optional:
+
+```text
+Read [Name]’s Story
+```
+
+section.
+
+This section should be an original, edited life-story narrative based on the supplied information.
+
+Do not reproduce a eulogy word for word unless I explicitly confirm that permission has been granted to publish it as written.
+
+Use the fuller story only when it adds meaningful detail beyond the song and the shorter **Remembering [Name]** section.
+
+The story should:
+
+* preserve important names, dates, relationships and events
+* remove repetition
+* remove unnecessary administrative detail
+* read naturally as a life story rather than a list of notes
+* remain factual
+* retain distinctive everyday details that make the person feel real
+* be divided into readable paragraphs
+* avoid repeating the shorter remembrance section unnecessarily
+* remain collapsed until the visitor chooses to open it
+
+The permanent page order is:
+
+1. Song player
+2. Lyrics
+3. Remembering [Name]
+4. Read [Name]’s Story — only when included
+5. Share this memorial
+
+The fuller story must appear **below the Remembering section**, not above it.
+
+## `data.json` requirements
+
+Create valid JSON following the structure already used by the working memorial pages.
+
+Include the required fields:
+
+```json
 {
-  "slug": "peter-burgoyne",
-  "name": "Peter Burgoyne",
-  "shortName": "Peter",
-  "possessiveName": "Peter’s",
-  "dates": "1948–2024",
+  "slug": "",
+  "name": "",
+  "shortName": "",
+  "possessiveName": "",
+  "dates": "",
   "pronouns": {
-    "subject": "he",
-    "possessive": "his"
+    "subject": "",
+    "possessive": ""
   },
-  "heroImage": "peter-burgoyne-hero.png",
-  "heroAlt": "Peter Burgoyne standing beside the sea in warm evening light",
-  "heroShade": "linear-gradient(90deg,rgba(255,253,249,.98) 0%,rgba(255,253,249,.90) 25%,rgba(255,253,249,.42) 43%,rgba(255,253,249,0) 66%),linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%)",
-  "tributeHtml": "A life shaped by purpose, service and quiet determination.<br>Peter gave his time, skills and care generously.",
-  "songTitle": "A Life of Purpose",
-  "audioUrl": "https://audio.asongforlife.co.uk/examples/peter-burgoyne-a-life-of-purpose.mp3",
-  "downloadUrl": "https://a-song-for-life-downloads.zenacarinas.workers.dev/peter-burgoyne",
-  "shareImage": "peter-burgoyne-hero.png",
-  "shareDescription": "A personal memorial song created from Peter’s story.",
-  "lyrics": "Born in February, in Derby town,\nPeter learned to work and stand his ground.\nFrom Chapel Street Market in his younger days,\nHe built his life in quiet, steadfast ways.\n\nLondon became where his path would unfold,\nWith a curious mind and a spirit so bold.\nWhatever the challenge, whatever was new,\nHe met it with purpose and always saw it through.\n\nYou made a life of purpose,\nA life both strong and true.\nYou gave your time so freely\nIn everything you would do.\n\nA husband, dad and grandad,\nA loyal, trusted friend.\nThe lessons that you gave us\nWill stay with us always.\n\nAt Burton’s dance hall, beneath the lights,\nPeter met Diane on those London nights.\nCaravan holidays, sea air and song,\nTwo people discovering where they belonged.\n\nThey married in June in the summer of ’70,\nThen built their home and their family.\nKarl, then Ross, then Louise came along,\nAnd Peter stood beside them, dependable and strong.\n\nHe taught them to swim and be safe in the tide,\nAnd watched their confidence grow by his side.\nThen grandchildren came and brought joy to his days,\nEach one dearly loved in their own special way.\n\nBuster and Isla, Beau and Jolie,\nThen Honey completed the family tree.\nHe watched every milestone with grandfather’s pride,\nContent just to listen and stand by their side.\n\nHis lifeguard training opened a door,\nTo teach and to help and to give even more.\nHe worked with the swimmers, the young and disabled,\nSharing his knowledge whenever he was able.\n\nHe served on the Thames through the darkness and rain,\nKeeping watch over London again and again.\nAt concerts and crossings, wherever the need,\nHe offered his time through his actions and deeds.\n\nFrom Baxter Hoare to the Greenwich days,\nPeter kept learning and finding new ways.\nAnd when one door closed, he would start something new,\nFinding another good job he could do.\n\nFrom poolside to post room, friendships were made,\nWith stories and laughter that brightened each day.\nWhatever the role and wherever he went,\nHe gave it his best and was quietly content.\n\nHe stacked up the wood for the cold winter days,\nAnd worked in his boiler suit, dusty and grey.\nThe sound of the saw would ring out from the shed,\nWith plans for the next useful job in his head.\n\nThe neighbours would smile when a skip came in view,\nFor Peter could see what might still be of use.\nWhere others saw rubbish, he always saw more,\nA purpose worth saving and bringing back home.\n\nYou made a life of purpose,\nA life both full and true.\nYou gave your strength so freely\nIn everything you would do.\n\nA husband, dad and grandad,\nA loyal, trusted friend.\nThe love and time you gave us\nWill never truly end.",
-  "rememberingTitle": "Remembering Peter",
-  "rememberingParagraphs": [
-    "Peter was hardworking, practical and endlessly curious. From his early days in Derby and London to the many roles he took on throughout his life, he met change with determination and was always ready to learn something new.",
-    "He was a devoted husband to Diane, a proud father to Karl, Ross and Louise, and a much-loved grandad to Buster, Isla, Beau, Jolie and Honey. His friendships, his love of music, his swimming and lifesaving work, and his years serving on the Thames all reflected the loyalty and generosity he brought to the people around him.",
-    "Peter had a gift for seeing usefulness where others might not, whether in a new skill, a practical job or a piece of wood rescued for winter. The time he gave, the lessons he shared and the steady way he stood beside those he loved remain part of the family life he helped to build."
-  ],
-  "closingLine": "A life of purpose, remembered with love.",
-  "storyTitle": "Read Peter’s Story",
-  "storyParagraphs": [
-    "Peter Burgoyne was born on 14 February 1948 in Derby to Roy and Joyce. He grew up with his older brother, David, and later, after his mother remarried, the family expanded to include Elizabeth and Paul.",
-    "His early years were spent in Derby, where he attended Gerard Street Primary School, before moving to London and continuing his education at Sir Philip Magnus Secondary School. Peter learned the value of hard work from a young age. He took a weekend job at Chapel Street Market in Islington and later began his working life with an electrical wholesaler on Gray’s Inn Road. It was the beginning of a long and varied career marked by reliability, curiosity and a willingness to learn.",
-    "In the 1960s, Peter met Diane at a dance hall in Burton’s. Their relationship grew through shared evenings, music and caravan holidays on the Isle of Wight. They married on 13 June 1970 at St Mary’s Abchurch in London and soon moved to Barnehurst. In 1978, they settled in Horton Kirby, where they built their family home and shared many years of life together.",
-    "Friends became an important part of that story. Ted, Francis and Ed helped Peter and Diane with the practical work of preparing their home, and Peter never forgot their kindness. Friendship mattered deeply to him, and throughout his life he remained loyal to the people he met through work, volunteering and family life.",
-    "Peter and Diane welcomed three children: Karl in 1976, Ross in 1979 and Louise in 1982. Peter was a devoted father who believed in teaching by doing. After completing a swimming teaching course, he made sure his children were confident and safe in the water. He took pride in helping them learn, grow and find their own way.",
-    "Later, becoming a grandfather brought him enormous happiness. Buster, Isla, Beau, Jolie and Honey each held a special place in his life. Peter loved watching them grow, hearing about their milestones and simply being present. His affection was often shown quietly — through time, interest, stories and the dependable way he stood alongside those he loved.",
-    "Peter’s sense of service extended far beyond his family. He served for nine years as a special constable with the Metropolitan Police Thames Division, patrolling the river, supporting public safety and helping at major events. It was a role he was proud of, and it brought lasting friendships with Rod, Colin and Fred.",
-    "Swimming and lifesaving also became a major part of his life. After training with the Royal Life Saving Society, Peter volunteered with West Kent Lifeguards, Hastings Lifeguards and Bexley Beavers Disabled Swimming Club. Through this work he formed a close friendship with Chris Dearing. Peter gave his time freely, not for reward, but because helping others came naturally to him.",
-    "His working life continued to evolve. At Baxter Hoare, first in London Bridge and later in Erith, he built a friendship with Paul Marshall that lasted for more than thirty years. When redundancy brought that chapter to an end, Peter used his lifeguarding and technical skills to begin a new career at the University of Greenwich.",
-    "There, he became responsible for swimming-pool maintenance and trained as a pool plant technician, mastering the demanding work of managing chemical systems and keeping the pool operating safely. He loved the independence, responsibility and familiar faces that came with the role. When the pool later closed, Peter adapted once again, moving into the post room at Woolwich, where he enjoyed the social side of the job and formed a strong friendship with his colleague Andy.",
-    "Peter retired in 2013, although retirement never meant becoming idle. He remained practical, energetic and resourceful. He collected wood from skips and surrounding villages, seeing value where others saw waste. Back at home, he would cut and prepare it for winter in his garage, usually dressed in the boiler suit that became almost part of his identity.",
-    "Neighbours grew used to seeing Peter searching for something useful, planning his next job or finding a new purpose for something that had been discarded. It reflected the way he approached life: prepared, inventive and unwilling to waste what could still be of value.",
-    "Peter lived a life shaped by work, family, friendship, service and quiet determination. He kept learning, kept contributing and kept finding practical ways to help. The stories he leaves behind are filled with music, swimming, the Thames, family milestones, rescued wood, old friendships and a lifetime of making himself useful.",
-    "His was a life of purpose — built steadily, generously and with love."
-  ]
+  "heroImage": "",
+  "heroAlt": "",
+  "heroShade": "",
+  "tributeHtml": "",
+  "songTitle": "",
+  "audioUrl": "",
+  "downloadUrl": "",
+  "shareImage": "",
+  "shareDescription": "",
+  "lyrics": "",
+  "rememberingTitle": "",
+  "rememberingParagraphs": [],
+  "closingLine": ""
 }
+```
+
+When a fuller story is included, add:
+
+```json
+"storyTitle": "Read [Name]’s Story",
+"storyParagraphs": [
+  "First paragraph...",
+  "Second paragraph...",
+  "Third paragraph..."
+]
+```
+
+The end of the JSON should then look like:
+
+```json
+"rememberingTitle": "Remembering [Name]",
+"rememberingParagraphs": [
+  "First remembrance paragraph.",
+  "Second remembrance paragraph.",
+  "Third remembrance paragraph."
+],
+"closingLine": "A brief closing line.",
+"storyTitle": "Read [Name]’s Story",
+"storyParagraphs": [
+  "First story paragraph.",
+  "Second story paragraph.",
+  "Third story paragraph."
+]
+```
+
+The story fields are optional.
+
+When no fuller story is needed, omit both:
+
+```json
+"storyTitle"
+```
+
+and:
+
+```json
+"storyParagraphs"
+```
+
+completely.
+
+Do not include them as empty values.
+
+When `storyParagraphs` is included:
+
+* `storyTitle` must also be included
+* `storyParagraphs` must be a non-empty array
+* every paragraph must contain meaningful text
+
+Use:
+
+```text
+https://a-song-for-life-downloads.zenacarinas.workers.dev/person-slug
+```
+
+for the download URL, replacing `person-slug` with the actual slug.
+
+Keep line breaks in the lyrics encoded correctly using:
+
+```text
+\n
+```
+
+Ensure:
+
+* quotation marks are correctly escaped
+* apostrophes do not break the JSON
+* curly apostrophes are preserved correctly where appropriate
+* the filename exactly matches the filename referenced in `heroImage`
+* the filename exactly matches the filename referenced in `shareImage`
+* the slug is lowercase and hyphenated
+* the slug matches the GitHub folder name
+* the finished JSON is valid
+* no required field is accidentally omitted
+* optional story fields are either both included or both omitted
+
+## Working method
+
+1. Review everything I provide.
+2. Identify only genuinely essential missing information.
+3. Ask one concise question only when something essential is missing.
+4. Otherwise, proceed without unnecessary questions.
+5. Write the short tribute line where needed.
+6. Write the concise **Remembering [Name]** section.
+7. Decide whether the supplied material warrants a fuller story section.
+8. When it does, edit the material into an original **Read [Name]’s Story** narrative.
+9. Keep the shorter Remembering section concise and avoid duplicating the fuller story.
+10. Write the closing line where needed.
+11. Create the valid `data.json`.
+12. Use the final approved image without changing it.
+13. Create the complete memorial folder.
+14. Package the folder as a ZIP ready for GitHub.
+15. Give me a working download link.
+16. Tell me exactly where to upload it:
+
+```text
+a-song-for-life-pages/
+  memorials/
+    person-slug/
+```
+
+17. Tell me to unzip the download first.
+18. Tell me to upload the entire `person-slug` folder into the GitHub `memorials` folder.
+19. Suggest this commit message:
+
+```text
+Add [Name] memorial page
+```
+
+20. After it is committed, tell me to wait for the Cloudflare build.
+21. Tell me to open:
+
+```text
+https://remembering.asongforlife.co.uk/person-slug/
+```
+
+22. Tell me to check the desktop and mobile versions.
+23. Tell me to check that the song player, lyrics dropdown, optional story dropdown, download button, share button and QR code work correctly.
+
+## Final checks before delivering the ZIP
+
+Confirm privately that:
+
+* `data.json` is valid
+* the image is inside the correct folder
+* filenames match exactly
+* the slug matches the folder name
+* the audio URL is correct
+* the download URL uses the correct slug
+* the lyrics are complete
+* the tribute text matches the person
+* the remembrance text matches the person
+* the closing line matches the tone of the page
+* optional story fields are either both present or both omitted
+* the fuller story is edited and original rather than an unapproved verbatim eulogy
+* the fuller story preserves important facts
+* the fuller story appears after the Remembering section
+* the Remembering section and fuller story do not unnecessarily repeat each other
+* the ZIP contains the folder itself, not just two loose files
+* no unnecessary duplicate images are included
+* no additional artwork has been generated after the final image was supplied
+
+Do not generate additional artwork once the final image has been supplied.
+
+## Information for this memorial
+
+```text
+Name:
+Dates:
+Final clean landscape image:
+Audio URL:
+Lyrics:
+Life story or personal details:
+Eulogy, questionnaire or longer notes:
+Include a fuller Read [Name]’s Story section? Yes / No / Decide for me
+Preferred short tribute line:
+Preferred closing line:
+```
