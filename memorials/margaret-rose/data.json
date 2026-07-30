@@ -4,7 +4,10 @@
   "shortName": "Margaret",
   "possessiveName": "Margaret’s",
   "dates": "1946–2023",
-  "pronouns": { "subject": "she", "possessive": "her" },
+  "pronouns": {
+    "subject": "she",
+    "possessive": "her"
+  },
   "heroImage": "margaret-rose-rose-garden-hero.png",
   "heroAlt": "Margaret Rose standing in a rose garden in warm evening light",
   "heroShade": "linear-gradient(90deg,rgba(255,253,249,.98) 0%,rgba(255,253,249,.90) 25%,rgba(255,253,249,.42) 43%,rgba(255,253,249,0) 66%),linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%)",
@@ -20,5 +23,6 @@
     "Margaret was a beloved teacher, gardener and friend whose kindness touched everyone she met.",
     "She found joy in simple things — roses opening in the morning, a good book beside her bed, and time spent with the people she loved."
   ],
-  "closingLine": "Forever loved. Never forgotten."
+  "closingLine": "Forever loved. Never forgotten.",
+  "pageType": "example"
 }
