@@ -100,6 +100,15 @@ function validate(d, dir) {
     throw new Error(`${dir}: lyrics are unexpectedly short`);
   }
 
+  if (
+    d.pageType !== undefined &&
+    !['example', 'client'].includes(d.pageType)
+  ) {
+    throw new Error(
+      `${dir}: pageType must be "example" or "client"`
+    );
+  }
+
   if (d.storyParagraphs !== undefined) {
     if (
       !Array.isArray(d.storyParagraphs) ||
@@ -165,6 +174,41 @@ function getDownloadUrl(d) {
 
 function renderPage(d, css) {
   const downloadUrl = getDownloadUrl(d);
+  const isExample = d.pageType === 'example';
+
+  const exampleNav = isExample
+    ? `
+<nav class="example-nav" aria-label="Example memorial navigation">
+  <a class="example-nav__brand" href="https://asongforlife.co.uk/">
+    A Song for Life
+  </a>
+
+  <a class="example-nav__return" href="https://asongforlife.co.uk/">
+    <span aria-hidden="true">←</span>
+    Return to A Song for Life
+  </a>
+</nav>`
+    : '';
+
+  const footerCredit = isExample
+    ? `
+    Example memorial
+    <span aria-hidden="true">·</span>
+    Created with care by
+    <a href="https://asongforlife.co.uk/">A Song for Life</a>
+    <span aria-hidden="true">·</span>
+    <a href="https://asongforlife.co.uk/">Return to website</a>`
+    : `
+    Created with care by Zena Carina
+    <span aria-hidden="true">·</span>
+    <a
+      href="https://asongforlife.co.uk"
+      target="_blank"
+      rel="noopener"
+    >
+      Visit A Song for Life
+    </a>`;
+
   const url = `${BASE_URL}/${d.slug}/`;
 
   const imageUrl =
@@ -254,6 +298,7 @@ ${css}
 </head>
 
 <body>
+${exampleNav}
 <main class="shell">
 <article class="page">
 
@@ -498,16 +543,7 @@ ${storySection}
   </p>
 
   <p class="footer-credit">
-    Created with care by Zena Carina
-    <span aria-hidden="true">·</span>
-
-    <a
-      href="https://asongforlife.co.uk"
-      target="_blank"
-      rel="noopener"
-    >
-      Visit A Song for Life
-    </a>
+${footerCredit}
   </p>
 </footer>
 
