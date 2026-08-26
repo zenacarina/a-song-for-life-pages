@@ -152,7 +152,6 @@ function lyricParts(lyrics) {
 }
 
 function getDownloadUrl(d) {
-  // Existing manually entered download links still work.
   if (d.downloadUrl) {
     return d.downloadUrl;
   }
@@ -299,12 +298,16 @@ ${css}
 
 <body>
 ${exampleNav}
+
 <main class="shell">
 <article class="page">
+
+<section class="section-card section-card--top">
 
 <section class="hero" aria-labelledby="memorial-name">
   <picture>
     ${d.heroImageMobile ? `<source media="(max-width:620px) and (orientation:portrait)" srcset="${escapeHtml(d.heroImageMobile)}">` : ''}
+
     <img
       class="hero-image"
       src="${escapeHtml(d.heroImage)}"
@@ -407,7 +410,7 @@ ${exampleNav}
   </div>
 </section>
 
-<div class="content">
+<div class="content content--top">
 
 <section class="panel lyrics-panel">
   <h2 class="lyrics-heading">Lyrics</h2>
@@ -446,6 +449,13 @@ ${exampleNav}
   </div>
 </section>
 
+</div>
+</section>
+
+<section class="section-card section-card--middle">
+
+<div class="content content--middle">
+
 <section
   class="panel remembrance"
   aria-labelledby="story-title"
@@ -466,6 +476,13 @@ ${paragraphs}
 </section>
 
 ${storySection}
+
+</div>
+</section>
+
+<section class="section-card section-card--bottom">
+
+<div class="content content--bottom">
 
 <section
   class="panel share-grid"
@@ -547,6 +564,8 @@ ${footerCredit}
   </p>
 </footer>
 
+</section>
+
 </article>
 </main>
 
@@ -576,7 +595,8 @@ ${footerCredit}
   const storyContent =
     document.getElementById('storyContent');
 
-  const share = document.getElementById('share');
+  const share =
+    document.getElementById('share');
 
   const copyLink =
     document.getElementById('copyLink');
@@ -898,6 +918,7 @@ const root = `<!doctype html>
 <meta name="robots" content="noindex,nofollow">
 <title>A Song for Life</title>
 <link rel="icon" href="/favicon.ico">
+
 <style>
 body{
   margin:0;
@@ -927,6 +948,7 @@ p{
 <body>
 <main>
   <div class="heart">♥</div>
+
   <h1>A Song for Life</h1>
 
   <p>
@@ -983,8 +1005,10 @@ for (const { dir, data, folder } of pages) {
     );
   }
 
-  if (data.shareImage !== data.heroImage &&
-      data.shareImage !== data.heroImageMobile) {
+  if (
+    data.shareImage !== data.heroImage &&
+    data.shareImage !== data.heroImageMobile
+  ) {
     await fs.copyFile(
       path.join(folder, data.shareImage),
       path.join(out, data.shareImage)
