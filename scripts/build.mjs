@@ -126,6 +126,19 @@ function validate(d, dir) {
       );
     }
   }
+
+  if (d.galleryPhotos !== undefined) {
+    if (
+      !Array.isArray(d.galleryPhotos) ||
+      d.galleryPhotos.length < 1 ||
+      d.galleryPhotos.length > 5 ||
+      d.galleryPhotos.some(photo => !String(photo).trim())
+    ) {
+      throw new Error(
+        `${dir}: galleryPhotos must contain between 1 and 5 image filenames`
+      );
+    }
+  }
 }
 
 function lyricParts(lyrics) {
@@ -152,6 +165,7 @@ function lyricParts(lyrics) {
 }
 
 function getDownloadUrl(d) {
+  // Existing manually entered download links still work.
   if (d.downloadUrl) {
     return d.downloadUrl;
   }
@@ -257,6 +271,48 @@ ${storyParagraphs}
 </section>`
     : '';
 
+  const galleryPhotos = Array.isArray(d.galleryPhotos)
+    ? d.galleryPhotos.slice(0, 5)
+    : [];
+
+  const galleryItems = galleryPhotos
+    .map((photo, index) => {
+      const position =
+        d.galleryPhotoPositions?.[photo] || '50% 50%';
+
+      return `      <figure class="memory-photo">
+        <img
+          src="${escapeHtml(photo)}"
+          alt="${escapeHtml(d.name)} memorial photograph ${index + 1}"
+          loading="lazy"
+          style="--photo-position:${escapeHtml(position)}"
+        >
+      </figure>`;
+    })
+    .join('\n');
+
+  const gallerySection = galleryPhotos.length
+    ? `
+<section class="section-card section-card--gallery">
+  <div class="content content--gallery">
+    <section
+      class="panel gallery-panel"
+      aria-labelledby="gallery-title"
+    >
+      <h2 id="gallery-title" class="gallery-title">
+        ${escapeHtml(d.galleryTitle || 'A Life in Pictures')}
+      </h2>
+
+      <div class="panel-rule" aria-hidden="true">♥</div>
+
+      <div class="gallery-grid gallery-grid--${galleryPhotos.length}">
+${galleryItems}
+      </div>
+    </section>
+  </div>
+</section>`
+    : '';
+
   const shareText =
     `Listen to ${d.name}’s personal memorial song.`;
 
@@ -298,7 +354,6 @@ ${css}
 
 <body>
 ${exampleNav}
-
 <main class="shell">
 <article class="page">
 
@@ -479,6 +534,8 @@ ${storySection}
 
 </div>
 </section>
+
+${gallerySection}
 
 <section class="section-card section-card--bottom">
 
@@ -875,6 +932,7 @@ for (const dir of dirs) {
     data.heroImage,
     data.heroImageMobile,
     data.shareImage,
+    ...(Array.isArray(data.galleryPhotos) ? data.galleryPhotos : []),
   ].filter(Boolean)) {
     if (!(await exists(path.join(folder, asset)))) {
       throw new Error(
@@ -1012,6 +1070,17 @@ for (const { dir, data, folder } of pages) {
     await fs.copyFile(
       path.join(folder, data.shareImage),
       path.join(out, data.shareImage)
+    );
+  }
+
+  for (const photo of (
+    Array.isArray(data.galleryPhotos)
+      ? data.galleryPhotos
+      : []
+  )) {
+    await fs.copyFile(
+      path.join(folder, photo),
+      path.join(out, photo)
     );
   }
 }
