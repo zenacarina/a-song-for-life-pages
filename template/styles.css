@@ -227,7 +227,7 @@ a:focus-visible{
 }
 
 
-/* PLAYER — ORIGINAL FLOATING CARD */
+/* PLAYER â€” ORIGINAL FLOATING CARD */
 
 .player-card{
   position:relative;
@@ -1591,7 +1591,7 @@ a:focus-visible{
 }
 
 
-/* PLAYER â€” ORIGINAL FLOATING CARD */
+/* PLAYER Ã¢â‚¬â€ ORIGINAL FLOATING CARD */
 
 .player-card{
   position:relative;
@@ -2082,7 +2082,7 @@ a:focus-visible{
 }
 
 
-/* FOOTER â€” INSIDE THIRD CREAM CARD */
+/* FOOTER Ã¢â‚¬â€ INSIDE THIRD CREAM CARD */
 
 .footer{
   position:relative;
@@ -2600,5 +2600,63 @@ a:focus-visible{
   *{
     scroll-behavior:auto!important;
     transition:none!important;
+  }
+}
+
+/* =========================================================
+   FINAL GALLERY SIZING OVERRIDE
+   Lead image stays wide/natural.
+   Smaller gallery images use matching square frames without
+   cropping the photographs.
+   ========================================================= */
+
+.gallery-grid--5 .memory-photo:not(:first-child),
+.gallery-grid--4 .memory-photo,
+.gallery-grid--3 .memory-photo:not(:first-child){
+  aspect-ratio:1 / 1!important;
+  background:#f4ede3!important;
+}
+
+.gallery-grid--5 .memory-photo:not(:first-child) img,
+.gallery-grid--4 .memory-photo img,
+.gallery-grid--3 .memory-photo:not(:first-child) img{
+  width:100%!important;
+  height:100%!important;
+  object-fit:contain!important;
+  object-position:center!important;
+  background:#f4ede3!important;
+}
+
+/* Keep the lead image from being forced square */
+.gallery-grid--5 .memory-photo:first-child{
+  aspect-ratio:auto!important;
+}
+
+.gallery-grid--5 .memory-photo:first-child img{
+  width:100%!important;
+  height:auto!important;
+  object-fit:contain!important;
+}
+
+/* On tablets and phones the smaller images form a tidy 2 x 2 grid */
+@media(max-width:900px){
+  .gallery-grid--5{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:none!important;
+  }
+
+  .gallery-grid--5 .memory-photo:first-child{
+    grid-column:1 / -1!important;
+    grid-row:auto!important;
+  }
+}
+
+@media(max-width:620px){
+  .gallery-grid--5{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+
+  .gallery-grid--5 .memory-photo:not(:first-child){
+    aspect-ratio:1 / 1!important;
   }
 }
