@@ -152,6 +152,7 @@ function lyricParts(lyrics) {
 }
 
 function getDownloadUrl(d) {
+  // Existing manually entered download links still work.
   if (d.downloadUrl) {
     return d.downloadUrl;
   }
@@ -228,33 +229,33 @@ function renderPage(d, css) {
 
   const storySection = storyParagraphs
     ? `
-<div class="story-divider"></div>
+<section class="panel story-panel">
+  <button
+    id="storyToggle"
+    class="story-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="storyContent"
+  >
+    <span id="storyLabel" class="story-label">
+      ${escapeHtml(d.storyTitle)}
+    </span>
 
-<button
-  id="storyToggle"
-  class="story-toggle"
-  type="button"
-  aria-expanded="false"
-  aria-controls="storyContent"
->
-  <span id="storyLabel" class="story-label">
-    ${escapeHtml(d.storyTitle)}
-  </span>
+    <span class="chev" aria-hidden="true"></span>
+  </button>
 
-  <span class="chev" aria-hidden="true"></span>
-</button>
-
-<div
-  id="storyContent"
-  class="story-content"
-  aria-hidden="true"
->
-  <div class="story-inner">
-    <div class="story-copy">
+  <div
+    id="storyContent"
+    class="story-content"
+    aria-hidden="true"
+  >
+    <div class="story-inner">
+      <div class="story-copy">
 ${storyParagraphs}
+      </div>
     </div>
   </div>
-</div>`
+</section>`
     : '';
 
   const shareText =
@@ -298,18 +299,12 @@ ${css}
 
 <body>
 ${exampleNav}
-
 <main class="shell">
 <article class="page">
 
 <section class="hero" aria-labelledby="memorial-name">
   <picture>
-    ${
-      d.heroImageMobile
-        ? `<source media="(max-width:620px) and (orientation:portrait)" srcset="${escapeHtml(d.heroImageMobile)}">`
-        : ''
-    }
-
+    ${d.heroImageMobile ? `<source media="(max-width:620px) and (orientation:portrait)" srcset="${escapeHtml(d.heroImageMobile)}">` : ''}
     <img
       class="hero-image"
       src="${escapeHtml(d.heroImage)}"
@@ -342,123 +337,117 @@ ${exampleNav}
 </section>
 
 <section
-  class="song-card"
-  aria-label="${escapeHtml(d.possessiveName)} memorial song"
+  class="player-card"
+  aria-label="${escapeHtml(d.possessiveName)} memorial song player"
 >
-  <div class="player-inner">
+  <audio
+    id="audio"
+    preload="metadata"
+    src="${escapeHtml(d.audioUrl)}"
+  ></audio>
 
-    <audio
-      id="audio"
-      preload="metadata"
-      src="${escapeHtml(d.audioUrl)}"
-    ></audio>
+  <button
+    id="play"
+    class="play"
+    type="button"
+    aria-label="Play ${escapeHtml(d.songTitle)}"
+  >
+    <span class="triangle" aria-hidden="true"></span>
 
-    <button
-      id="play"
-      class="play"
-      type="button"
-      aria-label="Play ${escapeHtml(d.songTitle)}"
+    <span class="pause" aria-hidden="true">
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <div>
+    <p id="playerTitle" class="song-title">
+      ${escapeHtml(d.songTitle)}
+    </p>
+
+    <p class="song-sub">
+      A personal song created in ${
+        escapeHtml(d.pronouns?.possessive || 'their')
+      } honour
+    </p>
+
+    <input
+      id="seek"
+      class="seek"
+      type="range"
+      min="0"
+      max="100"
+      value="0"
+      step=".1"
+      aria-label="Song progress"
     >
-      <span class="triangle" aria-hidden="true"></span>
 
-      <span class="pause" aria-hidden="true">
-        <span></span>
-        <span></span>
-      </span>
-    </button>
-
-    <div class="player-main">
-      <p id="playerTitle" class="song-title">
-        ${escapeHtml(d.songTitle)}
-      </p>
-
-      <p class="song-sub">
-        A personal song created in ${
-          escapeHtml(d.pronouns?.possessive || 'their')
-        } honour
-      </p>
-
-      <input
-        id="seek"
-        class="seek"
-        type="range"
-        min="0"
-        max="100"
-        value="0"
-        step=".1"
-        aria-label="Song progress"
-      >
-
-      <div class="times">
-        <span id="current">0:00</span>
-        <span id="duration">0:00</span>
-      </div>
+    <div class="times">
+      <span id="current">0:00</span>
+      <span id="duration">0:00</span>
     </div>
-
-    <div class="player-actions">
-      <button
-        id="share"
-        class="icon-btn primary"
-        type="button"
-      >
-        Share
-      </button>
-
-      <button
-        id="download"
-        class="icon-btn"
-        type="button"
-      >
-        Download song
-      </button>
-    </div>
-
   </div>
 
-  <div class="song-divider"></div>
-
-  <div class="lyrics-section">
-    <h2 class="lyrics-heading">Lyrics</h2>
-
-    <div
-      class="lyrics-preview"
-      aria-label="Lyrics preview"
-    >
-      <p>${preview.map(escapeHtml).join('<br>')}</p>
-    </div>
-
+  <div class="player-actions">
     <button
-      id="lyricsToggle"
-      class="lyrics-toggle"
+      id="share"
+      class="icon-btn primary"
       type="button"
-      aria-expanded="false"
-      aria-controls="lyricsContent"
     >
-      <span class="lyrics-label">
-        <span id="lyricsLabel">
-          View remaining lyrics
-        </span>
-      </span>
-
-      <span class="chev" aria-hidden="true"></span>
+      Share
     </button>
 
-    <div
-      id="lyricsContent"
-      class="lyrics-content"
-      aria-hidden="true"
+    <button
+      id="download"
+      class="icon-btn"
+      type="button"
     >
-      <div class="lyrics-inner">
-        <div class="lyrics">${escapeHtml(remainder)}</div>
-      </div>
-    </div>
+      Download song
+    </button>
   </div>
 </section>
 
 <div class="content">
 
+<section class="panel lyrics-panel">
+  <h2 class="lyrics-heading">Lyrics</h2>
+
+  <div
+    class="lyrics-preview"
+    aria-label="Lyrics preview"
+  >
+    <p>${preview.map(escapeHtml).join('<br>')}</p>
+  </div>
+
+  <button
+    id="lyricsToggle"
+    class="lyrics-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="lyricsContent"
+  >
+    <span class="lyrics-label">
+      <span id="lyricsLabel">
+        View remaining lyrics
+      </span>
+    </span>
+
+    <span class="chev" aria-hidden="true"></span>
+  </button>
+
+  <div
+    id="lyricsContent"
+    class="lyrics-content"
+    aria-hidden="true"
+  >
+    <div class="lyrics-inner">
+      <div class="lyrics">${escapeHtml(remainder)}</div>
+    </div>
+  </div>
+</section>
+
 <section
-  class="panel remembrance remembrance-card"
+  class="panel remembrance"
   aria-labelledby="story-title"
 >
   <div class="remembrance-copy">
@@ -474,9 +463,9 @@ ${paragraphs}
       <em>${escapeHtml(d.closingLine)}</em>
     </p>
   </div>
-
-  ${storySection}
 </section>
+
+${storySection}
 
 <section
   class="panel share-grid"
@@ -587,8 +576,7 @@ ${footerCredit}
   const storyContent =
     document.getElementById('storyContent');
 
-  const share =
-    document.getElementById('share');
+  const share = document.getElementById('share');
 
   const copyLink =
     document.getElementById('copyLink');
@@ -910,7 +898,6 @@ const root = `<!doctype html>
 <meta name="robots" content="noindex,nofollow">
 <title>A Song for Life</title>
 <link rel="icon" href="/favicon.ico">
-
 <style>
 body{
   margin:0;
@@ -940,7 +927,6 @@ p{
 <body>
 <main>
   <div class="heart">♥</div>
-
   <h1>A Song for Life</h1>
 
   <p>
@@ -997,10 +983,8 @@ for (const { dir, data, folder } of pages) {
     );
   }
 
-  if (
-    data.shareImage !== data.heroImage &&
-    data.shareImage !== data.heroImageMobile
-  ) {
+  if (data.shareImage !== data.heroImage &&
+      data.shareImage !== data.heroImageMobile) {
     await fs.copyFile(
       path.join(folder, data.shareImage),
       path.join(out, data.shareImage)
