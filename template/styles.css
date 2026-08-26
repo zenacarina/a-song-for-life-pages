@@ -226,7 +226,7 @@ a:focus-visible{
 }
 
 
-/* PLAYER — ORIGINAL FLOATING CARD */
+/* PLAYER â€” ORIGINAL FLOATING CARD */
 
 .player-card{
   position:relative;
@@ -488,7 +488,6 @@ a:focus-visible{
   color:var(--gold-dark);
   font:italic 18px/1.6 Georgia,serif;
   background:rgba(255,255,255,.22);
-  border-bottom:1px solid rgba(184,120,36,.22);
 }
 
 .lyrics-preview p{
@@ -718,7 +717,7 @@ a:focus-visible{
 }
 
 
-/* FOOTER — INSIDE THIRD CREAM CARD */
+/* FOOTER â€” INSIDE THIRD CREAM CARD */
 
 .footer{
   position:relative;
