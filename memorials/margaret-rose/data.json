@@ -18,14 +18,27 @@
   "downloadUrl": "https://a-song-for-life-downloads.zenacarinas.workers.dev/margaret-rose",
   "shareImage": "margaret-rose-share-card-clean.jpg",
   "shareDescription": "A personal memorial song created from her story.",
+
+  "galleryTitle": "A Life in Pictures",
+  "galleryPhotos": [
+    "margaret-family.png",
+    "margaret-baby.png",
+    "margaret-school.png",
+    "margaret-david-young.png",
+    "margaret-david-garden.png"
+  ],
+
   "lyrics": "She loved the soil upon her hands\nAnd sunlight in her hair\nShe grew roses in her garden\nAnd left her kindness there\n\nShe knew the names of every child\nWho passed her classroom door\nAnd somehow made the quiet ones\nBelieve a little more\n\nShe kept a tin of buttons\nAnd letters tied with string\nBirthday cards from years gone by\nAnd every precious thing\n\nMargaret Rose, we’re missing you\nAnd all the love you gave\nIn gardens full of morning sun\nIn every heart you shaped\nYou gave us words, you gave us grace\nYou taught us how to care\nAnd when the roses bloom again\nWe’ll feel you standing there\n\nShe made a home where tea was poured\nAnd cake was always near\nWhere every guest was welcomed in\nWith “come on in, my dear”\nShe loved the spring and Sunday roast\nThe books beside her bed\nThe stories read to bright young eyes\nThe little prayers she said\n\nAnd though we wish for one more cup\nOne more “come in, my dear”\nThe love she gave so freely\nIs still living with us here\n\nMargaret Rose, we’re missing you\nAnd all the love you gave\nIn gardens full of morning sun\nIn every heart you shaped\nYou gave us words, you gave us grace\nYou taught us how to care\nAnd when the roses bloom again\nWe’ll feel you standing there\n\nSo rest now, gentle Margaret\nYour work on earth is done\nThe seeds you planted long ago\nAre reaching for the sun",
+
   "rememberingTitle": "Remembering Margaret",
   "rememberingParagraphs": [
     "Margaret was a much-loved wife, mother, grandmother, teacher and friend whose kindness shaped both her family life and the many classrooms she cared for.",
     "She shared more than fifty years with her husband, David, and was a devoted mother to Helen and Thomas. Later, Sophie, Ben and Emily brought her the deep joy of becoming a grandmother.",
     "For over three decades at St Anne’s Primary School, Margaret was known for noticing the quiet child, remembering every birthday and helping each pupil feel that they mattered. At home, the same warmth lived in her garden, her books, her Sunday roasts and the open invitation to come in for tea."
   ],
+
   "closingLine": "Forever loved. Never forgotten.",
+
   "storyTitle": "Read Margaret’s Story",
   "storyParagraphs": [
     "Margaret Rose was born in Kent in 1946, the second of three sisters. She grew up in a busy family home where clothes were mended, letters were saved and the garden was treated almost like another room. Her mother taught her how to take cuttings and her father encouraged her love of reading, two interests that stayed with her throughout her life.",
