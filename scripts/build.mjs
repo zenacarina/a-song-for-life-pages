@@ -462,6 +462,54 @@ ${css}
 
 @media(max-width:620px){
 
+  /* MOBILE HERO — COPY FIRST, IMAGE SECOND */
+
+  .hero{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    padding-top:0!important;
+  }
+
+  .hero-copy{
+    order:1!important;
+    position:relative!important;
+    z-index:2!important;
+    width:100%!important;
+    padding:24px 14px 28px!important;
+    text-align:center!important;
+    background:
+      linear-gradient(
+        180deg,
+        #fffdf9,
+        var(--cream)
+      )!important;
+  }
+
+  .hero picture{
+    order:2!important;
+    position:relative!important;
+    display:block!important;
+    width:100%!important;
+    aspect-ratio:16/11!important;
+    overflow:hidden!important;
+  }
+
+  .hero-image{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    object-position:
+      var(--hero-position-mobile,75% 34%)!important;
+  }
+
+  .hero-shade{
+    display:none!important;
+  }
+
   .gallery-panel{
     padding:19px 15px 20px;
   }
