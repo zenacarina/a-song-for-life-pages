@@ -165,7 +165,6 @@ function lyricParts(lyrics) {
 }
 
 function getDownloadUrl(d) {
-  // Existing manually entered download links still work.
   if (d.downloadUrl) {
     return d.downloadUrl;
   }
@@ -277,15 +276,11 @@ ${storyParagraphs}
 
   const galleryItems = galleryPhotos
     .map((photo, index) => {
-      const position =
-        d.galleryPhotoPositions?.[photo] || '50% 50%';
-
       return `      <figure class="memory-photo">
         <img
           src="${escapeHtml(photo)}"
           alt="${escapeHtml(d.name)} memorial photograph ${index + 1}"
           loading="lazy"
-          style="--photo-position:${escapeHtml(position)}"
         >
       </figure>`;
     })
@@ -300,7 +295,7 @@ ${storyParagraphs}
       aria-labelledby="gallery-title"
     >
       <h2 id="gallery-title" class="gallery-title">
-        ${escapeHtml(d.galleryTitle || 'A Life in Pictures')}
+        Gallery
       </h2>
 
       <div class="panel-rule" aria-hidden="true">♥</div>
@@ -349,11 +344,174 @@ ${galleryItems}
 
 <style>
 ${css}
+
+/* POLISHED NATURAL-PROPORTION MEMORIAL GALLERY */
+
+.gallery-panel{
+  padding:30px 34px 34px;
+}
+
+.gallery-title{
+  margin:0 0 10px;
+  color:var(--navy);
+  font:28px Georgia,serif;
+  text-align:center;
+  letter-spacing:.01em;
+}
+
+.gallery-grid{
+  display:grid;
+  gap:14px;
+  margin-top:12px;
+  align-items:start;
+}
+
+.memory-photo{
+  position:relative;
+  min-width:0;
+  min-height:0;
+  margin:0;
+  overflow:hidden;
+  padding:6px;
+  background:
+    linear-gradient(
+      145deg,
+      #f3ebdf,
+      #fffdfa
+    );
+  border:1px solid rgba(184,120,36,.16);
+  border-radius:13px;
+  box-shadow:
+    0 7px 20px rgba(46,32,20,.07);
+  aspect-ratio:auto!important;
+}
+
+.memory-photo img{
+  display:block;
+  width:100%;
+  height:auto!important;
+  max-width:100%;
+  object-fit:contain!important;
+  object-position:center;
+  border-radius:8px;
+}
+
+/* ONE PHOTO */
+
+.gallery-grid--1{
+  max-width:760px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+/* TWO PHOTOS */
+
+.gallery-grid--2{
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+}
+
+/* THREE PHOTOS */
+
+.gallery-grid--3{
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+  grid-template-rows:none!important;
+}
+
+.gallery-grid--3 .memory-photo:first-child{
+  grid-column:1 / -1;
+  grid-row:auto!important;
+}
+
+/* FOUR PHOTOS */
+
+.gallery-grid--4{
+  grid-template-columns:
+    repeat(2,minmax(0,1fr));
+}
+
+/* FIVE PHOTOS */
+
+.gallery-grid--5{
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+  grid-template-rows:none!important;
+}
+
+.gallery-grid--5 .memory-photo:first-child{
+  grid-column:1 / -1;
+  grid-row:auto!important;
+}
+
+@media(max-width:900px){
+
+  .gallery-panel{
+    padding:24px 22px 26px;
+  }
+
+  .gallery-grid--5{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+  }
+
+  .gallery-grid--5 .memory-photo:first-child{
+    grid-column:1 / -1;
+  }
+}
+
+@media(max-width:620px){
+
+  .gallery-panel{
+    padding:19px 15px 20px;
+  }
+
+  .gallery-title{
+    font-size:23px;
+    margin-bottom:8px;
+  }
+
+  .gallery-grid{
+    gap:9px;
+    margin-top:8px;
+  }
+
+  .gallery-grid--1,
+  .gallery-grid--2{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-grid--3,
+  .gallery-grid--4,
+  .gallery-grid--5{
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+    grid-template-rows:none!important;
+  }
+
+  .gallery-grid--3 .memory-photo:first-child,
+  .gallery-grid--4 .memory-photo:first-child,
+  .gallery-grid--5 .memory-photo:first-child{
+    grid-column:1 / -1;
+    grid-row:auto!important;
+  }
+
+  .gallery-grid .memory-photo{
+    aspect-ratio:auto!important;
+  }
+
+  .gallery-grid .memory-photo img{
+    width:100%;
+    height:auto!important;
+    object-fit:contain!important;
+  }
+}
 </style>
 </head>
 
 <body>
 ${exampleNav}
+
 <main class="shell">
 <article class="page">
 
