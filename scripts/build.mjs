@@ -131,11 +131,11 @@ function validate(d, dir) {
     if (
       !Array.isArray(d.galleryPhotos) ||
       d.galleryPhotos.length < 1 ||
-      d.galleryPhotos.length > 5 ||
+      d.galleryPhotos.length > 20 ||
       d.galleryPhotos.some(photo => !String(photo).trim())
     ) {
       throw new Error(
-        `${dir}: galleryPhotos must contain between 1 and 5 image filenames`
+        `${dir}: galleryPhotos must contain between 1 and 20 image filenames`
       );
     }
   }
@@ -271,10 +271,20 @@ ${storyParagraphs}
     : '';
 
   const galleryPhotos = Array.isArray(d.galleryPhotos)
-    ? d.galleryPhotos.slice(0, 5)
+    ? d.galleryPhotos
     : [];
 
-  const galleryItems = galleryPhotos
+  const visibleGalleryPhotos = galleryPhotos.slice(0, 5);
+
+  const galleryPhotoData = galleryPhotos.map((photo, index) => ({
+    src: photo,
+    alt: `${d.name} memorial photograph ${index + 1}`,
+  }));
+
+  const galleryPhotoJson = JSON.stringify(galleryPhotoData)
+    .replaceAll('<', '\\u003c');
+
+  const galleryItems = visibleGalleryPhotos
     .map((photo, index) => {
       return `      <figure class="memory-photo">
         <button
@@ -293,7 +303,7 @@ ${storyParagraphs}
     })
     .join('\n');
 
-  const gallerySection = galleryPhotos.length
+  const gallerySection = visibleGalleryPhotos.length
     ? `
 <section class="section-card section-card--gallery">
   <div class="content content--gallery">
@@ -307,7 +317,7 @@ ${storyParagraphs}
 
       <div class="panel-rule" aria-hidden="true">♥</div>
 
-      <div class="gallery-grid gallery-grid--${galleryPhotos.length}">
+      <div class="gallery-grid gallery-grid--${visibleGalleryPhotos.length}">
 ${galleryItems}
       </div>
     </section>
@@ -454,22 +464,16 @@ ${css}
   border-radius:8px;
 }
 
-/* ONE PHOTO */
-
 .gallery-grid--1{
   max-width:760px;
   margin-left:auto;
   margin-right:auto;
 }
 
-/* TWO PHOTOS */
-
 .gallery-grid--2{
   grid-template-columns:
     repeat(2,minmax(0,1fr));
 }
-
-/* THREE PHOTOS */
 
 .gallery-grid--3{
   grid-template-columns:
@@ -482,14 +486,10 @@ ${css}
   grid-row:auto!important;
 }
 
-/* FOUR PHOTOS */
-
 .gallery-grid--4{
   grid-template-columns:
     repeat(2,minmax(0,1fr));
 }
-
-/* FIVE PHOTOS */
 
 .gallery-grid--5{
   grid-template-columns:
@@ -531,6 +531,9 @@ ${css}
     filter:brightness(1.02);
   }
 }
+
+
+/* LIGHTBOX */
 
 .gallery-lightbox{
   position:fixed;
@@ -675,7 +678,6 @@ body.gallery-lightbox-open{
 }
 
 @media(max-width:900px){
-
   .gallery-panel{
     padding:24px 22px 26px;
   }
@@ -784,6 +786,7 @@ body.gallery-lightbox-open{
     object-fit:contain!important;
   }
 }
+
 </style>
 </head>
 
@@ -1135,6 +1138,7 @@ ${footerCredit}
   )};
 
   const shareText = ${escapeJs(shareText)};
+  const galleryPhotoData = ${galleryPhotoJson};
 
   const fmt = seconds =>
     !Number.isFinite(seconds)
@@ -1312,6 +1316,7 @@ ${footerCredit}
 
   if (
     galleryTriggers.length &&
+    galleryPhotoData.length &&
     galleryLightbox &&
     galleryLightboxImage &&
     galleryClose &&
@@ -1325,15 +1330,14 @@ ${footerCredit}
     let touchStartY = 0;
 
     const renderGalleryImage = () => {
-      const trigger = galleryTriggers[galleryIndex];
-      const image = trigger.querySelector('img');
+      const photo = galleryPhotoData[galleryIndex];
 
-      galleryLightboxImage.src = image.currentSrc || image.src;
-      galleryLightboxImage.alt = image.alt || '';
+      galleryLightboxImage.src = photo.src;
+      galleryLightboxImage.alt = photo.alt;
       galleryCounter.textContent =
-        (galleryIndex + 1) + ' / ' + galleryTriggers.length;
+        (galleryIndex + 1) + ' / ' + galleryPhotoData.length;
 
-      const onlyOne = galleryTriggers.length < 2;
+      const onlyOne = galleryPhotoData.length < 2;
       galleryPrev.hidden = onlyOne;
       galleryNext.hidden = onlyOne;
     };
@@ -1369,8 +1373,8 @@ ${footerCredit}
         (
           galleryIndex +
           direction +
-          galleryTriggers.length
-        ) % galleryTriggers.length;
+          galleryPhotoData.length
+        ) % galleryPhotoData.length;
 
       renderGalleryImage();
     };
@@ -1451,7 +1455,10 @@ ${footerCredit}
         const first = controls[0];
         const last = controls[controls.length - 1];
 
-        if (event.shiftKey && document.activeElement === first) {
+        if (
+          event.shiftKey &&
+          document.activeElement === first
+        ) {
           event.preventDefault();
           last.focus();
         } else if (
@@ -1544,7 +1551,9 @@ for (const dir of dirs) {
     data.heroImage,
     data.heroImageMobile,
     data.shareImage,
-    ...(Array.isArray(data.galleryPhotos) ? data.galleryPhotos : []),
+    ...(Array.isArray(data.galleryPhotos)
+      ? data.galleryPhotos
+      : []),
   ].filter(Boolean)) {
     if (!(await exists(path.join(folder, asset)))) {
       throw new Error(
