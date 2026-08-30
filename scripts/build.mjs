@@ -410,6 +410,31 @@ ${galleryItems}
 
 <meta name="theme-color" content="#08243a">
 
+${
+  d.heroImageMobile
+    ? `<link
+  rel="preload"
+  as="image"
+  href="${escapeHtml(d.heroImageMobile)}"
+  media="(max-width:620px) and (orientation:portrait)"
+  fetchpriority="high"
+>
+
+<link
+  rel="preload"
+  as="image"
+  href="${escapeHtml(d.heroImage)}"
+  media="(min-width:621px), (orientation:landscape)"
+  fetchpriority="high"
+>`
+    : `<link
+  rel="preload"
+  as="image"
+  href="${escapeHtml(d.heroImage)}"
+  fetchpriority="high"
+>`
+}
+
 <style>
 ${css}
 
@@ -806,6 +831,9 @@ ${exampleNav}
       class="hero-image"
       src="${escapeHtml(d.heroImage)}"
       alt="${escapeHtml(d.heroAlt)}"
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
       style="--hero-position-mobile:${
         escapeHtml(d.heroPositionMobile || '75% 34%')
       }"
