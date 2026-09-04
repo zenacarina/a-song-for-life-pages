@@ -294,9 +294,12 @@ ${storyParagraphs}
           aria-label="Enlarge ${escapeHtml(d.name)} memorial photograph ${index + 1}"
         >
           <img
-            src="${escapeHtml(photo)}"
+            class="gallery-lazy-image"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+            data-src="${escapeHtml(photo)}"
             alt="${escapeHtml(d.name)} memorial photograph ${index + 1}"
             loading="lazy"
+            decoding="async"
           >
         </button>
       </figure>`;
@@ -1157,6 +1160,62 @@ ${footerCredit}
 
   const galleryCounter =
     document.getElementById('galleryCounter');
+
+  /*
+    TRUE DEFERRED GALLERY LOADING
+    --------------------------------
+    Keep the real gallery image URLs out of src during the initial page
+    load so below-the-fold gallery images cannot compete with the hero.
+    They begin loading only when they are close to the viewport.
+  */
+  const deferredGalleryImages =
+    Array.from(
+      document.querySelectorAll(
+        'img.gallery-lazy-image[data-src]'
+      )
+    );
+
+  const loadDeferredGalleryImage = image => {
+    const realSrc = image.getAttribute('data-src');
+
+    if (!realSrc) {
+      return;
+    }
+
+    image.src = realSrc;
+    image.removeAttribute('data-src');
+  };
+
+  if (deferredGalleryImages.length) {
+    if ('IntersectionObserver' in window) {
+      const galleryObserver =
+        new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (!entry.isIntersecting) {
+                return;
+              }
+
+              loadDeferredGalleryImage(entry.target);
+              galleryObserver.unobserve(entry.target);
+            });
+          },
+          {
+            root: null,
+            rootMargin: '250px 0px',
+            threshold: 0.01,
+          }
+        );
+
+      deferredGalleryImages.forEach(image => {
+        galleryObserver.observe(image);
+      });
+    } else {
+      deferredGalleryImages.forEach(
+        loadDeferredGalleryImage
+      );
+    }
+  }
 
   const songTitle = ${escapeJs(d.songTitle)};
   const downloadUrl = ${escapeJs(downloadUrl)};
