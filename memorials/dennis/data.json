@@ -8,14 +8,14 @@
     "subject": "he",
     "possessive": "his"
   },
-  "heroImage": "dennis-tropical-garden-clean.png",
+  "heroImage": "dennis-tropical-garden-clean.jpg",
   "heroAlt": "Dennis seated in a tropical garden in warm golden evening light",
   "heroShade": "linear-gradient(90deg,rgba(255,253,249,.76) 0%,rgba(255,253,249,.46) 24%,rgba(255,253,249,.12) 42%,rgba(255,253,249,0) 62%),linear-gradient(180deg,rgba(255,253,249,0) 84%,rgba(255,253,249,.92) 100%)",
   "tributeHtml": "He gave us music, laughter<br>and a welcome that felt like home.",
   "songTitle": "Remembering Dennis",
   "audioUrl": "https://audio.asongforlife.co.uk/examples/remembering-dennis.mp3",
   "downloadUrl": "https://a-song-for-life-downloads.zenacarinas.workers.dev/dennis",
-  "shareImage": "dennis-tropical-garden-clean.png",
+  "shareImage": "dennis-tropical-garden-clean.jpg",
   "shareDescription": "A personal memorial song created from his story.",
 
   "galleryTitle": "Gallery",
