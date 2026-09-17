@@ -2637,3 +2637,23 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     object-position:100% 50%!important;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE SQUARE HERO / RIGHT EDGE
+   Keeps all current redesign/mobile fixes.
+   Mobile hero:
+   - square crop
+   - anchored to far-right edge
+   - retains the pink roses
+   - keeps Margaret more centrally placed
+   - preserves rounded frame and player spacing
+   ========================================================= */
+
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .hero-image{
+    aspect-ratio:1 / 1!important;
+    object-fit:cover!important;
+    object-position:100% 50%!important;
+  }
+}
