@@ -1675,3 +1675,47 @@ body.memorial-margaret-rose-redesign .icon-btn{
     border-radius:8px;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MATCH MAIN WEBSITE NAVY
+   Main website navy sampled from the current homepage:
+   #062035
+
+   Keeps all current layout/card/gallery decisions.
+   Only tightens the navy family so the memorial page feels
+   like part of the same website.
+   ========================================================= */
+
+body.memorial-margaret-rose-redesign{
+  background:#062035;
+}
+
+body.memorial-margaret-rose-redesign .page{
+  background:#062035;
+}
+
+/* Top example banner stays distinct, but in the same darker family */
+body.memorial-margaret-rose-redesign .example-nav{
+  background:rgba(4,24,40,.94);
+  border-color:rgba(213,160,78,.34);
+}
+
+/* Gallery is intentionally a touch lighter than the page background
+   so it still reads as an inner panel rather than disappearing into it */
+body.memorial-margaret-rose-redesign .gallery-panel{
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.04),transparent 34%),
+    linear-gradient(180deg,#0a304b 0%,#08283f 100%);
+  border-color:rgba(255,255,255,.07);
+  box-shadow:
+    0 16px 30px rgba(2,15,25,.22),
+    inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+/* Slightly deeper outer-card shadow against the darker site navy */
+body.memorial-margaret-rose-redesign .section-card{
+  box-shadow:
+    0 26px 58px rgba(1,13,22,.24),
+    0 8px 20px rgba(1,13,22,.10);
+}
