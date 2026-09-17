@@ -2657,3 +2657,21 @@ body.memorial-page .footer-credit a{
     object-position:var(--hero-position-mobile,75% 34%)!important;
   }
 }
+
+
+/* =========================================================
+   ASFL ALL MEMORIALS â€” MOBILE HERO FINAL STANDARD
+   Applies to EVERY memorial page on mobile:
+   - square crop
+   - far-right anchored source image
+   - rounded framed treatment retained
+   - current player spacing retained
+   ========================================================= */
+
+@media(max-width:620px){
+  body.memorial-page .hero-image{
+    aspect-ratio:1 / 1!important;
+    object-fit:cover!important;
+    object-position:100% 50%!important;
+  }
+}
