@@ -671,12 +671,12 @@ body.gallery-lightbox-open{
     padding:
       calc(58px + env(safe-area-inset-top))
       10px
-      calc(150px + env(safe-area-inset-bottom));
+      calc(155px + env(safe-area-inset-bottom));
   }
 
   .gallery-lightbox__stage{
     width:100%;
-    height:calc(100dvh - 230px);
+    height:calc(100dvh - 235px);
     max-height:720px;
   }
 
@@ -695,7 +695,7 @@ body.gallery-lightbox-open{
   .gallery-lightbox__nav{
     position:fixed;
     top:auto;
-    bottom:calc(88px + env(safe-area-inset-bottom));
+    bottom:calc(92px + env(safe-area-inset-bottom));
     width:48px;
     height:48px;
     margin:0;
@@ -714,7 +714,7 @@ body.gallery-lightbox-open{
   .gallery-lightbox__counter{
     position:fixed;
     left:50%;
-    bottom:calc(97px + env(safe-area-inset-bottom));
+    bottom:calc(101px + env(safe-area-inset-bottom));
     transform:translateX(-50%);
     z-index:3;
     min-width:58px;
@@ -834,7 +834,7 @@ body.gallery-lightbox-open{
 </style>
 </head>
 
-<body>
+<body class="memorial-page memorial-${escapeHtml(d.slug)}">
 ${exampleNav}
 
 <main class="shell">
