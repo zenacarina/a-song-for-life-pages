@@ -1541,3 +1541,73 @@ body.memorial-margaret-rose-redesign .gallery-panel{
 }
 
 /* Leave outer slab/background colours untouched */
+
+
+/* =========================================================
+   GALLERY VARIATION:
+   - remove navy inner gallery backdrop
+   - restore cream gallery body
+   - use refined navy photo borders instead of thick white borders
+   ========================================================= */
+
+body.memorial-margaret-rose-redesign .gallery-panel{
+  background: linear-gradient(180deg, #fffdfa 0%, #fdf7ee 100%);
+  border: 1px solid rgba(213,160,78,.24);
+  box-shadow:
+    0 8px 18px rgba(53,39,24,.06),
+    inset 0 1px 0 rgba(255,255,255,.9);
+}
+
+body.memorial-margaret-rose-redesign .gallery-panel h2,
+body.memorial-margaret-rose-redesign .gallery-panel .section-kicker{
+  color: var(--navy);
+}
+
+body.memorial-margaret-rose-redesign .gallery-panel .section-divider,
+body.memorial-margaret-rose-redesign .gallery-panel .section-divider::before,
+body.memorial-margaret-rose-redesign .gallery-panel .section-divider::after{
+  color: var(--gold);
+  background: var(--gold);
+}
+
+body.memorial-margaret-rose-redesign .gallery-main,
+body.memorial-margaret-rose-redesign .gallery-thumb,
+body.memorial-margaret-rose-redesign .gallery-photo,
+body.memorial-margaret-rose-redesign .gallery-grid img{
+  border-color: #0b3557 !important;
+  box-shadow:
+    0 8px 18px rgba(5,29,47,.12),
+    0 0 0 1px rgba(255,255,255,.35) inset;
+}
+
+body.memorial-margaret-rose-redesign .gallery-main{
+  background: #0b3557;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+body.memorial-margaret-rose-redesign .gallery-main img{
+  display: block;
+  border: 0 !important;
+}
+
+body.memorial-margaret-rose-redesign .gallery-grid{
+  gap: 10px;
+}
+
+body.memorial-margaret-rose-redesign .gallery-thumb{
+  background: #0b3557;
+  padding: 3px;
+  border-radius: 6px;
+}
+
+body.memorial-margaret-rose-redesign .gallery-thumb img{
+  display: block;
+  border: 0 !important;
+}
+
+/* remove odd decorative botanical if still present */
+body.memorial-margaret-rose-redesign .gallery-panel::before,
+body.memorial-margaret-rose-redesign .gallery-panel::after{
+  content: none !important;
+}
