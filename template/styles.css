@@ -1405,3 +1405,107 @@ body.memorial-margaret-rose-redesign .lyrics{
   font-weight:400;
   line-height:1.72;
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” GALLERY FEATURE PANEL
+   Adds a navy inner gallery backdrop ONLY.
+   Everything else remains the restored original design.
+   ========================================================= */
+
+body.memorial-margaret-rose-redesign .gallery-panel{
+  position:relative;
+  overflow:hidden;
+  padding:34px 34px 36px;
+  border:1px solid rgba(213,160,78,.34);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% -10%,rgba(255,255,255,.055),transparent 36%),
+    linear-gradient(180deg,#0b304d 0%,#08243a 100%);
+  box-shadow:
+    0 14px 30px rgba(4,22,36,.16),
+    inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+/* subtle floral corner on navy */
+body.memorial-margaret-rose-redesign .gallery-panel::after{
+  content:"";
+  position:absolute;
+  top:-42px;
+  right:-48px;
+  width:210px;
+  height:210px;
+  background:url("/memorial-decor/foliage-2.png") center/contain no-repeat;
+  opacity:.34;
+  pointer-events:none;
+}
+
+body.memorial-margaret-rose-redesign .gallery-title{
+  position:relative;
+  z-index:1;
+  color:#f7ead7;
+}
+
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule{
+  position:relative;
+  z-index:1;
+  color:#d9a651;
+}
+
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before,
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+  background:#d9a651;
+  opacity:.72;
+}
+
+body.memorial-margaret-rose-redesign .gallery-grid{
+  position:relative;
+  z-index:1;
+  margin-top:18px;
+  gap:12px;
+}
+
+/* warm mounted-photo effect against the navy */
+body.memorial-margaret-rose-redesign .memory-photo{
+  padding:6px;
+  border-color:rgba(222,179,108,.44);
+  background:linear-gradient(145deg,#e8c993 0%,#f7ead6 44%,#fffaf2 100%);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.72);
+}
+
+body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+  padding:8px;
+  box-shadow:
+    0 14px 28px rgba(0,0,0,.20),
+    inset 0 1px 0 rgba(255,255,255,.74);
+}
+
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .gallery-panel{
+    padding:24px 14px 20px;
+    border-radius:14px;
+  }
+
+  body.memorial-margaret-rose-redesign .gallery-panel::after{
+    width:130px;
+    height:130px;
+    top:-30px;
+    right:-34px;
+    opacity:.24;
+  }
+
+  body.memorial-margaret-rose-redesign .gallery-grid{
+    gap:8px;
+    margin-top:12px;
+  }
+
+  body.memorial-margaret-rose-redesign .memory-photo{
+    padding:4px;
+  }
+
+  body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+    padding:5px;
+  }
+}
