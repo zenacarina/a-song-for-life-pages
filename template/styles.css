@@ -2413,3 +2413,86 @@ body.memorial-margaret-rose-redesign .footer-credit{
 body.memorial-margaret-rose-redesign .footer-credit a{
   display:none!important;
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE HERO GAP FIX V2
+   Fixes the oversized blank cream area between the framed
+   hero photograph and the audio player by making the mobile
+   hero use a true vertical flow.
+   ========================================================= */
+
+@media(max-width:620px){
+
+  body.memorial-margaret-rose-redesign .hero{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    padding:0!important;
+  }
+
+  /* Memorial text first */
+  body.memorial-margaret-rose-redesign .hero-copy{
+    order:1;
+    position:relative;
+    width:100%;
+    padding:17px 14px 24px!important;
+  }
+
+  /* Framed photograph immediately after the memorial text */
+  body.memorial-margaret-rose-redesign .hero picture{
+    order:2;
+    display:block!important;
+    width:100%;
+    margin:0!important;
+    padding:0!important;
+    line-height:0;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    position:relative!important;
+    inset:auto!important;
+    display:block!important;
+    width:calc(100% - 28px)!important;
+    height:auto!important;
+    aspect-ratio:auto!important;
+    margin:0 14px 18px!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-shade{
+    display:none!important;
+  }
+
+  /* Player now follows directly after the photograph */
+  body.memorial-margaret-rose-redesign .player-card{
+    width:calc(100% - 28px)!important;
+    margin:0 14px!important;
+  }
+}
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE SQUARE HERO CROP
+   Keeps all current styling/fixes.
+   Only changes the framed hero image on mobile.
+   ========================================================= */
+
+@media(max-width:620px){
+
+  body.memorial-margaret-rose-redesign .hero picture{
+    display:block!important;
+    width:100%;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    width:calc(100% - 28px)!important;
+    height:auto!important;
+    aspect-ratio:1 / 1!important;
+    margin:0 14px 18px!important;
+    object-fit:cover!important;
+    object-position:72% 50%!important;
+    border-radius:20px!important;
+  }
+}
