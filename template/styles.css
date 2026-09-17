@@ -2238,3 +2238,62 @@ body.memorial-margaret-rose-redesign .copy-link{
     margin-bottom:9px;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” GALLERY MAIN PHOTO RATIO FIX
+   Scoped ONLY to /margaret-rose-redesign/
+
+   Fix:
+   - removes the fixed-height / letterbox feel from the main
+     Margaret + family gallery photo
+   - keeps the 4 thumbnails underneath
+   - does not alter the rest of the memorial design
+   ========================================================= */
+
+/* Let the gallery rows size naturally instead of forcing two fixed rows */
+body.memorial-margaret-rose-redesign .gallery-grid--5{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  grid-template-rows:none!important;
+  align-items:start;
+}
+
+/* Main Margaret + family image spans the full width */
+body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+  grid-column:1 / -1;
+  grid-row:auto!important;
+  aspect-ratio:16 / 9;
+  min-height:0;
+}
+
+/* Four thumbnails sit naturally beneath */
+body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:not(:first-child){
+  aspect-ratio:1 / 1;
+  min-height:0;
+}
+
+/* Keep images filling their own natural boxes cleanly */
+body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* On wider screens give the hero family photo a little more height */
+@media(min-width:900px){
+  body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+    aspect-ratio:1.55 / 1;
+  }
+}
+
+/* Mobile keeps a comfortable landscape image */
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .gallery-grid--5{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+
+  body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+    grid-column:1 / -1;
+    aspect-ratio:4 / 3;
+  }
+}
