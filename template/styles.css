@@ -1512,145 +1512,32 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” REFINEMENT PASS
-   1. Remove gallery botanical
-   2. Navy/gold audio player
-   3. Cream cards pop more against beige
-   Scoped ONLY to /margaret-rose-redesign/
+   MARGARET ROSE REDESIGN â€” SUBTLE CREAM CARD REFINEMENT
+   Keeps:
+   - original architecture
+   - original cream audio player
+   - navy italic lyrics
+   - navy inner gallery
+   - original overall colours
+   Only adds a little more separation to cream cards.
    ========================================================= */
 
-/* REMOVE THE GALLERY BOTANICAL */
-body.memorial-margaret-rose-redesign .gallery-panel::after{
-  content:none!important;
-  display:none!important;
-}
-
-/* SOPHISTICATED NAVY / GOLD AUDIO PLAYER */
-body.memorial-margaret-rose-redesign .player-card{
-  border:1px solid rgba(213,160,78,.38);
-  background:
-    radial-gradient(circle at 18% 0%,rgba(255,255,255,.045),transparent 26%),
-    linear-gradient(180deg,#0b304d 0%,#08243a 100%);
-  box-shadow:
-    0 16px 34px rgba(4,22,36,.20),
-    inset 0 1px 0 rgba(255,255,255,.035);
-}
-
-body.memorial-margaret-rose-redesign .song-title{
-  color:#f7ead7;
-}
-
-body.memorial-margaret-rose-redesign .song-sub{
-  color:#d9a651;
-}
-
-body.memorial-margaret-rose-redesign .play{
-  background:#d5a04e;
-  border:1px solid rgba(255,255,255,.16);
-  box-shadow:
-    0 8px 20px rgba(0,0,0,.24),
-    inset 0 1px 0 rgba(255,255,255,.18);
-}
-
-body.memorial-margaret-rose-redesign .play .triangle{
-  border-left-color:#08243a;
-}
-
-body.memorial-margaret-rose-redesign .play .pause span{
-  background:#08243a;
-}
-
-body.memorial-margaret-rose-redesign .seek{
-  background:linear-gradient(
-    90deg,
-    #d5a04e 0,
-    #d5a04e var(--p,0%),
-    rgba(247,234,215,.32) var(--p,0%),
-    rgba(247,234,215,.32) 100%
-  );
-}
-
-body.memorial-margaret-rose-redesign .seek::-webkit-slider-thumb{
-  background:#f7ead7;
-  border:2px solid #d5a04e;
-}
-
-body.memorial-margaret-rose-redesign .seek::-moz-range-thumb{
-  background:#f7ead7;
-  border:2px solid #d5a04e;
-}
-
-body.memorial-margaret-rose-redesign .time-row,
-body.memorial-margaret-rose-redesign .time-row span{
-  color:rgba(247,234,215,.80);
-}
-
-body.memorial-margaret-rose-redesign .icon-btn.primary{
-  background:#d5a04e;
-  color:#08243a;
-  border-color:#d5a04e;
-}
-
-body.memorial-margaret-rose-redesign .icon-btn.primary:hover{
-  background:#e0b76e;
-}
-
-body.memorial-margaret-rose-redesign .icon-btn:not(.primary){
-  color:#f5e8d6;
-  border-color:rgba(213,160,78,.46);
-  background:rgba(255,255,255,.035);
-}
-
-body.memorial-margaret-rose-redesign .icon-btn:not(.primary):hover{
-  border-color:#d5a04e;
-  background:rgba(213,160,78,.08);
-}
-
-/* MAKE INNER CREAM CARDS POP MORE AGAINST THE BEIGE SLABS */
 body.memorial-margaret-rose-redesign .lyrics-panel,
 body.memorial-margaret-rose-redesign .remembrance,
 body.memorial-margaret-rose-redesign .story-panel,
 body.memorial-margaret-rose-redesign .share-grid{
-  background:
-    linear-gradient(180deg,#fffdfa 0%,#fff9f1 100%);
-  border-color:rgba(193,132,44,.28);
+  background:linear-gradient(180deg,#fffefb 0%,#fffaf4 100%);
+  border-color:rgba(213,160,78,.25);
   box-shadow:
-    0 10px 24px rgba(90,58,24,.09),
+    0 8px 18px rgba(53,39,24,.06),
     inset 0 1px 0 rgba(255,255,255,.88);
 }
 
-/* slightly stronger tonal separation of the beige outer sections */
-body.memorial-margaret-rose-redesign .section-card--top,
-body.memorial-margaret-rose-redesign .section-card--middle,
-body.memorial-margaret-rose-redesign .section-card--gallery,
-body.memorial-margaret-rose-redesign .section-card--bottom{
-  background:
-    linear-gradient(180deg,#f8ecdc 0%,#f3dfc5 100%);
-}
-
-/* keep gallery outer slab cream/beige while inner gallery remains navy */
-body.memorial-margaret-rose-redesign .section-card--gallery{
-  background:
-    linear-gradient(180deg,#f8ecdc 0%,#f3dfc5 100%);
-}
-
-/* refined gold borders and slightly richer shadows */
-body.memorial-margaret-rose-redesign .lyrics-panel,
-body.memorial-margaret-rose-redesign .remembrance,
-body.memorial-margaret-rose-redesign .story-panel,
-body.memorial-margaret-rose-redesign .share-grid,
+/* Keep gallery exactly as the successful navy-inner-panel treatment */
 body.memorial-margaret-rose-redesign .gallery-panel{
-  border-width:1px;
+  box-shadow:
+    0 12px 24px rgba(4,22,36,.14),
+    inset 0 1px 0 rgba(255,255,255,.03);
 }
 
-/* MOBILE */
-@media(max-width:620px){
-  body.memorial-margaret-rose-redesign .player-card{
-    padding:15px;
-  }
-
-  body.memorial-margaret-rose-redesign .play{
-    width:54px;
-    height:54px;
-  }
-}
+/* Leave outer slab/background colours untouched */
