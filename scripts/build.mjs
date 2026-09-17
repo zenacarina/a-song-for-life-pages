@@ -206,7 +206,8 @@ function renderPage(d, css) {
     ? `
     Example memorial
     <span aria-hidden="true">·</span>
-    Created with care by
+    Created with care by Zena Carina
+    <span aria-hidden="true">·</span>
     <a href="https://asongforlife.co.uk/">A Song for Life</a>
     <span aria-hidden="true">·</span>
     <a href="https://asongforlife.co.uk/">Return to website</a>`
@@ -218,7 +219,7 @@ function renderPage(d, css) {
       target="_blank"
       rel="noopener"
     >
-      Visit A Song for Life
+      A Song for Life
     </a>`;
 
   const url = `${BASE_URL}/${d.slug}/`;
@@ -667,24 +668,34 @@ body.gallery-lightbox-open{
 
 @media(max-width:620px){
   .gallery-lightbox{
-    padding:58px 10px 70px;
+    padding:
+      calc(58px + env(safe-area-inset-top))
+      10px
+      calc(150px + env(safe-area-inset-bottom));
   }
 
   .gallery-lightbox__stage{
-    height:calc(100vh - 138px);
+    width:100%;
+    height:calc(100dvh - 230px);
+    max-height:720px;
+  }
+
+  .gallery-lightbox__image{
+    max-height:100%;
   }
 
   .gallery-lightbox__close{
-    top:10px;
-    right:10px;
+    top:calc(12px + env(safe-area-inset-top));
+    right:12px;
     width:42px;
     height:42px;
     font-size:30px;
   }
 
   .gallery-lightbox__nav{
+    position:fixed;
     top:auto;
-    bottom:12px;
+    bottom:calc(88px + env(safe-area-inset-bottom));
     width:48px;
     height:48px;
     margin:0;
@@ -693,15 +704,20 @@ body.gallery-lightbox-open{
   }
 
   .gallery-lightbox__nav--prev{
-    left:calc(50% - 70px);
+    left:calc(50% - 76px);
   }
 
   .gallery-lightbox__nav--next{
-    right:calc(50% - 70px);
+    right:calc(50% - 76px);
   }
 
   .gallery-lightbox__counter{
-    bottom:-44px;
+    position:fixed;
+    left:50%;
+    bottom:calc(97px + env(safe-area-inset-bottom));
+    transform:translateX(-50%);
+    z-index:3;
+    min-width:58px;
   }
 }
 
@@ -818,7 +834,7 @@ body.gallery-lightbox-open{
 </style>
 </head>
 
-<body class="memorial-page memorial-${escapeHtml(d.slug)}">
+<body>
 ${exampleNav}
 
 <main class="shell">
