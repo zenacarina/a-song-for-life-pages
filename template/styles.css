@@ -2336,3 +2336,80 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
     display:none!important;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE SPACING REFINEMENT
+   Keeps all current redesign settings.
+   Changes only mobile vertical spacing:
+   - removes the oversized gap under the framed hero image
+   - brings the audio player closer to the photo
+   - adds breathing room above "Forever loved. Never forgotten."
+   ========================================================= */
+
+@media(max-width:620px){
+
+  /* Hero: remove leftover reserved space from the earlier mobile hero layout */
+  body.memorial-margaret-rose-redesign .hero{
+    min-height:0!important;
+    padding-top:0!important;
+    display:block;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-copy{
+    padding-bottom:22px!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    display:block;
+    margin:0 14px 20px!important;
+  }
+
+  /* Bring player up so the gap after the framed image is intentional, not huge */
+  body.memorial-margaret-rose-redesign .player-card{
+    margin:0 14px 0!important;
+    width:calc(100% - 28px)!important;
+  }
+
+  /* Keep a clean gap between player and lyrics */
+  body.memorial-margaret-rose-redesign .content--top{
+    padding-top:18px!important;
+  }
+
+  /* Remembering card: give closing line some breathing room */
+  body.memorial-margaret-rose-redesign .remembrance em{
+    margin-top:18px!important;
+    padding-top:2px;
+  }
+}
+
+
+/* =========================================================
+   FOOTER â€” SIMPLIFIED CENTRED TREATMENT
+   ========================================================= */
+
+body.memorial-margaret-rose-redesign .footer{
+  text-align:center;
+}
+
+body.memorial-margaret-rose-redesign .brand{
+  display:block;
+  margin:0 auto;
+  text-align:center;
+}
+
+body.memorial-margaret-rose-redesign .footer-note{
+  display:block;
+  margin:7px auto 0;
+  text-align:center;
+}
+
+body.memorial-margaret-rose-redesign .footer-credit{
+  display:block;
+  margin:14px auto 0;
+  text-align:center;
+}
+
+body.memorial-margaret-rose-redesign .footer-credit a{
+  display:none!important;
+}
