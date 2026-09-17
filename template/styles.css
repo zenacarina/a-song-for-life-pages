@@ -1544,70 +1544,107 @@ body.memorial-margaret-rose-redesign .gallery-panel{
 
 
 /* =========================================================
-   GALLERY VARIATION:
-   - remove navy inner gallery backdrop
-   - restore cream gallery body
-   - use refined navy photo borders instead of thick white borders
+   MARGARET ROSE REDESIGN â€” GOLD LINE / BORDERLESS GALLERY PASS
+   - gallery returns to cream
+   - photographs have NO visible border/frame
+   - content cards get finer, richer antique-gold lines
+   Scoped ONLY to /margaret-rose-redesign/
    ========================================================= */
 
+/* Refined gold line treatment on the inner content cards */
+body.memorial-margaret-rose-redesign .lyrics-panel,
+body.memorial-margaret-rose-redesign .remembrance,
+body.memorial-margaret-rose-redesign .story-panel,
+body.memorial-margaret-rose-redesign .gallery-panel,
+body.memorial-margaret-rose-redesign .share-grid{
+  border:1px solid rgba(176,112,30,.48);
+  box-shadow:
+    0 7px 17px rgba(57,39,20,.055),
+    inset 0 1px 0 rgba(255,255,255,.86);
+}
+
+/* Slightly richer gold in rules / accents */
+body.memorial-margaret-rose-redesign .panel-rule,
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule{
+  color:#b0711f;
+}
+
+body.memorial-margaret-rose-redesign .panel-rule::before,
+body.memorial-margaret-rose-redesign .panel-rule::after,
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before,
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+  background:#c18a3c;
+  opacity:.82;
+}
+
+/* Restore the gallery itself to a warm cream */
 body.memorial-margaret-rose-redesign .gallery-panel{
-  background: linear-gradient(180deg, #fffdfa 0%, #fdf7ee 100%);
-  border: 1px solid rgba(213,160,78,.24);
-  box-shadow:
-    0 8px 18px rgba(53,39,24,.06),
-    inset 0 1px 0 rgba(255,255,255,.9);
+  position:relative;
+  overflow:hidden;
+  padding:28px 28px 30px;
+  background:
+    linear-gradient(180deg,#fffefb 0%,#fff8ef 100%);
+  border-radius:16px;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel h2,
-body.memorial-margaret-rose-redesign .gallery-panel .section-kicker{
-  color: var(--navy);
-}
-
-body.memorial-margaret-rose-redesign .gallery-panel .section-divider,
-body.memorial-margaret-rose-redesign .gallery-panel .section-divider::before,
-body.memorial-margaret-rose-redesign .gallery-panel .section-divider::after{
-  color: var(--gold);
-  background: var(--gold);
-}
-
-body.memorial-margaret-rose-redesign .gallery-main,
-body.memorial-margaret-rose-redesign .gallery-thumb,
-body.memorial-margaret-rose-redesign .gallery-photo,
-body.memorial-margaret-rose-redesign .gallery-grid img{
-  border-color: #0b3557 !important;
-  box-shadow:
-    0 8px 18px rgba(5,29,47,.12),
-    0 0 0 1px rgba(255,255,255,.35) inset;
-}
-
-body.memorial-margaret-rose-redesign .gallery-main{
-  background: #0b3557;
-  padding: 4px;
-  border-radius: 6px;
-}
-
-body.memorial-margaret-rose-redesign .gallery-main img{
-  display: block;
-  border: 0 !important;
-}
-
-body.memorial-margaret-rose-redesign .gallery-grid{
-  gap: 10px;
-}
-
-body.memorial-margaret-rose-redesign .gallery-thumb{
-  background: #0b3557;
-  padding: 3px;
-  border-radius: 6px;
-}
-
-body.memorial-margaret-rose-redesign .gallery-thumb img{
-  display: block;
-  border: 0 !important;
-}
-
-/* remove odd decorative botanical if still present */
+/* remove decorative pseudo-elements from earlier gallery experiments */
 body.memorial-margaret-rose-redesign .gallery-panel::before,
 body.memorial-margaret-rose-redesign .gallery-panel::after{
-  content: none !important;
+  content:none!important;
+  display:none!important;
+}
+
+body.memorial-margaret-rose-redesign .gallery-title{
+  color:#08243a;
+}
+
+/* Borderless photographs: let the images themselves do the work */
+body.memorial-margaret-rose-redesign .memory-photo{
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  border-radius:8px;
+  overflow:hidden;
+}
+
+body.memorial-margaret-rose-redesign .memory-photo img{
+  display:block;
+  width:100%;
+  height:100%;
+  border:0!important;
+  border-radius:8px;
+  box-shadow:none!important;
+}
+
+/* Main photo retains only a tiny soft lift, not a visible frame */
+body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+  padding:0!important;
+  border:0!important;
+  background:transparent!important;
+  box-shadow:0 7px 18px rgba(39,29,19,.09)!important;
+  border-radius:9px;
+}
+
+/* A little more air so borderless thumbnails still feel deliberate */
+body.memorial-margaret-rose-redesign .gallery-grid{
+  gap:10px;
+  margin-top:16px;
+}
+
+/* mobile */
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .gallery-panel{
+    padding:20px 14px 22px;
+    border-radius:14px;
+  }
+
+  body.memorial-margaret-rose-redesign .gallery-grid{
+    gap:8px;
+  }
+
+  body.memorial-margaret-rose-redesign .memory-photo,
+  body.memorial-margaret-rose-redesign .memory-photo img{
+    border-radius:7px;
+  }
 }
