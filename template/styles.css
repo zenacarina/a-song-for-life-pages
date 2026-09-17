@@ -1842,3 +1842,139 @@ body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
     line-height:1.72;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” GALLERY + SHARE POLISH
+   Scoped ONLY to /margaret-rose-redesign/
+
+   Fixes:
+   - removes line above "View remaining lyrics"
+   - removes accidental full-width gold bar in gallery
+   - adds more breathing room around gallery photos
+   - adds subtle gallery instruction
+   - gives Share section a proper title + more padding
+   ========================================================= */
+
+/* 1. LYRICS â€” no divider line above the toggle */
+body.memorial-margaret-rose-redesign .lyrics-toggle{
+  border-top:0!important;
+}
+
+
+/* 2. GALLERY â€” remove accidental full-width gold bar */
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule{
+  background:transparent!important;
+  color:#d9a651;
+  margin:0 auto 12px;
+}
+
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before,
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+  width:46px!important;
+  height:1px!important;
+  opacity:.62;
+}
+
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before{
+  background:linear-gradient(90deg,transparent,#d9a651)!important;
+}
+
+body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+  background:linear-gradient(90deg,#d9a651,transparent)!important;
+}
+
+
+/* 3. GALLERY â€” more breathing room */
+body.memorial-margaret-rose-redesign .gallery-panel{
+  padding:34px 42px 42px;
+}
+
+body.memorial-margaret-rose-redesign .gallery-grid{
+  gap:14px;
+  margin-top:0;
+}
+
+
+/* Subtle instruction without changing build.mjs / live memorial markup */
+body.memorial-margaret-rose-redesign .gallery-grid::before{
+  content:"Select any photo to open the gallery";
+  grid-column:1 / -1;
+  display:block;
+  margin:0 0 3px;
+  color:rgba(247,234,215,.70);
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:12px;
+  font-weight:400;
+  line-height:1.4;
+  letter-spacing:.035em;
+  text-align:center;
+}
+
+
+/* 4. SHARE â€” turn the whole area into a clearly titled section */
+body.memorial-margaret-rose-redesign .content--bottom{
+  padding-top:34px;
+  padding-bottom:36px;
+}
+
+body.memorial-margaret-rose-redesign .share-grid{
+  position:relative;
+  padding:34px 34px 32px;
+  row-gap:28px;
+}
+
+/* Title spans the full grid */
+body.memorial-margaret-rose-redesign .share-grid::before{
+  content:"Share this memorial";
+  grid-column:1 / -1;
+  display:block;
+  margin:0 0 2px;
+  padding-bottom:16px;
+  color:#08243a;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:28px;
+  font-weight:400;
+  line-height:1.15;
+  text-align:center;
+  background:
+    linear-gradient(#d5a04e,#d5a04e) center bottom / 54px 1px no-repeat;
+}
+
+/* Existing left-hand heading becomes a quieter subheading */
+body.memorial-margaret-rose-redesign .share-copy h2{
+  font-size:20px;
+}
+
+
+/* MOBILE */
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .gallery-panel{
+    padding:24px 18px 26px;
+  }
+
+  body.memorial-margaret-rose-redesign .gallery-grid{
+    gap:10px;
+  }
+
+  body.memorial-margaret-rose-redesign .gallery-grid::before{
+    margin-bottom:2px;
+    font-size:11.5px;
+  }
+
+  body.memorial-margaret-rose-redesign .content--bottom{
+    padding-top:20px;
+    padding-bottom:22px;
+  }
+
+  body.memorial-margaret-rose-redesign .share-grid{
+    padding:24px 18px 24px;
+  }
+
+  body.memorial-margaret-rose-redesign .share-grid::before{
+    width:100%;
+    margin-bottom:18px;
+    padding-bottom:13px;
+    font-size:24px;
+  }
+}
