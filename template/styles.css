@@ -1383,12 +1383,12 @@ a:focus-visible{
 }
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MINIMAL LYRIC TYPOGRAPHY ONLY
+   MEMORIAL PAGE DESIGN â€” MINIMAL LYRIC TYPOGRAPHY ONLY
    Everything else uses the original memorial-page design.
    Scoped ONLY to /margaret-rose-redesign/
    ========================================================= */
 
-body.memorial-margaret-rose-redesign .lyrics-preview{
+body.memorial-page .lyrics-preview{
   color:#173A55;
   font-family:Georgia,"Times New Roman",serif;
   font-size:17px;
@@ -1397,7 +1397,7 @@ body.memorial-margaret-rose-redesign .lyrics-preview{
   line-height:1.68;
 }
 
-body.memorial-margaret-rose-redesign .lyrics{
+body.memorial-page .lyrics{
   color:#173A55;
   font-family:Georgia,"Times New Roman",serif;
   font-size:17px;
@@ -1408,12 +1408,12 @@ body.memorial-margaret-rose-redesign .lyrics{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” GALLERY FEATURE PANEL
+   MEMORIAL PAGE DESIGN â€” GALLERY FEATURE PANEL
    Adds a navy inner gallery backdrop ONLY.
    Everything else remains the restored original design.
    ========================================================= */
 
-body.memorial-margaret-rose-redesign .gallery-panel{
+body.memorial-page .gallery-panel{
   position:relative;
   overflow:hidden;
   padding:34px 34px 36px;
@@ -1428,7 +1428,7 @@ body.memorial-margaret-rose-redesign .gallery-panel{
 }
 
 /* subtle floral corner on navy */
-body.memorial-margaret-rose-redesign .gallery-panel::after{
+body.memorial-page .gallery-panel::after{
   content:"";
   position:absolute;
   top:-42px;
@@ -1440,25 +1440,25 @@ body.memorial-margaret-rose-redesign .gallery-panel::after{
   pointer-events:none;
 }
 
-body.memorial-margaret-rose-redesign .gallery-title{
+body.memorial-page .gallery-title{
   position:relative;
   z-index:1;
   color:#f7ead7;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule{
+body.memorial-page .gallery-panel .panel-rule{
   position:relative;
   z-index:1;
   color:#d9a651;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before,
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+body.memorial-page .gallery-panel .panel-rule::before,
+body.memorial-page .gallery-panel .panel-rule::after{
   background:#d9a651;
   opacity:.72;
 }
 
-body.memorial-margaret-rose-redesign .gallery-grid{
+body.memorial-page .gallery-grid{
   position:relative;
   z-index:1;
   margin-top:18px;
@@ -1466,7 +1466,7 @@ body.memorial-margaret-rose-redesign .gallery-grid{
 }
 
 /* warm mounted-photo effect against the navy */
-body.memorial-margaret-rose-redesign .memory-photo{
+body.memorial-page .memory-photo{
   padding:6px;
   border-color:rgba(222,179,108,.44);
   background:linear-gradient(145deg,#e8c993 0%,#f7ead6 44%,#fffaf2 100%);
@@ -1475,7 +1475,7 @@ body.memorial-margaret-rose-redesign .memory-photo{
     inset 0 1px 0 rgba(255,255,255,.72);
 }
 
-body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+body.memorial-page .gallery-grid--5 .memory-photo:first-child{
   padding:8px;
   box-shadow:
     0 14px 28px rgba(0,0,0,.20),
@@ -1483,12 +1483,12 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
 }
 
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .gallery-panel{
+  body.memorial-page .gallery-panel{
     padding:24px 14px 20px;
     border-radius:14px;
   }
 
-  body.memorial-margaret-rose-redesign .gallery-panel::after{
+  body.memorial-page .gallery-panel::after{
     width:130px;
     height:130px;
     top:-30px;
@@ -1496,23 +1496,23 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
     opacity:.24;
   }
 
-  body.memorial-margaret-rose-redesign .gallery-grid{
+  body.memorial-page .gallery-grid{
     gap:8px;
     margin-top:12px;
   }
 
-  body.memorial-margaret-rose-redesign .memory-photo{
+  body.memorial-page .memory-photo{
     padding:4px;
   }
 
-  body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+  body.memorial-page .gallery-grid--5 .memory-photo:first-child{
     padding:5px;
   }
 }
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” SUBTLE CREAM CARD REFINEMENT
+   MEMORIAL PAGE DESIGN â€” SUBTLE CREAM CARD REFINEMENT
    Keeps:
    - original architecture
    - original cream audio player
@@ -1522,10 +1522,10 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
    Only adds a little more separation to cream cards.
    ========================================================= */
 
-body.memorial-margaret-rose-redesign .lyrics-panel,
-body.memorial-margaret-rose-redesign .remembrance,
-body.memorial-margaret-rose-redesign .story-panel,
-body.memorial-margaret-rose-redesign .share-grid{
+body.memorial-page .lyrics-panel,
+body.memorial-page .remembrance,
+body.memorial-page .story-panel,
+body.memorial-page .share-grid{
   background:linear-gradient(180deg,#fffefb 0%,#fffaf4 100%);
   border-color:rgba(213,160,78,.25);
   box-shadow:
@@ -1534,7 +1534,7 @@ body.memorial-margaret-rose-redesign .share-grid{
 }
 
 /* Keep gallery exactly as the successful navy-inner-panel treatment */
-body.memorial-margaret-rose-redesign .gallery-panel{
+body.memorial-page .gallery-panel{
   box-shadow:
     0 12px 24px rgba(4,22,36,.14),
     inset 0 1px 0 rgba(255,255,255,.03);
@@ -1544,7 +1544,7 @@ body.memorial-margaret-rose-redesign .gallery-panel{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” SHADOW-LIFT + NAVY GALLERY
+   MEMORIAL PAGE DESIGN â€” SHADOW-LIFT + NAVY GALLERY
    Scoped ONLY to /margaret-rose-redesign/
 
    Keeps:
@@ -1561,10 +1561,10 @@ body.memorial-margaret-rose-redesign .gallery-panel{
    ========================================================= */
 
 /* CLEANER, MODERN CARD LIFT */
-body.memorial-margaret-rose-redesign .lyrics-panel,
-body.memorial-margaret-rose-redesign .remembrance,
-body.memorial-margaret-rose-redesign .story-panel,
-body.memorial-margaret-rose-redesign .share-grid{
+body.memorial-page .lyrics-panel,
+body.memorial-page .remembrance,
+body.memorial-page .story-panel,
+body.memorial-page .share-grid{
   background:
     linear-gradient(180deg,#fffefb 0%,#fffaf4 100%);
   border:1px solid rgba(160,126,84,.14);
@@ -1575,12 +1575,12 @@ body.memorial-margaret-rose-redesign .share-grid{
 }
 
 /* KEEP OUTER SECTION CARDS QUIET */
-body.memorial-margaret-rose-redesign .section-card{
+body.memorial-page .section-card{
   border-color:rgba(213,160,78,.22);
 }
 
 /* GALLERY: NAVY INNER PANEL, NO BOTANICAL */
-body.memorial-margaret-rose-redesign .gallery-panel{
+body.memorial-page .gallery-panel{
   position:relative;
   overflow:hidden;
   padding:30px 30px 32px;
@@ -1594,33 +1594,33 @@ body.memorial-margaret-rose-redesign .gallery-panel{
     inset 0 1px 0 rgba(255,255,255,.035);
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel::before,
-body.memorial-margaret-rose-redesign .gallery-panel::after{
+body.memorial-page .gallery-panel::before,
+body.memorial-page .gallery-panel::after{
   content:none!important;
   display:none!important;
 }
 
 /* GALLERY TITLE + GOLD ACCENT */
-body.memorial-margaret-rose-redesign .gallery-title{
+body.memorial-page .gallery-title{
   color:#f7ead7;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule{
+body.memorial-page .gallery-panel .panel-rule{
   color:#d9a651;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before,
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+body.memorial-page .gallery-panel .panel-rule::before,
+body.memorial-page .gallery-panel .panel-rule::after{
   background:linear-gradient(90deg,transparent,#d9a651);
   opacity:.72;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+body.memorial-page .gallery-panel .panel-rule::after{
   background:linear-gradient(90deg,#d9a651,transparent);
 }
 
 /* BORDERLESS PHOTOGRAPHS */
-body.memorial-margaret-rose-redesign .memory-photo{
+body.memorial-page .memory-photo{
   padding:0!important;
   border:0!important;
   background:transparent!important;
@@ -1629,7 +1629,7 @@ body.memorial-margaret-rose-redesign .memory-photo{
   overflow:hidden;
 }
 
-body.memorial-margaret-rose-redesign .memory-photo img{
+body.memorial-page .memory-photo img{
   display:block;
   width:100%;
   height:100%;
@@ -1639,7 +1639,7 @@ body.memorial-margaret-rose-redesign .memory-photo img{
 }
 
 /* MAIN PHOTO: ONLY A VERY SOFT LIFT */
-body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+body.memorial-page .gallery-grid--5 .memory-photo:first-child{
   padding:0!important;
   border:0!important;
   background:transparent!important;
@@ -1647,38 +1647,38 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
   border-radius:11px;
 }
 
-body.memorial-margaret-rose-redesign .gallery-grid{
+body.memorial-page .gallery-grid{
   gap:10px;
   margin-top:14px;
 }
 
 /* LESS "GOLD BOX", KEEP GOLD AS SMALL ACCENT ONLY */
-body.memorial-margaret-rose-redesign .copy-link,
-body.memorial-margaret-rose-redesign .icon-btn{
+body.memorial-page .copy-link,
+body.memorial-page .icon-btn{
   border-color:rgba(184,120,36,.20);
 }
 
 /* MOBILE */
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .gallery-panel{
+  body.memorial-page .gallery-panel{
     padding:22px 14px 20px;
     border-radius:14px;
   }
 
-  body.memorial-margaret-rose-redesign .gallery-grid{
+  body.memorial-page .gallery-grid{
     gap:8px;
     margin-top:10px;
   }
 
-  body.memorial-margaret-rose-redesign .memory-photo,
-  body.memorial-margaret-rose-redesign .memory-photo img{
+  body.memorial-page .memory-photo,
+  body.memorial-page .memory-photo img{
     border-radius:8px;
   }
 }
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MATCH MAIN WEBSITE NAVY
+   MEMORIAL PAGE DESIGN â€” MATCH MAIN WEBSITE NAVY
    Main website navy sampled from the current homepage:
    #062035
 
@@ -1687,23 +1687,23 @@ body.memorial-margaret-rose-redesign .icon-btn{
    like part of the same website.
    ========================================================= */
 
-body.memorial-margaret-rose-redesign{
+body.memorial-page{
   background:#062035;
 }
 
-body.memorial-margaret-rose-redesign .page{
+body.memorial-page .page{
   background:#062035;
 }
 
 /* Top example banner stays distinct, but in the same darker family */
-body.memorial-margaret-rose-redesign .example-nav{
+body.memorial-page .example-nav{
   background:rgba(4,24,40,.94);
   border-color:rgba(213,160,78,.34);
 }
 
 /* Gallery is intentionally a touch lighter than the page background
    so it still reads as an inner panel rather than disappearing into it */
-body.memorial-margaret-rose-redesign .gallery-panel{
+body.memorial-page .gallery-panel{
   background:
     radial-gradient(circle at 50% 0%,rgba(255,255,255,.04),transparent 34%),
     linear-gradient(180deg,#0a304b 0%,#08283f 100%);
@@ -1714,7 +1714,7 @@ body.memorial-margaret-rose-redesign .gallery-panel{
 }
 
 /* Slightly deeper outer-card shadow against the darker site navy */
-body.memorial-margaret-rose-redesign .section-card{
+body.memorial-page .section-card{
   box-shadow:
     0 26px 58px rgba(1,13,22,.24),
     0 8px 20px rgba(1,13,22,.10);
@@ -1722,7 +1722,7 @@ body.memorial-margaret-rose-redesign .section-card{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” CORRECTION
+   MEMORIAL PAGE DESIGN â€” CORRECTION
    User wanted:
    - darker website-matched navy for the GALLERY panel only
    - lyrics card to stay cream, not navy
@@ -1731,12 +1731,12 @@ body.memorial-margaret-rose-redesign .section-card{
    ========================================================= */
 
 /* Slightly more breathing room between the main page slabs */
-body.memorial-margaret-rose-redesign .page{
+body.memorial-page .page{
   gap:30px;
 }
 
 /* LYRICS CARD: keep cream, not navy */
-body.memorial-margaret-rose-redesign .lyrics-panel{
+body.memorial-page .lyrics-panel{
   background:linear-gradient(180deg,#fffefb 0%,#fffaf4 100%);
   border:1px solid rgba(160,126,84,.14);
   box-shadow:
@@ -1746,7 +1746,7 @@ body.memorial-margaret-rose-redesign .lyrics-panel{
 }
 
 /* Give the title more presence without becoming fussy */
-body.memorial-margaret-rose-redesign .lyrics-heading{
+body.memorial-page .lyrics-heading{
   margin:0;
   padding:16px 24px 8px;
   color:#173A55;
@@ -1760,7 +1760,7 @@ body.memorial-margaret-rose-redesign .lyrics-heading{
   opacity:1;
 }
 
-body.memorial-margaret-rose-redesign .lyrics-heading::after{
+body.memorial-page .lyrics-heading::after{
   content:"";
   display:block;
   width:68px;
@@ -1769,7 +1769,7 @@ body.memorial-margaret-rose-redesign .lyrics-heading::after{
   background:linear-gradient(90deg,transparent 0%,#d5a04e 20%,#d5a04e 80%,transparent 100%);
 }
 
-body.memorial-margaret-rose-redesign .lyrics-preview{
+body.memorial-page .lyrics-preview{
   padding:8px 30px 20px;
   color:#173A55;
   font-family:Georgia,"Times New Roman",serif;
@@ -1781,7 +1781,7 @@ body.memorial-margaret-rose-redesign .lyrics-preview{
   background:transparent;
 }
 
-body.memorial-margaret-rose-redesign .lyrics{
+body.memorial-page .lyrics{
   color:#173A55;
   font-family:Georgia,"Times New Roman",serif;
   font-size:17px;
@@ -1790,18 +1790,18 @@ body.memorial-margaret-rose-redesign .lyrics{
   line-height:1.8;
 }
 
-body.memorial-margaret-rose-redesign .lyrics-toggle{
+body.memorial-page .lyrics-toggle{
   padding:18px 24px 18px;
   background:transparent;
   border-top:1px solid rgba(213,160,78,.22);
 }
 
-body.memorial-margaret-rose-redesign .lyrics-label{
+body.memorial-page .lyrics-label{
   color:#173A55;
 }
 
 /* GALLERY PANEL: darker, same navy family as the page/site */
-body.memorial-margaret-rose-redesign .gallery-panel{
+body.memorial-page .gallery-panel{
   background:
     radial-gradient(circle at 50% 0%,rgba(30,74,104,.38),transparent 40%),
     linear-gradient(180deg,var(--navy),var(--deep));
@@ -1811,33 +1811,33 @@ body.memorial-margaret-rose-redesign .gallery-panel{
     inset 0 1px 0 rgba(255,255,255,.04);
 }
 
-body.memorial-margaret-rose-redesign .gallery-title{
+body.memorial-page .gallery-title{
   color:#f7ead7;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule,
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before,
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+body.memorial-page .gallery-panel .panel-rule,
+body.memorial-page .gallery-panel .panel-rule::before,
+body.memorial-page .gallery-panel .panel-rule::after{
   color:#d9a651;
   background:#d9a651;
 }
 
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .page{
+  body.memorial-page .page{
     gap:24px;
   }
 
-  body.memorial-margaret-rose-redesign .lyrics-heading{
+  body.memorial-page .lyrics-heading{
     padding:14px 16px 8px;
     font-size:24px;
   }
 
-  body.memorial-margaret-rose-redesign .lyrics-heading::after{
+  body.memorial-page .lyrics-heading::after{
     width:56px;
   }
 
-  body.memorial-margaret-rose-redesign .lyrics-preview,
-  body.memorial-margaret-rose-redesign .lyrics{
+  body.memorial-page .lyrics-preview,
+  body.memorial-page .lyrics{
     font-size:16px;
     line-height:1.72;
   }
@@ -1845,7 +1845,7 @@ body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” GALLERY + SHARE POLISH
+   MEMORIAL PAGE DESIGN â€” GALLERY + SHARE POLISH
    Scoped ONLY to /margaret-rose-redesign/
 
    Fixes:
@@ -1857,47 +1857,47 @@ body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
    ========================================================= */
 
 /* 1. LYRICS â€” no divider line above the toggle */
-body.memorial-margaret-rose-redesign .lyrics-toggle{
+body.memorial-page .lyrics-toggle{
   border-top:0!important;
 }
 
 
 /* 2. GALLERY â€” remove accidental full-width gold bar */
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule{
+body.memorial-page .gallery-panel .panel-rule{
   background:transparent!important;
   color:#d9a651;
   margin:0 auto 12px;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before,
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+body.memorial-page .gallery-panel .panel-rule::before,
+body.memorial-page .gallery-panel .panel-rule::after{
   width:46px!important;
   height:1px!important;
   opacity:.62;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::before{
+body.memorial-page .gallery-panel .panel-rule::before{
   background:linear-gradient(90deg,transparent,#d9a651)!important;
 }
 
-body.memorial-margaret-rose-redesign .gallery-panel .panel-rule::after{
+body.memorial-page .gallery-panel .panel-rule::after{
   background:linear-gradient(90deg,#d9a651,transparent)!important;
 }
 
 
 /* 3. GALLERY â€” more breathing room */
-body.memorial-margaret-rose-redesign .gallery-panel{
+body.memorial-page .gallery-panel{
   padding:34px 42px 42px;
 }
 
-body.memorial-margaret-rose-redesign .gallery-grid{
+body.memorial-page .gallery-grid{
   gap:14px;
   margin-top:0;
 }
 
 
 /* Subtle instruction without changing build.mjs / live memorial markup */
-body.memorial-margaret-rose-redesign .gallery-grid::before{
+body.memorial-page .gallery-grid::before{
   content:"Select any photo to open the gallery";
   grid-column:1 / -1;
   display:block;
@@ -1913,19 +1913,19 @@ body.memorial-margaret-rose-redesign .gallery-grid::before{
 
 
 /* 4. SHARE â€” turn the whole area into a clearly titled section */
-body.memorial-margaret-rose-redesign .content--bottom{
+body.memorial-page .content--bottom{
   padding-top:34px;
   padding-bottom:36px;
 }
 
-body.memorial-margaret-rose-redesign .share-grid{
+body.memorial-page .share-grid{
   position:relative;
   padding:34px 34px 32px;
   row-gap:28px;
 }
 
 /* Title spans the full grid */
-body.memorial-margaret-rose-redesign .share-grid::before{
+body.memorial-page .share-grid::before{
   content:"Share this memorial";
   grid-column:1 / -1;
   display:block;
@@ -1942,36 +1942,36 @@ body.memorial-margaret-rose-redesign .share-grid::before{
 }
 
 /* Existing left-hand heading becomes a quieter subheading */
-body.memorial-margaret-rose-redesign .share-copy h2{
+body.memorial-page .share-copy h2{
   font-size:20px;
 }
 
 
 /* MOBILE */
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .gallery-panel{
+  body.memorial-page .gallery-panel{
     padding:24px 18px 26px;
   }
 
-  body.memorial-margaret-rose-redesign .gallery-grid{
+  body.memorial-page .gallery-grid{
     gap:10px;
   }
 
-  body.memorial-margaret-rose-redesign .gallery-grid::before{
+  body.memorial-page .gallery-grid::before{
     margin-bottom:2px;
     font-size:11.5px;
   }
 
-  body.memorial-margaret-rose-redesign .content--bottom{
+  body.memorial-page .content--bottom{
     padding-top:20px;
     padding-bottom:22px;
   }
 
-  body.memorial-margaret-rose-redesign .share-grid{
+  body.memorial-page .share-grid{
     padding:24px 18px 24px;
   }
 
-  body.memorial-margaret-rose-redesign .share-grid::before{
+  body.memorial-page .share-grid::before{
     width:100%;
     margin-bottom:18px;
     padding-bottom:13px;
@@ -1981,7 +1981,7 @@ body.memorial-margaret-rose-redesign .share-copy h2{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” PLAYER / LYRICS / SHARE REFINEMENT
+   MEMORIAL PAGE DESIGN â€” PLAYER / LYRICS / SHARE REFINEMENT
    Scoped ONLY to /margaret-rose-redesign/
 
    Changes:
@@ -1997,7 +1997,7 @@ body.memorial-margaret-rose-redesign .share-copy h2{
 
 
 /* 1. PLAYER â€” give Download song a little lift */
-body.memorial-margaret-rose-redesign .player-actions .icon-btn:not(.primary){
+body.memorial-page .player-actions .icon-btn:not(.primary){
   background:#fffefb;
   border-color:rgba(160,126,84,.18);
   box-shadow:
@@ -2005,7 +2005,7 @@ body.memorial-margaret-rose-redesign .player-actions .icon-btn:not(.primary){
     0 2px 5px rgba(8,36,58,.05);
 }
 
-body.memorial-margaret-rose-redesign .player-actions .icon-btn:not(.primary):hover{
+body.memorial-page .player-actions .icon-btn:not(.primary):hover{
   background:#fff;
   border-color:rgba(184,120,36,.28);
   box-shadow:
@@ -2015,18 +2015,18 @@ body.memorial-margaret-rose-redesign .player-actions .icon-btn:not(.primary):hov
 
 
 /* 2. LYRICS â€” gold text to match the arrow */
-body.memorial-margaret-rose-redesign .lyrics-label{
+body.memorial-page .lyrics-label{
   color:#b87824;
 }
 
-body.memorial-margaret-rose-redesign .lyrics-toggle .chev{
+body.memorial-page .lyrics-toggle .chev{
   border-right-color:#b87824;
   border-bottom-color:#b87824;
 }
 
 
 /* 3. SHARE â€” elegant centered reading order */
-body.memorial-margaret-rose-redesign .share-grid{
+body.memorial-page .share-grid{
   display:grid;
   grid-template-columns:1fr;
   grid-template-areas:
@@ -2042,7 +2042,7 @@ body.memorial-margaret-rose-redesign .share-grid{
 }
 
 /* Existing pseudo-heading */
-body.memorial-margaret-rose-redesign .share-grid::before{
+body.memorial-page .share-grid::before{
   grid-area:title;
   width:100%;
   margin:0 0 18px;
@@ -2052,17 +2052,17 @@ body.memorial-margaret-rose-redesign .share-grid::before{
 
 /* Allow the paragraph and button inside .share-copy to become
    separate items in the parent grid */
-body.memorial-margaret-rose-redesign .share-copy{
+body.memorial-page .share-copy{
   display:contents;
 }
 
 /* Hide the duplicate inner heading because the section now
    already has a proper heading above it */
-body.memorial-margaret-rose-redesign .share-copy h2{
+body.memorial-page .share-copy h2{
   display:none;
 }
 
-body.memorial-margaret-rose-redesign .share-copy p{
+body.memorial-page .share-copy p{
   grid-area:intro;
   max-width:540px;
   margin:0 auto 19px;
@@ -2074,7 +2074,7 @@ body.memorial-margaret-rose-redesign .share-copy p{
 
 
 /* QR centred as the visual focus */
-body.memorial-margaret-rose-redesign .qr-wrap{
+body.memorial-page .qr-wrap{
   grid-area:qr;
   display:flex;
   justify-content:center;
@@ -2082,7 +2082,7 @@ body.memorial-margaret-rose-redesign .qr-wrap{
   margin:0 0 15px;
 }
 
-body.memorial-margaret-rose-redesign #qr{
+body.memorial-page #qr{
   margin:0 auto;
   padding:9px;
   background:#fff;
@@ -2094,7 +2094,7 @@ body.memorial-margaret-rose-redesign #qr{
 
 
 /* Copy button sits directly beneath QR */
-body.memorial-margaret-rose-redesign .copy-link{
+body.memorial-page .copy-link{
   grid-area:copy;
   justify-self:center;
   margin:0 0 26px;
@@ -2106,7 +2106,7 @@ body.memorial-margaret-rose-redesign .copy-link{
 
 
 /* Privacy becomes a quiet final note rather than a competing column */
-body.memorial-margaret-rose-redesign .privacy{
+body.memorial-page .privacy{
   grid-area:privacy;
   width:min(100%,560px);
   margin:0 auto;
@@ -2115,13 +2115,13 @@ body.memorial-margaret-rose-redesign .privacy{
   text-align:center;
 }
 
-body.memorial-margaret-rose-redesign .privacy h2{
+body.memorial-page .privacy h2{
   margin:0 0 7px;
   color:#08243a;
   font-size:20px;
 }
 
-body.memorial-margaret-rose-redesign .privacy p{
+body.memorial-page .privacy p{
   max-width:500px;
   margin:0 auto;
   line-height:1.58;
@@ -2131,7 +2131,7 @@ body.memorial-margaret-rose-redesign .privacy p{
 
 /* MOBILE */
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .share-grid{
+  body.memorial-page .share-grid{
     display:grid;
     grid-template-columns:1fr;
     grid-template-areas:
@@ -2145,44 +2145,44 @@ body.memorial-margaret-rose-redesign .privacy p{
     text-align:center;
   }
 
-  body.memorial-margaret-rose-redesign .share-grid::before{
+  body.memorial-page .share-grid::before{
     margin-bottom:15px;
     padding-bottom:12px;
     font-size:24px;
   }
 
-  body.memorial-margaret-rose-redesign .share-copy{
+  body.memorial-page .share-copy{
     display:contents;
   }
 
-  body.memorial-margaret-rose-redesign .share-copy p{
+  body.memorial-page .share-copy p{
     margin-bottom:16px;
     font-size:14.5px;
   }
 
-  body.memorial-margaret-rose-redesign .qr-wrap{
+  body.memorial-page .qr-wrap{
     width:100%;
     margin:0 0 13px;
   }
 
-  body.memorial-margaret-rose-redesign .qr-toggle{
+  body.memorial-page .qr-toggle{
     display:none;
   }
 
-  body.memorial-margaret-rose-redesign .qr-panel{
+  body.memorial-page .qr-panel{
     display:block!important;
   }
 
-  body.memorial-margaret-rose-redesign .qr-panel-inner{
+  body.memorial-page .qr-panel-inner{
     display:flex;
     justify-content:center;
   }
 
-  body.memorial-margaret-rose-redesign .copy-link{
+  body.memorial-page .copy-link{
     margin:0 0 22px;
   }
 
-  body.memorial-margaret-rose-redesign .privacy{
+  body.memorial-page .privacy{
     width:100%;
     padding-top:19px;
   }
@@ -2190,7 +2190,7 @@ body.memorial-margaret-rose-redesign .privacy p{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MICRO POLISH
+   MEMORIAL PAGE DESIGN â€” MICRO POLISH
    Scoped ONLY to /margaret-rose-redesign/
 
    Changes:
@@ -2200,13 +2200,13 @@ body.memorial-margaret-rose-redesign .privacy p{
    ========================================================= */
 
 /* PLAYER â€” lift navy Share button to balance Download button */
-body.memorial-margaret-rose-redesign .player-actions .icon-btn.primary{
+body.memorial-page .player-actions .icon-btn.primary{
   box-shadow:
     0 8px 18px rgba(8,36,58,.20),
     0 2px 5px rgba(8,36,58,.10);
 }
 
-body.memorial-margaret-rose-redesign .player-actions .icon-btn.primary:hover{
+body.memorial-page .player-actions .icon-btn.primary:hover{
   box-shadow:
     0 11px 22px rgba(8,36,58,.24),
     0 3px 7px rgba(8,36,58,.11);
@@ -2214,34 +2214,34 @@ body.memorial-margaret-rose-redesign .player-actions .icon-btn.primary:hover{
 
 
 /* SHARE â€” slightly more breathing room above QR */
-body.memorial-margaret-rose-redesign .share-copy p{
+body.memorial-page .share-copy p{
   margin-bottom:24px;
 }
 
 /* QR and button read as one grouped action */
-body.memorial-margaret-rose-redesign .qr-wrap{
+body.memorial-page .qr-wrap{
   margin-bottom:10px;
 }
 
-body.memorial-margaret-rose-redesign .copy-link{
+body.memorial-page .copy-link{
   margin-bottom:26px;
 }
 
 
 /* MOBILE */
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .share-copy p{
+  body.memorial-page .share-copy p{
     margin-bottom:20px;
   }
 
-  body.memorial-margaret-rose-redesign .qr-wrap{
+  body.memorial-page .qr-wrap{
     margin-bottom:9px;
   }
 }
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” GALLERY MAIN PHOTO RATIO FIX
+   MEMORIAL PAGE DESIGN â€” GALLERY MAIN PHOTO RATIO FIX
    Scoped ONLY to /margaret-rose-redesign/
 
    Fix:
@@ -2252,14 +2252,14 @@ body.memorial-margaret-rose-redesign .copy-link{
    ========================================================= */
 
 /* Let the gallery rows size naturally instead of forcing two fixed rows */
-body.memorial-margaret-rose-redesign .gallery-grid--5{
+body.memorial-page .gallery-grid--5{
   grid-template-columns:repeat(4,minmax(0,1fr));
   grid-template-rows:none!important;
   align-items:start;
 }
 
 /* Main Margaret + family image spans the full width */
-body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+body.memorial-page .gallery-grid--5 .memory-photo:first-child{
   grid-column:1 / -1;
   grid-row:auto!important;
   aspect-ratio:16 / 9;
@@ -2267,13 +2267,13 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
 }
 
 /* Four thumbnails sit naturally beneath */
-body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:not(:first-child){
+body.memorial-page .gallery-grid--5 .memory-photo:not(:first-child){
   aspect-ratio:1 / 1;
   min-height:0;
 }
 
 /* Keep images filling their own natural boxes cleanly */
-body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
+body.memorial-page .gallery-grid--5 .memory-photo img{
   width:100%;
   height:100%;
   object-fit:cover;
@@ -2281,18 +2281,18 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
 
 /* On wider screens give the hero family photo a little more height */
 @media(min-width:900px){
-  body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+  body.memorial-page .gallery-grid--5 .memory-photo:first-child{
     aspect-ratio:1.55 / 1;
   }
 }
 
 /* Mobile keeps a comfortable landscape image */
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .gallery-grid--5{
+  body.memorial-page .gallery-grid--5{
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
-  body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
+  body.memorial-page .gallery-grid--5 .memory-photo:first-child{
     grid-column:1 / -1;
     aspect-ratio:4 / 3;
   }
@@ -2300,23 +2300,23 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE POLISH RECOVERY
+   MEMORIAL PAGE DESIGN â€” MOBILE POLISH RECOVERY
    Preserves all current redesign settings.
    ========================================================= */
 
 @media(max-width:620px){
 
   /* More breathing room above Remembering Margaret */
-  body.memorial-margaret-rose-redesign .remembrance{
+  body.memorial-page .remembrance{
     padding-top:30px!important;
   }
 
   /* Mobile hero photo: framed treatment inspired by main ASFL site */
-  body.memorial-margaret-rose-redesign .hero{
+  body.memorial-page .hero{
     padding-top:0!important;
   }
 
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     position:relative!important;
     inset:auto!important;
     width:calc(100% - 28px)!important;
@@ -2332,14 +2332,14 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
     overflow:hidden;
   }
 
-  body.memorial-margaret-rose-redesign .hero-shade{
+  body.memorial-page .hero-shade{
     display:none!important;
   }
 }
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE SPACING REFINEMENT
+   MEMORIAL PAGE DESIGN â€” MOBILE SPACING REFINEMENT
    Keeps all current redesign settings.
    Changes only mobile vertical spacing:
    - removes the oversized gap under the framed hero image
@@ -2350,34 +2350,34 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
 @media(max-width:620px){
 
   /* Hero: remove leftover reserved space from the earlier mobile hero layout */
-  body.memorial-margaret-rose-redesign .hero{
+  body.memorial-page .hero{
     min-height:0!important;
     padding-top:0!important;
     display:block;
   }
 
-  body.memorial-margaret-rose-redesign .hero-copy{
+  body.memorial-page .hero-copy{
     padding-bottom:22px!important;
   }
 
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     display:block;
     margin:0 14px 20px!important;
   }
 
   /* Bring player up so the gap after the framed image is intentional, not huge */
-  body.memorial-margaret-rose-redesign .player-card{
+  body.memorial-page .player-card{
     margin:0 14px 0!important;
     width:calc(100% - 28px)!important;
   }
 
   /* Keep a clean gap between player and lyrics */
-  body.memorial-margaret-rose-redesign .content--top{
+  body.memorial-page .content--top{
     padding-top:18px!important;
   }
 
   /* Remembering card: give closing line some breathing room */
-  body.memorial-margaret-rose-redesign .remembrance em{
+  body.memorial-page .remembrance em{
     margin-top:18px!important;
     padding-top:2px;
   }
@@ -2388,35 +2388,35 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
    FOOTER â€” SIMPLIFIED CENTRED TREATMENT
    ========================================================= */
 
-body.memorial-margaret-rose-redesign .footer{
+body.memorial-page .footer{
   text-align:center;
 }
 
-body.memorial-margaret-rose-redesign .brand{
+body.memorial-page .brand{
   display:block;
   margin:0 auto;
   text-align:center;
 }
 
-body.memorial-margaret-rose-redesign .footer-note{
+body.memorial-page .footer-note{
   display:block;
   margin:7px auto 0;
   text-align:center;
 }
 
-body.memorial-margaret-rose-redesign .footer-credit{
+body.memorial-page .footer-credit{
   display:block;
   margin:14px auto 0;
   text-align:center;
 }
 
-body.memorial-margaret-rose-redesign .footer-credit a{
+body.memorial-page .footer-credit a{
   display:none!important;
 }
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE HERO GAP FIX V2
+   MEMORIAL PAGE DESIGN â€” MOBILE HERO GAP FIX V2
    Fixes the oversized blank cream area between the framed
    hero photograph and the audio player by making the mobile
    hero use a true vertical flow.
@@ -2424,7 +2424,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
 @media(max-width:620px){
 
-  body.memorial-margaret-rose-redesign .hero{
+  body.memorial-page .hero{
     display:flex!important;
     flex-direction:column!important;
     min-height:0!important;
@@ -2432,7 +2432,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
   }
 
   /* Memorial text first */
-  body.memorial-margaret-rose-redesign .hero-copy{
+  body.memorial-page .hero-copy{
     order:1;
     position:relative;
     width:100%;
@@ -2440,7 +2440,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
   }
 
   /* Framed photograph immediately after the memorial text */
-  body.memorial-margaret-rose-redesign .hero picture{
+  body.memorial-page .hero picture{
     order:2;
     display:block!important;
     width:100%;
@@ -2449,7 +2449,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     line-height:0;
   }
 
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     position:relative!important;
     inset:auto!important;
     display:block!important;
@@ -2459,12 +2459,12 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     margin:0 14px 18px!important;
   }
 
-  body.memorial-margaret-rose-redesign .hero-shade{
+  body.memorial-page .hero-shade{
     display:none!important;
   }
 
   /* Player now follows directly after the photograph */
-  body.memorial-margaret-rose-redesign .player-card{
+  body.memorial-page .player-card{
     width:calc(100% - 28px)!important;
     margin:0 14px!important;
   }
@@ -2472,21 +2472,21 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE SQUARE HERO CROP
+   MEMORIAL PAGE DESIGN â€” MOBILE SQUARE HERO CROP
    Keeps all current styling/fixes.
    Only changes the framed hero image on mobile.
    ========================================================= */
 
 @media(max-width:620px){
 
-  body.memorial-margaret-rose-redesign .hero picture{
+  body.memorial-page .hero picture{
     display:block!important;
     width:100%;
     margin:0!important;
     padding:0!important;
   }
 
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     width:calc(100% - 28px)!important;
     height:auto!important;
     aspect-ratio:1 / 1!important;
@@ -2499,14 +2499,14 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE HERO 5:4 CROP
+   MEMORIAL PAGE DESIGN â€” MOBILE HERO 5:4 CROP
    Softer middle ground between the original landscape crop
    and the too-dominant square crop.
    ========================================================= */
 
 @media(max-width:620px){
 
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     aspect-ratio:5 / 4!important;
     object-fit:cover!important;
     object-position:68% 50%!important;
@@ -2515,22 +2515,22 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE HERO / PLAYER CLEARANCE
+   MEMORIAL PAGE DESIGN â€” MOBILE HERO / PLAYER CLEARANCE
    Keeps the 5:4 crop but guarantees the audio player cannot
    sit on top of the bottom edge of the hero photograph.
    ========================================================= */
 
 @media(max-width:620px){
 
-  body.memorial-margaret-rose-redesign .hero{
+  body.memorial-page .hero{
     padding-bottom:18px!important;
   }
 
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     margin:0 14px!important;
   }
 
-  body.memorial-margaret-rose-redesign .player-card{
+  body.memorial-page .player-card{
     width:calc(100% - 28px)!important;
     margin:0 14px!important;
     position:relative!important;
@@ -2540,7 +2540,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE HERO FINAL TIDY
+   MEMORIAL PAGE DESIGN â€” MOBILE HERO FINAL TIDY
    Keeps all current redesign/mobile fixes.
    Changes only the mobile hero:
    - proper rounded corners on all four edges
@@ -2550,21 +2550,21 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
 @media(max-width:620px){
 
-  body.memorial-margaret-rose-redesign .hero{
+  body.memorial-page .hero{
     display:flex!important;
     flex-direction:column!important;
     min-height:0!important;
     padding:0 0 12px!important;
   }
 
-  body.memorial-margaret-rose-redesign .hero-copy{
+  body.memorial-page .hero-copy{
     order:1;
     width:100%;
     padding:17px 14px 22px!important;
   }
 
   /* Rounded frame owns the clipping so bottom corners stay visible */
-  body.memorial-margaret-rose-redesign .hero picture{
+  body.memorial-page .hero picture{
     order:2;
     display:block!important;
     width:calc(100% - 28px)!important;
@@ -2580,7 +2580,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
       0 4px 10px rgba(8,36,58,.06);
   }
 
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     position:relative!important;
     inset:auto!important;
     display:block!important;
@@ -2596,11 +2596,11 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     object-position:78% 50%!important;
   }
 
-  body.memorial-margaret-rose-redesign .hero-shade{
+  body.memorial-page .hero-shade{
     display:none!important;
   }
 
-  body.memorial-margaret-rose-redesign .player-card{
+  body.memorial-page .player-card{
     width:calc(100% - 28px)!important;
     margin:0 14px!important;
     position:relative!important;
@@ -2610,21 +2610,21 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE HERO ROSES RIGHT
+   MEMORIAL PAGE DESIGN â€” MOBILE HERO ROSES RIGHT
    Keeps all current styling.
    Only shifts the mobile hero crop further right so more of
    the pink roses are retained and Margaret sits more centrally.
    ========================================================= */
 
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     object-position:85% 50%!important;
   }
 }
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE HERO RIGHT-EDGE ANCHOR
+   MEMORIAL PAGE DESIGN â€” MOBILE HERO RIGHT-EDGE ANCHOR
    Keeps the current preferred mobile hero treatment.
    Only anchors the crop to the far-right edge of the source
    photo so the rose cluster is retained and Margaret moves
@@ -2632,15 +2632,15 @@ body.memorial-margaret-rose-redesign .footer-credit a{
    ========================================================= */
 
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     object-fit:cover!important;
-    object-position:100% 50%!important;
+    object-position:var(--hero-position-mobile,75% 34%)!important;
   }
 }
 
 
 /* =========================================================
-   MARGARET ROSE REDESIGN â€” MOBILE SQUARE HERO / RIGHT EDGE
+   MEMORIAL PAGE DESIGN â€” MOBILE SQUARE HERO / RIGHT EDGE
    Keeps all current redesign/mobile fixes.
    Mobile hero:
    - square crop
@@ -2651,31 +2651,9 @@ body.memorial-margaret-rose-redesign .footer-credit a{
    ========================================================= */
 
 @media(max-width:620px){
-  body.memorial-margaret-rose-redesign .hero-image{
+  body.memorial-page .hero-image{
     aspect-ratio:1 / 1!important;
     object-fit:cover!important;
-    object-position:100% 50%!important;
-  }
-}
-
-/* =========================================================
-   MARGARET ROSE REDESIGN â€” TRUE MOBILE SQUARE HERO
-   Fixes the square on the FRAME itself, not only the image.
-   This overrides the earlier 5:4/16:11 mobile hero rules.
-   ========================================================= */
-@media(max-width:620px){
-  body.memorial-margaret-rose-redesign .hero picture{
-    aspect-ratio:1 / 1!important;
-    height:auto!important;
-  }
-
-  body.memorial-margaret-rose-redesign .hero-image{
-    position:absolute!important;
-    inset:0!important;
-    width:100%!important;
-    height:100%!important;
-    aspect-ratio:auto!important;
-    object-fit:cover!important;
-    object-position:100% 50%!important;
+    object-position:var(--hero-position-mobile,75% 34%)!important;
   }
 }
