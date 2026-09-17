@@ -2621,3 +2621,19 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     object-position:85% 50%!important;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE HERO RIGHT-EDGE ANCHOR
+   Keeps the current preferred mobile hero treatment.
+   Only anchors the crop to the far-right edge of the source
+   photo so the rose cluster is retained and Margaret moves
+   closer to the centre of the visible crop.
+   ========================================================= */
+
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .hero-image{
+    object-fit:cover!important;
+    object-position:100% 50%!important;
+  }
+}
