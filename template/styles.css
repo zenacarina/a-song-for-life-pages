@@ -1978,3 +1978,212 @@ body.memorial-margaret-rose-redesign .share-copy h2{
     font-size:24px;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” PLAYER / LYRICS / SHARE REFINEMENT
+   Scoped ONLY to /margaret-rose-redesign/
+
+   Changes:
+   - lifts the white Download song button with a soft shadow
+   - makes "View remaining lyrics" the same restrained gold as its arrow
+   - rearranges Share into a logical centered stack:
+       title
+       short share blurb
+       QR code
+       copy-link button
+       privacy note
+   ========================================================= */
+
+
+/* 1. PLAYER â€” give Download song a little lift */
+body.memorial-margaret-rose-redesign .player-actions .icon-btn:not(.primary){
+  background:#fffefb;
+  border-color:rgba(160,126,84,.18);
+  box-shadow:
+    0 8px 18px rgba(8,36,58,.11),
+    0 2px 5px rgba(8,36,58,.05);
+}
+
+body.memorial-margaret-rose-redesign .player-actions .icon-btn:not(.primary):hover{
+  background:#fff;
+  border-color:rgba(184,120,36,.28);
+  box-shadow:
+    0 11px 22px rgba(8,36,58,.14),
+    0 3px 7px rgba(8,36,58,.06);
+}
+
+
+/* 2. LYRICS â€” gold text to match the arrow */
+body.memorial-margaret-rose-redesign .lyrics-label{
+  color:#b87824;
+}
+
+body.memorial-margaret-rose-redesign .lyrics-toggle .chev{
+  border-right-color:#b87824;
+  border-bottom-color:#b87824;
+}
+
+
+/* 3. SHARE â€” elegant centered reading order */
+body.memorial-margaret-rose-redesign .share-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-areas:
+    "title"
+    "intro"
+    "qr"
+    "copy"
+    "privacy";
+  justify-items:center;
+  gap:0;
+  padding:38px 44px 36px;
+  text-align:center;
+}
+
+/* Existing pseudo-heading */
+body.memorial-margaret-rose-redesign .share-grid::before{
+  grid-area:title;
+  width:100%;
+  margin:0 0 18px;
+  padding-bottom:15px;
+  font-size:28px;
+}
+
+/* Allow the paragraph and button inside .share-copy to become
+   separate items in the parent grid */
+body.memorial-margaret-rose-redesign .share-copy{
+  display:contents;
+}
+
+/* Hide the duplicate inner heading because the section now
+   already has a proper heading above it */
+body.memorial-margaret-rose-redesign .share-copy h2{
+  display:none;
+}
+
+body.memorial-margaret-rose-redesign .share-copy p{
+  grid-area:intro;
+  max-width:540px;
+  margin:0 auto 19px;
+  color:#6f6961;
+  font-size:14.5px;
+  line-height:1.6;
+  text-align:center;
+}
+
+
+/* QR centred as the visual focus */
+body.memorial-margaret-rose-redesign .qr-wrap{
+  grid-area:qr;
+  display:flex;
+  justify-content:center;
+  width:100%;
+  margin:0 0 15px;
+}
+
+body.memorial-margaret-rose-redesign #qr{
+  margin:0 auto;
+  padding:9px;
+  background:#fff;
+  border:1px solid rgba(184,120,36,.24);
+  box-shadow:
+    0 8px 18px rgba(34,29,24,.07),
+    0 2px 5px rgba(34,29,24,.035);
+}
+
+
+/* Copy button sits directly beneath QR */
+body.memorial-margaret-rose-redesign .copy-link{
+  grid-area:copy;
+  justify-self:center;
+  margin:0 0 26px;
+  padding:10px 16px;
+  background:#fff;
+  border:1px solid rgba(184,120,36,.22);
+  box-shadow:0 5px 12px rgba(34,29,24,.05);
+}
+
+
+/* Privacy becomes a quiet final note rather than a competing column */
+body.memorial-margaret-rose-redesign .privacy{
+  grid-area:privacy;
+  width:min(100%,560px);
+  margin:0 auto;
+  padding-top:21px;
+  border-top:1px solid rgba(184,120,36,.13);
+  text-align:center;
+}
+
+body.memorial-margaret-rose-redesign .privacy h2{
+  margin:0 0 7px;
+  color:#08243a;
+  font-size:20px;
+}
+
+body.memorial-margaret-rose-redesign .privacy p{
+  max-width:500px;
+  margin:0 auto;
+  line-height:1.58;
+  text-align:center;
+}
+
+
+/* MOBILE */
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .share-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "title"
+      "intro"
+      "qr"
+      "copy"
+      "privacy";
+    gap:0;
+    padding:28px 20px 27px;
+    text-align:center;
+  }
+
+  body.memorial-margaret-rose-redesign .share-grid::before{
+    margin-bottom:15px;
+    padding-bottom:12px;
+    font-size:24px;
+  }
+
+  body.memorial-margaret-rose-redesign .share-copy{
+    display:contents;
+  }
+
+  body.memorial-margaret-rose-redesign .share-copy p{
+    margin-bottom:16px;
+    font-size:14.5px;
+  }
+
+  body.memorial-margaret-rose-redesign .qr-wrap{
+    width:100%;
+    margin:0 0 13px;
+  }
+
+  body.memorial-margaret-rose-redesign .qr-toggle{
+    display:none;
+  }
+
+  body.memorial-margaret-rose-redesign .qr-panel{
+    display:block!important;
+  }
+
+  body.memorial-margaret-rose-redesign .qr-panel-inner{
+    display:flex;
+    justify-content:center;
+  }
+
+  body.memorial-margaret-rose-redesign .copy-link{
+    margin:0 0 22px;
+  }
+
+  body.memorial-margaret-rose-redesign .privacy{
+    width:100%;
+    padding-top:19px;
+  }
+}
