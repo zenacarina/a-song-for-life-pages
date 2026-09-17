@@ -2657,3 +2657,25 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     object-position:100% 50%!important;
   }
 }
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” TRUE MOBILE SQUARE HERO
+   Fixes the square on the FRAME itself, not only the image.
+   This overrides the earlier 5:4/16:11 mobile hero rules.
+   ========================================================= */
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .hero picture{
+    aspect-ratio:1 / 1!important;
+    height:auto!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    object-position:100% 50%!important;
+  }
+}
