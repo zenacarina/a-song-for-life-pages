@@ -203,24 +203,8 @@ function renderPage(d, css) {
     : '';
 
   const footerCredit = isExample
-    ? `
-    Example memorial
-    <span aria-hidden="true">·</span>
-    Created with care by Zena Carina
-    <span aria-hidden="true">·</span>
-    <a href="https://asongforlife.co.uk/">A Song for Life</a>
-    <span aria-hidden="true">·</span>
-    <a href="https://asongforlife.co.uk/">Return to website</a>`
-    : `
-    Created with care by Zena Carina
-    <span aria-hidden="true">·</span>
-    <a
-      href="https://asongforlife.co.uk"
-      target="_blank"
-      rel="noopener"
-    >
-      A Song for Life
-    </a>`;
+    ? `Example memorial <span aria-hidden="true">·</span> Created with care by Zena Carina`
+    : `Created with care by Zena Carina`;
 
   const url = `${BASE_URL}/${d.slug}/`;
 
