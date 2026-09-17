@@ -1719,3 +1719,143 @@ body.memorial-margaret-rose-redesign .section-card{
     0 26px 58px rgba(1,13,22,.24),
     0 8px 20px rgba(1,13,22,.10);
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” NAVY LYRICS + MORE BREATHING ROOM
+   Scoped ONLY to /margaret-rose-redesign/
+
+   Changes:
+   - Lyrics panel uses the same dark navy family as the gallery
+   - "Lyrics" becomes a proper elegant serif heading
+   - Adds a fine gold divider under the heading
+   - Gives the lyric excerpt more vertical breathing room
+   - Keeps the overall page structure unchanged
+   ========================================================= */
+
+body.memorial-margaret-rose-redesign .lyrics-panel{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.04),transparent 34%),
+    linear-gradient(180deg,#0a304b 0%,#08283f 100%);
+  border:1px solid rgba(255,255,255,.07);
+  box-shadow:
+    0 16px 30px rgba(2,15,25,.18),
+    inset 0 1px 0 rgba(255,255,255,.035);
+}
+
+/* Replace the tiny metadata-style label with a real section heading */
+body.memorial-margaret-rose-redesign .lyrics-heading{
+  position:relative;
+  margin:0;
+  padding:24px 24px 16px;
+  color:#f7ead7;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:25px;
+  font-weight:400;
+  line-height:1.15;
+  letter-spacing:0;
+  text-transform:none;
+  text-align:center;
+  opacity:1;
+}
+
+body.memorial-margaret-rose-redesign .lyrics-heading::after{
+  content:"";
+  display:block;
+  width:72px;
+  height:1px;
+  margin:13px auto 0;
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    #d9a651 22%,
+    #d9a651 78%,
+    transparent 100%
+  );
+}
+
+/* More generous spacing around the excerpt */
+body.memorial-margaret-rose-redesign .lyrics-preview{
+  margin:0;
+  padding:10px 34px 26px;
+  color:#f7ead7;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;
+  font-style:italic;
+  font-weight:400;
+  line-height:1.82;
+  text-align:center;
+  background:transparent;
+}
+
+body.memorial-margaret-rose-redesign .lyrics-preview p{
+  margin:0;
+}
+
+/* Expanded lyrics continue the same treatment */
+body.memorial-margaret-rose-redesign .lyrics{
+  max-width:720px;
+  margin:0 auto;
+  padding:8px 34px 34px;
+  color:#f7ead7;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:17px;
+  font-style:italic;
+  font-weight:400;
+  line-height:1.82;
+  text-align:center;
+  white-space:pre-line;
+}
+
+/* Toggle bar stays navy, but gets a little more air and definition */
+body.memorial-margaret-rose-redesign .lyrics-toggle{
+  padding:17px 24px 18px;
+  color:#f7ead7;
+  background:rgba(255,255,255,.025);
+  border-top:1px solid rgba(217,166,81,.22);
+}
+
+body.memorial-margaret-rose-redesign .lyrics-label{
+  color:#f7ead7;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:18px;
+}
+
+body.memorial-margaret-rose-redesign .lyrics-toggle .chev{
+  border-right-color:#d9a651;
+  border-bottom-color:#d9a651;
+}
+
+/* Mobile spacing */
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .lyrics-heading{
+    padding:20px 16px 13px;
+    font-size:22px;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics-heading::after{
+    width:60px;
+    margin-top:11px;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics-preview{
+    padding:8px 20px 22px;
+    font-size:16px;
+    line-height:1.72;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics{
+    padding:6px 18px 28px;
+    font-size:16px;
+    line-height:1.72;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics-toggle{
+    padding:15px 16px 16px;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics-label{
+    font-size:17px;
+  }
+}
