@@ -2725,3 +2725,32 @@ body.memorial-page .footer-credit a{
     position:relative!important;
   }
 }
+
+
+/* =========================================================
+   ASFL â€” MARY MOBILE HERO POSITION ONLY
+   All memorials keep the same true square mobile hero.
+   Mary alone is shifted visually about 15% to the right
+   by moving her crop position from 100% to 85%.
+   ========================================================= */
+
+@media(max-width:620px){
+  body.memorial-mary .hero-image{
+    object-position:85% 50%!important;
+  }
+}
+
+
+/* =========================================================
+   ASFL â€” PETER BURGOYNE MOBILE HERO POSITION ONLY
+   The global square/right-edge crop does not suit Peter
+   because he sits on the left side of his source photograph.
+   Keep the square frame, but shift Peter's crop left so he
+   is properly visible.
+   ========================================================= */
+
+@media(max-width:620px){
+  body.memorial-peter-burgoyne .hero-image{
+    object-position:15% 50%!important;
+  }
+}
