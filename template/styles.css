@@ -2496,3 +2496,44 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     border-radius:20px!important;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE HERO 5:4 CROP
+   Softer middle ground between the original landscape crop
+   and the too-dominant square crop.
+   ========================================================= */
+
+@media(max-width:620px){
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    aspect-ratio:5 / 4!important;
+    object-fit:cover!important;
+    object-position:68% 50%!important;
+  }
+}
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE HERO / PLAYER CLEARANCE
+   Keeps the 5:4 crop but guarantees the audio player cannot
+   sit on top of the bottom edge of the hero photograph.
+   ========================================================= */
+
+@media(max-width:620px){
+
+  body.memorial-margaret-rose-redesign .hero{
+    padding-bottom:18px!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    margin:0 14px!important;
+  }
+
+  body.memorial-margaret-rose-redesign .player-card{
+    width:calc(100% - 28px)!important;
+    margin:0 14px!important;
+    position:relative!important;
+    z-index:5;
+  }
+}
