@@ -2537,3 +2537,73 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     z-index:5;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE HERO FINAL TIDY
+   Keeps all current redesign/mobile fixes.
+   Changes only the mobile hero:
+   - proper rounded corners on all four edges
+   - shifts crop further right to retain Margaret + pink roses
+   - keeps a clean, tighter gap above the player
+   ========================================================= */
+
+@media(max-width:620px){
+
+  body.memorial-margaret-rose-redesign .hero{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    padding:0 0 12px!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-copy{
+    order:1;
+    width:100%;
+    padding:17px 14px 22px!important;
+  }
+
+  /* Rounded frame owns the clipping so bottom corners stay visible */
+  body.memorial-margaret-rose-redesign .hero picture{
+    order:2;
+    display:block!important;
+    width:calc(100% - 28px)!important;
+    margin:0 14px 14px!important;
+    padding:0!important;
+    line-height:0;
+    border:1px solid rgba(213,160,78,.30);
+    border-radius:22px!important;
+    overflow:hidden!important;
+    background:#efe8de;
+    box-shadow:
+      0 14px 30px rgba(8,36,58,.13),
+      0 4px 10px rgba(8,36,58,.06);
+  }
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    position:relative!important;
+    inset:auto!important;
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:5 / 4!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    object-fit:cover!important;
+    object-position:78% 50%!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-shade{
+    display:none!important;
+  }
+
+  body.memorial-margaret-rose-redesign .player-card{
+    width:calc(100% - 28px)!important;
+    margin:0 14px!important;
+    position:relative!important;
+    z-index:5;
+  }
+}
