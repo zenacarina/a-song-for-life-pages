@@ -818,7 +818,7 @@ body.gallery-lightbox-open{
 </style>
 </head>
 
-<body>
+<body class="memorial-page memorial-${escapeHtml(d.slug)}">
 ${exampleNav}
 
 <main class="shell">
