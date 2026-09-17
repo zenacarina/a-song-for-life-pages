@@ -2297,3 +2297,43 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo img{
     aspect-ratio:4 / 3;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE POLISH PASS
+   Scoped ONLY to /margaret-rose-redesign/
+
+   Mobile changes:
+   - frames the hero photograph like the main website hero
+   - gives Remembering Margaret more air above its heading
+   - keeps all current desktop styling intact
+   ========================================================= */
+
+@media(max-width:620px){
+
+  /* HERO PHOTO â€” framed rather than flush to the card edges */
+  body.memorial-margaret-rose-redesign .hero picture{
+    width:calc(100% - 28px)!important;
+    margin:0 14px 14px!important;
+    border:1px solid rgba(213,160,78,.30);
+    border-radius:20px!important;
+    box-shadow:
+      0 14px 30px rgba(8,36,58,.13),
+      0 4px 10px rgba(8,36,58,.06);
+    overflow:hidden!important;
+  }
+
+  body.memorial-margaret-rose-redesign .hero-image{
+    border-radius:19px!important;
+  }
+
+  /* REMEMBERING â€” more breathing room above heading */
+  body.memorial-margaret-rose-redesign .remembrance{
+    padding:30px 18px 22px!important;
+  }
+
+  body.memorial-margaret-rose-redesign .remembrance .panel-title{
+    margin-top:0;
+    margin-bottom:12px;
+  }
+}
