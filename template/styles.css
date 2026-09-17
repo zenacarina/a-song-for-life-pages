@@ -1382,33 +1382,43 @@ a:focus-visible{
   }
 }
 
-
 /* =========================================================
-   MARGARET ROSE REDESIGN SANDBOX
+   MARGARET ROSE REDESIGN SANDBOX â€” ROUND 3
    Scoped ONLY to /margaret-rose-redesign/
+   Uses navy feature panels so the florals feel richer.
+   Requires:
+   /memorial-decor/foliage-4.png
+   /memorial-decor/foliage-2.png
+   /memorial-decor/music-3.png
    ========================================================= */
 
 body.memorial-margaret-rose-redesign{
-  --redesign-paper:#fffaf2;
-  --redesign-paper-2:#f8efe2;
+  --redesign-paper:#fff9f0;
+  --redesign-paper-soft:#fbf0e2;
+  --redesign-paper-deep:#f3e2cd;
   --redesign-ink:#0b2a42;
+  --redesign-navy:#07253d;
+  --redesign-navy-2:#0b304d;
   --redesign-gold:#c58a35;
-  --redesign-line:rgba(184,120,36,.22);
+  --redesign-gold-soft:#dfbf81;
+  --redesign-cream-text:#f6ead7;
+  --redesign-line:rgba(184,120,36,.20);
+  --redesign-line-soft:rgba(184,120,36,.12);
 }
 
-/* quieter example banner */
+/* example bar */
 body.memorial-margaret-rose-redesign .example-nav{
   min-height:42px;
   margin-top:14px;
   padding:5px 16px;
   border-radius:10px;
-  border-color:rgba(213,160,78,.26);
-  background:rgba(5,28,45,.76);
+  border-color:rgba(213,160,78,.28);
+  background:rgba(5,28,45,.78);
   box-shadow:0 8px 20px rgba(0,0,0,.10);
 }
 
 body.memorial-margaret-rose-redesign .example-nav__brand{
-  color:#f4e8d5;
+  color:#f5ead9;
   font:600 11px/1.2 Arial,Helvetica,sans-serif;
   letter-spacing:.17em;
   text-transform:uppercase;
@@ -1417,42 +1427,68 @@ body.memorial-margaret-rose-redesign .example-nav__brand{
 body.memorial-margaret-rose-redesign .example-nav__return{
   min-height:30px;
   font-size:12px;
-  letter-spacing:.01em;
 }
 
-/* overall page rhythm */
+/* overall rhythm */
 body.memorial-margaret-rose-redesign .shell{
   padding-top:24px;
   padding-bottom:72px;
 }
 
 body.memorial-margaret-rose-redesign .page{
-  gap:14px;
+  gap:0;
   border-radius:26px;
   background:transparent;
 }
 
-body.memorial-margaret-rose-redesign .section-card{
+body.memorial-margaret-rose-redesign .section-card--top{
+  margin-bottom:14px;
   border-radius:22px;
-  border-color:rgba(213,160,78,.30);
-  box-shadow:0 20px 52px rgba(0,0,0,.16);
+  border-color:rgba(213,160,78,.40);
+  box-shadow:0 22px 54px rgba(0,0,0,.16);
   background:
     radial-gradient(circle at 50% 0%,rgba(255,255,255,.92),transparent 44%),
-    linear-gradient(180deg,#fffdf9 0%,#fbf5eb 100%);
+    linear-gradient(180deg,#fffdf9 0%,#fbf4e9 100%);
 }
 
-/* HERO â€” preserve the photography, refine the framing */
-body.memorial-margaret-rose-redesign .section-card--top{
-  border-color:rgba(213,160,78,.40);
+/* continuous memorial body below hero */
+body.memorial-margaret-rose-redesign .section-card--middle,
+body.memorial-margaret-rose-redesign .section-card--gallery,
+body.memorial-margaret-rose-redesign .section-card--bottom{
+  margin:0;
+  border-color:rgba(213,160,78,.26);
+  background:
+    radial-gradient(circle at 50% -12%,rgba(255,255,255,.90),transparent 36%),
+    linear-gradient(180deg,#fffaf2 0%,#f8ecdc 100%);
+  box-shadow:none;
 }
 
+body.memorial-margaret-rose-redesign .section-card--middle{
+  border-radius:22px 22px 0 0;
+  border-bottom:0;
+  box-shadow:0 22px 52px rgba(0,0,0,.15);
+}
+
+body.memorial-margaret-rose-redesign .section-card--gallery{
+  border-radius:0;
+  border-top:0;
+  border-bottom:0;
+}
+
+body.memorial-margaret-rose-redesign .section-card--bottom{
+  border-radius:0 0 22px 22px;
+  border-top:0;
+  box-shadow:0 22px 52px rgba(0,0,0,.15);
+}
+
+/* hero */
 body.memorial-margaret-rose-redesign .hero{
   min-height:610px;
   background:#fbf5eb;
 }
 
 body.memorial-margaret-rose-redesign .hero-image{
-  filter:saturate(1.01) contrast(1.015);
+  filter:saturate(1.02) contrast(1.015);
 }
 
 body.memorial-margaret-rose-redesign .hero-copy{
@@ -1463,14 +1499,14 @@ body.memorial-margaret-rose-redesign .hero-copy{
 
 body.memorial-margaret-rose-redesign .kicker{
   margin-bottom:14px;
+  color:var(--redesign-gold);
   font:700 12px/1.2 Arial,Helvetica,sans-serif;
   letter-spacing:.20em;
-  color:var(--redesign-gold);
 }
 
 body.memorial-margaret-rose-redesign .hero h1{
   color:#092941;
-  text-shadow:0 1px 0 rgba(255,255,255,.50);
+  text-shadow:0 1px 0 rgba(255,255,255,.52);
 }
 
 body.memorial-margaret-rose-redesign .dates{
@@ -1486,7 +1522,7 @@ body.memorial-margaret-rose-redesign .tribute{
   line-height:1.42;
 }
 
-/* PLAYER â€” make it feel like a keepsake, not an app panel */
+/* player */
 body.memorial-margaret-rose-redesign .player-card{
   width:calc(100% - 112px);
   margin-top:-108px;
@@ -1494,10 +1530,10 @@ body.memorial-margaret-rose-redesign .player-card{
   border-radius:17px;
   border-color:rgba(184,120,36,.22);
   background:
-    linear-gradient(180deg,rgba(255,253,249,.985),rgba(250,244,235,.98));
+    linear-gradient(180deg,rgba(255,253,249,.99),rgba(250,244,235,.985));
   box-shadow:
     0 18px 42px rgba(42,31,20,.13),
-    inset 0 1px 0 rgba(255,255,255,.8);
+    inset 0 1px 0 rgba(255,255,255,.82);
 }
 
 body.memorial-margaret-rose-redesign .play{
@@ -1508,8 +1544,8 @@ body.memorial-margaret-rose-redesign .play{
 
 body.memorial-margaret-rose-redesign .song-title{
   margin-bottom:5px;
-  font-size:28px;
   color:#08243a;
+  font-size:28px;
 }
 
 body.memorial-margaret-rose-redesign .song-sub{
@@ -1544,77 +1580,158 @@ body.memorial-margaret-rose-redesign .icon-btn.primary{
   background:#08243a;
 }
 
-/* TOP CONTENT / LYRICS â€” remove the box-inside-box feeling */
+/* content spacing */
 body.memorial-margaret-rose-redesign .content--top{
-  padding:24px 54px 46px;
+  padding:26px 54px 48px;
 }
 
+/* LYRICS â€” navy keepsake panel */
 body.memorial-margaret-rose-redesign .lyrics-panel{
+  position:relative;
+  isolation:isolate;
   margin-top:0;
-  padding:22px 0 0;
-  border:0;
-  border-radius:0;
-  background:transparent;
-  box-shadow:none;
+  overflow:hidden;
+  padding:28px 42px 20px;
+  border:1px solid rgba(213,160,78,.24);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.05),transparent 32%),
+    linear-gradient(180deg,var(--redesign-navy-2) 0%,var(--redesign-navy) 100%);
+  box-shadow:
+    0 16px 34px rgba(7,26,43,.22),
+    inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+body.memorial-margaret-rose-redesign .lyrics-panel::before{
+  content:"";
+  position:absolute;
+  top:-26px;
+  left:-28px;
+  width:220px;
+  height:220px;
+  background:url("/memorial-decor/foliage-4.png") center/contain no-repeat;
+  opacity:.92;
+  pointer-events:none;
+}
+
+body.memorial-margaret-rose-redesign .lyrics-panel::after{
+  content:"";
+  position:absolute;
+  top:8px;
+  right:18px;
+  width:200px;
+  height:112px;
+  background:url("/memorial-decor/music-3.png") center/contain no-repeat;
+  opacity:.22;
+  pointer-events:none;
 }
 
 body.memorial-margaret-rose-redesign .lyrics-heading{
   position:relative;
-  padding:5px 24px 12px;
-  color:#b77b29;
-  font-size:10px;
-  font-weight:700;
-  letter-spacing:.22em;
+  z-index:1;
+  margin:0;
+  padding:0 24px 16px;
+  color:#dcb676;
+  font:700 10px/1.2 Arial,Helvetica,sans-serif;
+  letter-spacing:.24em;
 }
 
 body.memorial-margaret-rose-redesign .lyrics-heading::after{
   content:"";
   display:block;
-  width:78px;
+  width:74px;
   height:1px;
-  margin:12px auto 0;
-  background:linear-gradient(90deg,transparent,#d5a04e,transparent);
+  margin:13px auto 0;
+  background:linear-gradient(90deg,transparent,rgba(223,191,129,.82),transparent);
 }
 
 body.memorial-margaret-rose-redesign .lyrics-preview{
-  max-width:690px;
+  position:relative;
+  z-index:1;
+  max-width:720px;
   margin:0 auto;
-  padding:4px 28px 25px;
-  color:#a9691f;
+  padding:5px 30px 24px;
+  color:#f1dcc1;
   background:transparent;
-  font-size:19px;
-  line-height:1.72;
+  font:italic 21px/1.82 Georgia,serif;
+  text-align:center;
+  text-shadow:0 1px 0 rgba(0,0,0,.10);
 }
 
 body.memorial-margaret-rose-redesign .lyrics-toggle{
+  position:relative;
+  z-index:1;
   width:min(700px,100%);
   margin:0 auto;
-  padding:17px 4px 13px;
-  border-top:1px solid rgba(184,120,36,.18);
+  padding:15px 4px 10px;
+  border-top:1px solid rgba(223,191,129,.22);
   border-bottom:0;
+  transition:border-color .22s ease,opacity .22s ease;
 }
 
 body.memorial-margaret-rose-redesign .lyrics-label{
-  font-size:17px;
-  color:#12354e;
+  color:#f2e6d4;
+  font:17px Georgia,serif;
+}
+
+body.memorial-margaret-rose-redesign .lyrics-toggle[aria-expanded="true"]{
+  border-top-color:transparent;
+  padding-top:10px;
+}
+
+body.memorial-margaret-rose-redesign .lyrics-toggle[aria-expanded="true"] .lyrics-label{
+  opacity:.72;
 }
 
 body.memorial-margaret-rose-redesign .lyrics{
-  max-width:680px;
-  padding:12px 18px 34px;
-  line-height:1.78;
+  position:relative;
+  z-index:1;
+  max-width:720px;
+  padding:8px 24px 34px;
+  color:#f1dcc1;
+  font:italic 19px/1.85 Georgia,serif;
+  text-align:center;
 }
 
-/* STORY â€” editorial rather than UI */
-body.memorial-margaret-rose-redesign .section-card--middle{
-  overflow:visible;
+body.memorial-margaret-rose-redesign .lyrics-toggle svg,
+body.memorial-margaret-rose-redesign .story-toggle svg{
+  color:var(--redesign-gold-soft);
 }
 
+/* STORY */
 body.memorial-margaret-rose-redesign .content--middle{
-  padding:48px 76px 44px;
+  position:relative;
+  overflow:hidden;
+  padding:58px 82px 50px;
+}
+
+body.memorial-margaret-rose-redesign .content--middle::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  left:-54px;
+  width:245px;
+  height:245px;
+  background:url("/memorial-decor/foliage-4.png") center/contain no-repeat;
+  opacity:.06;
+  pointer-events:none;
+}
+
+body.memorial-margaret-rose-redesign .content--middle::after{
+  content:"";
+  position:absolute;
+  right:-70px;
+  bottom:-38px;
+  width:230px;
+  height:230px;
+  background:url("/memorial-decor/foliage-2.png") center/contain no-repeat;
+  opacity:.05;
+  pointer-events:none;
 }
 
 body.memorial-margaret-rose-redesign .remembrance{
+  position:relative;
+  z-index:1;
   margin:0;
   padding:0;
   overflow:visible;
@@ -1625,7 +1742,7 @@ body.memorial-margaret-rose-redesign .remembrance{
 }
 
 body.memorial-margaret-rose-redesign .remembrance-copy{
-  max-width:760px;
+  max-width:780px;
   margin:0 auto;
 }
 
@@ -1642,38 +1759,39 @@ body.memorial-margaret-rose-redesign .remembrance-copy::before{
 body.memorial-margaret-rose-redesign .panel-title{
   margin-bottom:10px;
   color:#08243a;
-  font-size:34px;
-  letter-spacing:-.01em;
+  font-size:36px;
+  letter-spacing:-.012em;
 }
 
 body.memorial-margaret-rose-redesign .panel-rule{
-  margin-bottom:28px;
+  margin-bottom:30px;
 }
 
 body.memorial-margaret-rose-redesign .panel-rule::before,
 body.memorial-margaret-rose-redesign .panel-rule::after{
   width:74px;
-  opacity:.76;
+  opacity:.72;
 }
 
 body.memorial-margaret-rose-redesign .remembrance p{
-  margin-bottom:15px;
+  margin-bottom:16px;
   color:#443d36;
-  font-size:15.5px;
-  line-height:1.82;
+  font-size:16px;
+  line-height:1.86;
 }
 
 body.memorial-margaret-rose-redesign .remembrance em{
-  margin-top:20px;
-  color:#ad6f25;
-  font-size:20px;
+  margin-top:24px;
+  color:#a86c25;
+  font-size:21px;
   text-align:center;
 }
 
-/* story accordion becomes a refined editorial continuation */
 body.memorial-margaret-rose-redesign .story-panel{
-  width:min(760px,100%);
-  margin:30px auto 0;
+  position:relative;
+  z-index:1;
+  width:min(780px,100%);
+  margin:34px auto 0;
   padding:0;
   border:0;
   border-radius:0;
@@ -1683,8 +1801,8 @@ body.memorial-margaret-rose-redesign .story-panel{
 
 body.memorial-margaret-rose-redesign .story-toggle{
   padding:18px 4px;
-  border-top:1px solid rgba(184,120,36,.23);
-  border-bottom:1px solid rgba(184,120,36,.14);
+  border-top:1px solid rgba(184,120,36,.19);
+  border-bottom:1px solid rgba(184,120,36,.12);
 }
 
 body.memorial-margaret-rose-redesign .story-label{
@@ -1693,23 +1811,40 @@ body.memorial-margaret-rose-redesign .story-label{
 }
 
 body.memorial-margaret-rose-redesign .story-copy{
-  max-width:760px;
-  padding:28px 4px 4px;
+  max-width:780px;
+  padding:30px 4px 4px;
 }
 
 body.memorial-margaret-rose-redesign .story-copy p{
-  margin-bottom:17px;
+  margin-bottom:18px;
   color:#443d36;
-  font-size:15.5px;
-  line-height:1.82;
+  font-size:16px;
+  line-height:1.86;
 }
 
-/* GALLERY â€” make it feel like an album page */
+/* GALLERY */
 body.memorial-margaret-rose-redesign .content--gallery{
-  padding:46px 48px 48px;
+  position:relative;
+  overflow:hidden;
+  padding:48px 48px 52px;
+  border-top:1px solid var(--redesign-line-soft);
+}
+
+body.memorial-margaret-rose-redesign .content--gallery::after{
+  content:"";
+  position:absolute;
+  right:-48px;
+  top:8px;
+  width:220px;
+  height:220px;
+  background:url("/memorial-decor/foliage-2.png") center/contain no-repeat;
+  opacity:.055;
+  pointer-events:none;
 }
 
 body.memorial-margaret-rose-redesign .gallery-panel{
+  position:relative;
+  z-index:1;
   margin:0;
   padding:0;
   border:0;
@@ -1731,23 +1866,22 @@ body.memorial-margaret-rose-redesign .gallery-panel::before{
 body.memorial-margaret-rose-redesign .gallery-title{
   margin-bottom:8px;
   color:#08243a;
-  font-size:34px;
+  font-size:36px;
 }
 
 body.memorial-margaret-rose-redesign .gallery-grid{
   gap:13px;
-  margin-top:20px;
+  margin-top:21px;
 }
 
 body.memorial-margaret-rose-redesign .memory-photo{
   padding:7px;
   border-radius:10px;
   border-color:rgba(184,120,36,.18);
-  background:
-    linear-gradient(145deg,#f4eadb,#fffdfa);
+  background:linear-gradient(145deg,#f4eadb,#fffdfa);
   box-shadow:
     0 9px 22px rgba(46,32,20,.07),
-    inset 0 1px 0 rgba(255,255,255,.8);
+    inset 0 1px 0 rgba(255,255,255,.82);
 }
 
 body.memorial-margaret-rose-redesign .memory-photo img{
@@ -1758,47 +1892,74 @@ body.memorial-margaret-rose-redesign .gallery-grid--5 .memory-photo:first-child{
   padding:9px;
   box-shadow:
     0 14px 32px rgba(46,32,20,.09),
-    inset 0 1px 0 rgba(255,255,255,.8);
+    inset 0 1px 0 rgba(255,255,255,.82);
 }
 
-/* SHARE â€” quieter closing chapter */
-body.memorial-margaret-rose-redesign .section-card--bottom{
-  background:linear-gradient(180deg,#fffaf2 0%,#f8eee0 100%);
-}
-
+/* SHARE â€” navy inset so florals glow */
 body.memorial-margaret-rose-redesign .content--bottom{
-  padding:40px 52px 34px;
+  position:relative;
+  overflow:hidden;
+  padding:42px 54px 36px;
+  border-top:1px solid var(--redesign-line-soft);
 }
 
 body.memorial-margaret-rose-redesign .share-grid{
-  padding:0;
-  border:0;
-  border-radius:0;
-  background:transparent;
-  box-shadow:none;
+  position:relative;
+  z-index:1;
+  overflow:hidden;
+  padding:26px 28px 24px;
+  border:1px solid rgba(213,160,78,.24);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.05),transparent 34%),
+    linear-gradient(180deg,var(--redesign-navy-2) 0%,var(--redesign-navy) 100%);
+  box-shadow:
+    0 16px 34px rgba(7,26,43,.22),
+    inset 0 1px 0 rgba(255,255,255,.04);
   grid-template-columns:132px minmax(0,1fr) minmax(0,.9fr);
   gap:32px;
 }
 
+body.memorial-margaret-rose-redesign .share-grid::before{
+  content:"";
+  position:absolute;
+  right:-18px;
+  bottom:-28px;
+  width:200px;
+  height:200px;
+  background:url("/memorial-decor/foliage-2.png") center/contain no-repeat;
+  opacity:.90;
+  pointer-events:none;
+}
+
 body.memorial-margaret-rose-redesign #qr{
+  position:relative;
+  z-index:1;
   padding:7px;
   border-radius:8px;
-  border-color:rgba(184,120,36,.22);
-  box-shadow:0 7px 18px rgba(46,32,20,.06);
+  border-color:rgba(223,191,129,.25);
+  background:#fffdfa;
+  box-shadow:0 7px 18px rgba(46,32,20,.08);
+}
+
+body.memorial-margaret-rose-redesign .share-copy,
+body.memorial-margaret-rose-redesign .privacy{
+  position:relative;
+  z-index:1;
 }
 
 body.memorial-margaret-rose-redesign .share-copy h2,
 body.memorial-margaret-rose-redesign .privacy h2{
   margin-bottom:9px;
-  color:#08243a;
+  color:#f6ead7;
   font-size:21px;
 }
 
 body.memorial-margaret-rose-redesign .share-copy p,
 body.memorial-margaret-rose-redesign .privacy p{
-  color:#6c645d;
+  color:#d9c9b4;
   font-size:13.5px;
-  line-height:1.65;
+  line-height:1.68;
 }
 
 body.memorial-margaret-rose-redesign .copy-link{
@@ -1809,11 +1970,15 @@ body.memorial-margaret-rose-redesign .copy-link{
   background:#fffdfa;
 }
 
-/* branded bookend footer */
+body.memorial-margaret-rose-redesign .copy-link:hover{
+  background:#fff7eb;
+}
+
+/* footer */
 body.memorial-margaret-rose-redesign .footer{
   margin-top:6px;
-  padding:27px 24px 29px;
-  border-top:1px solid rgba(213,160,78,.36);
+  padding:29px 24px 31px;
+  border-top:1px solid rgba(213,160,78,.38);
   background:
     radial-gradient(circle at 50% -40%,rgba(35,79,109,.62),transparent 58%),
     linear-gradient(180deg,#08243a,#061b2c);
@@ -1842,31 +2007,41 @@ body.memorial-margaret-rose-redesign .footer-credit a{
   border-bottom-color:rgba(244,223,189,.28);
 }
 
-/* TABLET */
+/* tablet */
 @media(max-width:900px){
-  body.memorial-margaret-rose-redesign .page{
-    gap:12px;
+  body.memorial-margaret-rose-redesign .section-card--top{
+    margin-bottom:12px;
   }
 
   body.memorial-margaret-rose-redesign .content--middle{
-    padding:38px 38px 36px;
+    padding:44px 40px 40px;
   }
 
   body.memorial-margaret-rose-redesign .content--gallery{
-    padding:38px 30px 36px;
+    padding:40px 30px 40px;
   }
 
   body.memorial-margaret-rose-redesign .content--bottom{
-    padding:32px 30px 28px;
+    padding:34px 30px 30px;
   }
 
   body.memorial-margaret-rose-redesign .share-grid{
     grid-template-columns:118px 1fr .9fr;
     gap:22px;
   }
+
+  body.memorial-margaret-rose-redesign .lyrics-panel::before{
+    opacity:.82;
+  }
+
+  body.memorial-margaret-rose-redesign .content--middle::before,
+  body.memorial-margaret-rose-redesign .content--middle::after,
+  body.memorial-margaret-rose-redesign .content--gallery::after{
+    opacity:.04;
+  }
 }
 
-/* MOBILE */
+/* mobile */
 @media(max-width:620px){
   body.memorial-margaret-rose-redesign .example-nav{
     width:calc(100% - 12px);
@@ -1888,12 +2063,17 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     padding:10px 6px 30px;
   }
 
-  body.memorial-margaret-rose-redesign .page{
-    gap:9px;
+  body.memorial-margaret-rose-redesign .section-card--top{
+    margin-bottom:9px;
+    border-radius:16px;
   }
 
-  body.memorial-margaret-rose-redesign .section-card{
-    border-radius:16px;
+  body.memorial-margaret-rose-redesign .section-card--middle{
+    border-radius:16px 16px 0 0;
+  }
+
+  body.memorial-margaret-rose-redesign .section-card--bottom{
+    border-radius:0 0 16px 16px;
   }
 
   body.memorial-margaret-rose-redesign .hero-copy{
@@ -1921,26 +2101,54 @@ body.memorial-margaret-rose-redesign .footer-credit a{
   }
 
   body.memorial-margaret-rose-redesign .content--top{
-    padding:18px 18px 30px;
+    padding:18px 14px 28px;
   }
 
   body.memorial-margaret-rose-redesign .lyrics-panel{
-    padding-top:14px;
+    padding:24px 14px 14px;
+    border-radius:14px;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics-panel::before{
+    width:140px;
+    height:140px;
+    top:-20px;
+    left:-24px;
+    opacity:.80;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics-panel::after{
+    width:130px;
+    right:-18px;
+    top:12px;
+    opacity:.16;
   }
 
   body.memorial-margaret-rose-redesign .lyrics-preview{
-    padding-left:6px;
-    padding-right:6px;
-    font-size:17px;
-    line-height:1.65;
+    padding-left:5px;
+    padding-right:5px;
+    font-size:18px;
+    line-height:1.72;
   }
 
   body.memorial-margaret-rose-redesign .lyrics-toggle{
-    padding:15px 2px 11px;
+    padding:13px 2px 9px;
+  }
+
+  body.memorial-margaret-rose-redesign .lyrics{
+    padding:8px 6px 28px;
+    font-size:17px;
+    line-height:1.78;
   }
 
   body.memorial-margaret-rose-redesign .content--middle{
-    padding:32px 20px 30px;
+    padding:36px 20px 32px;
+  }
+
+  body.memorial-margaret-rose-redesign .content--middle::before,
+  body.memorial-margaret-rose-redesign .content--middle::after,
+  body.memorial-margaret-rose-redesign .content--gallery::after{
+    display:none;
   }
 
   body.memorial-margaret-rose-redesign .remembrance-copy::before,
@@ -1951,7 +2159,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
   body.memorial-margaret-rose-redesign .panel-title,
   body.memorial-margaret-rose-redesign .gallery-title{
-    font-size:28px;
+    font-size:29px;
   }
 
   body.memorial-margaret-rose-redesign .panel-rule{
@@ -1960,8 +2168,8 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
   body.memorial-margaret-rose-redesign .remembrance p,
   body.memorial-margaret-rose-redesign .story-copy p{
-    font-size:14.5px;
-    line-height:1.75;
+    font-size:14.7px;
+    line-height:1.76;
   }
 
   body.memorial-margaret-rose-redesign .remembrance em{
@@ -1969,7 +2177,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
   }
 
   body.memorial-margaret-rose-redesign .story-panel{
-    margin-top:24px;
+    margin-top:25px;
   }
 
   body.memorial-margaret-rose-redesign .story-toggle{
@@ -1985,11 +2193,11 @@ body.memorial-margaret-rose-redesign .footer-credit a{
   }
 
   body.memorial-margaret-rose-redesign .content--gallery{
-    padding:32px 14px 28px;
+    padding:34px 14px 30px;
   }
 
   body.memorial-margaret-rose-redesign .gallery-grid{
-    margin-top:16px;
+    margin-top:17px;
     gap:8px;
   }
 
@@ -2003,11 +2211,21 @@ body.memorial-margaret-rose-redesign .footer-credit a{
   }
 
   body.memorial-margaret-rose-redesign .content--bottom{
-    padding:26px 18px 22px;
+    padding:28px 18px 24px;
   }
 
   body.memorial-margaret-rose-redesign .share-grid{
     display:block;
+    padding:20px 16px 18px;
+    border-radius:14px;
+  }
+
+  body.memorial-margaret-rose-redesign .share-grid::before{
+    width:125px;
+    height:125px;
+    right:-16px;
+    bottom:-18px;
+    opacity:.82;
   }
 
   body.memorial-margaret-rose-redesign .qr-toggle{
@@ -2023,7 +2241,7 @@ body.memorial-margaret-rose-redesign .footer-credit a{
 
   body.memorial-margaret-rose-redesign .privacy{
     margin-top:18px;
-    border-top:1px solid rgba(184,120,36,.16);
+    border-top:1px solid rgba(223,191,129,.14);
   }
 
   body.memorial-margaret-rose-redesign .footer{
