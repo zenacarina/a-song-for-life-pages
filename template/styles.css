@@ -2187,3 +2187,54 @@ body.memorial-margaret-rose-redesign .privacy p{
     padding-top:19px;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MICRO POLISH
+   Scoped ONLY to /margaret-rose-redesign/
+
+   Changes:
+   - gives the navy Share button a matching lifted shadow
+   - adds a touch more space between Share blurb and QR
+   - slightly tightens QR-to-copy-button spacing
+   ========================================================= */
+
+/* PLAYER â€” lift navy Share button to balance Download button */
+body.memorial-margaret-rose-redesign .player-actions .icon-btn.primary{
+  box-shadow:
+    0 8px 18px rgba(8,36,58,.20),
+    0 2px 5px rgba(8,36,58,.10);
+}
+
+body.memorial-margaret-rose-redesign .player-actions .icon-btn.primary:hover{
+  box-shadow:
+    0 11px 22px rgba(8,36,58,.24),
+    0 3px 7px rgba(8,36,58,.11);
+}
+
+
+/* SHARE â€” slightly more breathing room above QR */
+body.memorial-margaret-rose-redesign .share-copy p{
+  margin-bottom:24px;
+}
+
+/* QR and button read as one grouped action */
+body.memorial-margaret-rose-redesign .qr-wrap{
+  margin-bottom:10px;
+}
+
+body.memorial-margaret-rose-redesign .copy-link{
+  margin-bottom:26px;
+}
+
+
+/* MOBILE */
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .share-copy p{
+    margin-bottom:20px;
+  }
+
+  body.memorial-margaret-rose-redesign .qr-wrap{
+    margin-bottom:9px;
+  }
+}
