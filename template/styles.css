@@ -2607,3 +2607,17 @@ body.memorial-margaret-rose-redesign .footer-credit a{
     z-index:5;
   }
 }
+
+
+/* =========================================================
+   MARGARET ROSE REDESIGN â€” MOBILE HERO ROSES RIGHT
+   Keeps all current styling.
+   Only shifts the mobile hero crop further right so more of
+   the pink roses are retained and Margaret sits more centrally.
+   ========================================================= */
+
+@media(max-width:620px){
+  body.memorial-margaret-rose-redesign .hero-image{
+    object-position:85% 50%!important;
+  }
+}
