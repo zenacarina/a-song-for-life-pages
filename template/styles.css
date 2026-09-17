@@ -2675,3 +2675,53 @@ body.memorial-page .footer-credit a{
     object-position:100% 50%!important;
   }
 }
+
+
+/* =========================================================
+   ASFL ALL MEMORIALS â€” TRUE SQUARE MOBILE HERO FIX
+   The previous rule right-aligned the image but did not make
+   the rendered frame truly square because the image kept its
+   intrinsic height. This makes the WRAPPER square and lets
+   the image fill it.
+   ========================================================= */
+
+@media(max-width:620px){
+
+  body.memorial-page .hero picture{
+    display:block!important;
+    width:calc(100% - 28px)!important;
+    aspect-ratio:1 / 1!important;
+    height:auto!important;
+    margin:0 14px 14px!important;
+    padding:0!important;
+    border:1px solid rgba(213,160,78,.30);
+    border-radius:22px!important;
+    overflow:hidden!important;
+    line-height:0;
+    background:#efe8de;
+    box-shadow:
+      0 14px 30px rgba(8,36,58,.13),
+      0 4px 10px rgba(8,36,58,.06);
+  }
+
+  body.memorial-page .hero-image{
+    position:absolute!important;
+    inset:0!important;
+    width:100%!important;
+    height:100%!important;
+    max-width:none!important;
+    aspect-ratio:auto!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:0!important;
+    box-shadow:none!important;
+    object-fit:cover!important;
+    object-position:100% 50%!important;
+  }
+
+  /* Make the picture wrapper the positioning context */
+  body.memorial-page .hero picture{
+    position:relative!important;
+  }
+}
