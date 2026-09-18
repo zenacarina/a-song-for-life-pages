@@ -1080,7 +1080,7 @@ ${gallerySection}
 </div>
 
 <footer class="footer">
-  <div class="brand">A Song for Life</div>
+  <div class="brand"><a href="https://asongforlife.co.uk/">A Song for Life</a></div>
 
   <p class="footer-note">
     A personal song created from a life remembered
