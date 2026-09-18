@@ -2754,3 +2754,91 @@ body.memorial-page .footer-credit a{
     object-position:15% 50%!important;
   }
 }
+
+
+/* =========================================================
+   SHARE + FOOTER POLISH
+   - share text/copy action first
+   - privacy note second
+   - QR code last
+   - footer brand is a clickable site link
+   ========================================================= */
+
+body.memorial-page .share-grid{
+  grid-template-areas:
+    "title"
+    "intro"
+    "copy"
+    "privacy"
+    "qr"!important;
+}
+
+/* Keep the written sharing action together before the QR */
+body.memorial-page .share-copy p{
+  margin-bottom:16px!important;
+}
+
+body.memorial-page .copy-link{
+  grid-area:copy;
+  justify-self:center;
+  margin:0 0 24px!important;
+}
+
+/* Privacy reassurance comes before the QR */
+body.memorial-page .privacy{
+  grid-area:privacy;
+  margin-bottom:24px!important;
+}
+
+/* QR becomes the quiet final visual action */
+body.memorial-page .qr-wrap{
+  grid-area:qr;
+  width:100%;
+  margin:0!important;
+  padding-top:4px;
+}
+
+/* Footer site name: linked, but visually unchanged */
+body.memorial-page .brand a{
+  color:inherit;
+  text-decoration:none;
+  border:0;
+}
+
+body.memorial-page .brand a:hover,
+body.memorial-page .brand a:focus-visible{
+  color:var(--gold-dark);
+}
+
+/* The footer credit remains plain text */
+body.memorial-page .footer-credit a{
+  display:none!important;
+}
+
+@media(max-width:620px){
+  body.memorial-page .share-grid{
+    grid-template-areas:
+      "title"
+      "intro"
+      "copy"
+      "privacy"
+      "qr"!important;
+  }
+
+  body.memorial-page .share-copy p{
+    margin-bottom:16px!important;
+  }
+
+  body.memorial-page .copy-link{
+    margin-bottom:22px!important;
+  }
+
+  body.memorial-page .privacy{
+    margin-bottom:22px!important;
+  }
+
+  body.memorial-page .qr-wrap{
+    margin:0!important;
+    padding-top:2px;
+  }
+}
